@@ -14,6 +14,9 @@
 	if ($codes == true) {
 		$dc = $codes['code'];
 		$discount_percent = $codes['percent'];
+	} else {
+		$dc = 0;
+		$discount_percent = 0;
 	}
 
 	

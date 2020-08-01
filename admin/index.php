@@ -3,11 +3,11 @@
     require_once  $path.'../database/db_fashe.php';
     session_start();
     if(isset($_SESSION['login']) == false || $_SESSION['login'] == null){
-      header("location: ". $siteurl . "login.php");
+      header("location: ../login.php");
       die;
     }
      if($_SESSION['login']['role'] != 2 &&  $_SESSION['login']['role'] != 3){
-      header("location: ". $siteurl . "login.php");
+      header("location: ../login.php");
       die;
     }
     

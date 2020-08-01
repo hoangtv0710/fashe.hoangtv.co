@@ -1,15 +1,17 @@
-<?php 
-	$siteurl = "http://localhost/Fashe/";
-	$siteurlz = "http://localhost/Fashe/z-client/";
-	$adminUrl = "http://localhost/Fashe/admin/";
-	$adminAssetUrl = "http://localhost/Fashe/admin/adminlte/";
+<?php
+	//url
+	define('SITELINK', 'http://localhost/Fashe/');
+	define('SITELINKADMIN', 'http://localhost/Fashe/admin');
+
+	//database
 	$host = "localhost";
 	$dbname = "db_fashe";
 	$username = "root";
-	$password = "";
+	$password = "root";
 
 	$conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8",$username,$password);
 
+	//role user
 	const USER_ROLES = [
 		'Member' =>1,
 		'Moderator' => 2,

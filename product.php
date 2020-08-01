@@ -71,14 +71,14 @@
 							Danh mục
 						</h4>
 						<li class="p-t-4">
-							<a href="<?= $siteurl ?>product.php" class="s-text3">
+							<a href="product.php" class="s-text3">
 								<p class="text-uppercase">Tất cả</p><hr>										
 							</a>
 						</li>
 						<ul class="p-b-54">
 							<?php foreach ($cate as $c): ?>
 								<li class="p-t-4">
-									<a href="<?= $siteurl . "product.php?id=".$c['id'] ?>" class="s-text13">
+									<a href="<?= "product.php?id=".$c['id'] ?>" class="s-text13">
 										<p class="text-uppercase"><?= $c['name'] ?></p><hr>
 									</a>
 								</li>
@@ -95,29 +95,9 @@
 					<!--  -->
 					<div class="flex-sb-m flex-w p-b-35">
 						<div class="flex-w">
-							<div class="rs2-select2 bo4 of-hidden w-size12 m-t-5 m-b-5 m-r-10">
-								<select class="selection-2" name="sorting">
-									<option>Default Sorting</option>
-									<option>Popularity</option>
-									<option>Price: low to high</option>
-									<option>Price: high to low</option>
-								</select>
-							</div>
-
-							<div class="rs2-select2 bo4 of-hidden w-size12 m-t-5 m-b-5 m-r-10">
-								<select class="selection-2" name="sorting">
-									<option>Price</option>
-									<option data-toggle="tab" href="#row" role="tab">$0.00 - $50.00</option>
-									<option>$50.00 - $100.00</option>
-									<option>$100.00 - $150.00</option>
-									<option>$150.00 - $200.00</option>
-									<option>$200.00+</option>
-
-								</select>
-							</div>
 						</div>
 						<div class="search-product pos-relative bo4 of-hidden">
-							<form action="<?= $siteurl  ?>search_product.php" method="GET">
+							<form action="search_product.php" method="GET">
 								<input class="s-text7 size6 p-l-23 p-r-50" type="text" name="keyword" placeholder="Tìm kiếm sản phẩm..." required="">
 
 								<button type="submit" class="flex-c-m size5 ab-r-m color2 color0-hov trans-0-4">
@@ -147,14 +127,14 @@
 									</a>
 
 									<div class="block2-btn-addcart w-size1 trans-0-4">
-										<a href="<?= $siteurl . "product-detail.php?id=".$P['id']."&categories=".$P['cate_id'] ?>" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 m-b-10">Xem chi tiết</a>
-										<a href="<?= $siteurl . "save-cart.php?id=".$P['id'] ?>" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 m-b-10">Thêm vào giỏ</a>
+										<a href="<?= "product-detail.php?id=".$P['id']."&categories=".$P['cate_id'] ?>" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 m-b-10">Xem chi tiết</a>
+										<a href="<?= "save-cart.php?id=".$P['id'] ?>" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 m-b-10">Thêm vào giỏ</a>
 									</div>
 								</div>
 							</div>
 
 							<div class="block2-txt p-t-20 text-center text-uppercase">
-								<a href="<?= $siteurl . "product-detail.php?id=".$P['id']."&categories=".$P['cate_id'] ?>" class="block2-name dis-block s-text3 p-b-5">
+								<a href="<?= "product-detail.php?id=".$P['id']."&categories=".$P['cate_id'] ?>" class="block2-name dis-block s-text3 p-b-5">
 									<?= $P['product_name'] ?>
 								</a>
 
@@ -182,14 +162,14 @@
 
 									<div class="block2-btn-addcart w-size1 trans-0-4">
 										<!-- Button -->
-										<a href="<?= $siteurl . "product-detail.php?id=".$P['id']."&categories=".$P['cate_id'] ?>" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 m-b-10">Xem chi tiết</a>
-										<a href="<?= $siteurl . "save-cart.php?id=".$P['id'] ?>" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 m-b-10">Thêm vào giỏ</a>
+										<a href="<?= "product-detail.php?id=".$P['id']."&categories=".$P['cate_id'] ?>" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 m-b-10">Xem chi tiết</a>
+										<a href="<?= "save-cart.php?id=".$P['id'] ?>" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 m-b-10">Thêm vào giỏ</a>
 									</div>
 								</div>
 							</div>
 
 							<div class="block2-txt p-t-20 text-center text-uppercase">
-								<a href="<?= $siteurl . "product-detail.php?id=".$P['id']."&categories=".$P['cate_id'] ?>" class="block2-name dis-block s-text3 p-b-5">
+								<a href="<?= "product-detail.php?id=".$P['id']."&categories=".$P['cate_id'] ?>" class="block2-name dis-block s-text3 p-b-5">
 									<?= $P['product_name'] ?>
 								</a>
 
@@ -225,14 +205,14 @@
 
 								<div class="block2-btn-addcart w-size1 trans-0-4">
 									<!-- Button -->
-									<a href="<?= $siteurl . "product-detail.php?id=".$P['id']."&categories=".$P['cate_id'] ?>" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 m-b-10">Xem chi tiết</a>
-									<a href="<?= $siteurl . "save-cart.php?id=".$P['id'] ?>" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 m-b-10">Thêm vào giỏ</a>
+									<a href="<?= "product-detail.php?id=".$P['id']."&categories=".$P['cate_id'] ?>" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 m-b-10">Xem chi tiết</a>
+									<a href="<?= "save-cart.php?id=".$P['id'] ?>" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 m-b-10">Thêm vào giỏ</a>
 								</div>
 							</div>
 						</div>
 
 						<div class="block2-txt p-t-20 text-center text-uppercase">
-							<a href="<?= $siteurl . "product-detail.php?id=".$P['id']."&categories=".$P['cate_id'] ?>" class="block2-name dis-block s-text3 p-b-5">
+							<a href="<?= "product-detail.php?id=".$P['id']."&categories=".$P['cate_id'] ?>" class="block2-name dis-block s-text3 p-b-5">
 								<?= $P['product_name'] ?>
 							</a>
 
@@ -259,14 +239,14 @@
 
 								<div class="block2-btn-addcart w-size1 trans-0-4">
 									<!-- Button -->
-									<a href="<?= $siteurl . "product-detail.php?id=".$P['id']."&categories=".$P['cate_id'] ?>" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 m-b-10">Xem chi tiết</a>
-									<a href="<?= $siteurl . "save-cart.php?id=".$P['id'] ?>" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 m-b-10">Thêm vào giỏ</a>
+									<a href="<?= "product-detail.php?id=".$P['id']."&categories=".$P['cate_id'] ?>" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 m-b-10">Xem chi tiết</a>
+									<a href="<?= "save-cart.php?id=".$P['id'] ?>" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 m-b-10">Thêm vào giỏ</a>
 								</div>
 							</div>
 						</div>
 
 						<div class="block2-txt p-t-20 text-center text-uppercase">
-							<a href=<?= $siteurl . "product-detail.php?id=".$P['id']."&categories=".$P['cate_id'] ?>" class="block2-name dis-block s-text3 p-b-5">
+							<a href=<?= "product-detail.php?id=".$P['id']."&categories=".$P['cate_id'] ?>" class="block2-name dis-block s-text3 p-b-5">
 								<?= $P['product_name'] ?>
 							</a>
 
@@ -347,7 +327,7 @@
 		      initiateStartPageClick: false,
 		      startPage: <?= $pageNumber?>,
 		      onPageClick: function (event, page) {
-		        var url = '<?= $siteurl?>product.php';
+		        var url = 'product.php';
 		        url += "?page=" + page;
 		        window.location.href = url;
 		      }

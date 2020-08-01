@@ -8,7 +8,7 @@
 
   <header class="main-header">
     <!-- Logo -->
-    <a href="<?= $adminUrl ?>" class="logo">
+    <a href="<?= SITELINKADMIN ?>" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b>LT</span>
       <!-- logo for regular state and mobile devices -->
@@ -68,9 +68,9 @@
                   <?php if ($avt['id']==$_SESSION['login']['id']): ?>
                     
                     <?php if (!empty($avt['avatar'])): ?>
-                       <img src="<?= $siteurl . $avt['avatar'] ?>" class="img-circle" height="21" width="30" alt="User Image">
+                       <img src="<?= SITELINK . $avt['avatar'] ?>" class="img-circle" height="21" width="30" alt="User Image">
                     <?php else: ?>
-                       <img src="<?= $adminAssetUrl ?>dist/img/logoadmin.png" class="img-circle" alt="User Image" height="21" width="30">
+                       <img src="<?= SITELINKADMIN ?>dist/img/logoadmin.png" class="img-circle" alt="User Image" height="21" width="30">
                     <?php endif ?>
 
                   <?php endif ?>
@@ -85,9 +85,9 @@
                   <?php if ($avt['id']==$_SESSION['login']['id']): ?>
                     
                     <?php if (!empty($avt['avatar'])): ?>
-                       <img src="<?= $siteurl . $avt['avatar'] ?>" class="img-circle" alt="User Image">
+                       <img src="<?= SITELINK . $avt['avatar'] ?>" class="img-circle" alt="User Image">
                     <?php else: ?>
-                       <img src="<?= $adminAssetUrl ?>dist/img/logoadmin.png" class="img-circle" alt="User Image" height="21" width="30">
+                       <img src="<?= SITELINKADMIN ?>dist/img/logoadmin.png" class="img-circle" alt="User Image" height="21" width="30">
                     <?php endif ?>
 
                   <?php endif ?>

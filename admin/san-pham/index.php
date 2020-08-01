@@ -25,7 +25,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Sản phẩm</title>
-  <link rel="stylesheet" href="<?= $adminAssetUrl?>plugins/Toastr/toastr.min.css"></style> 
+  <link rel="stylesheet" href="<?= SITELINKADMIN ?>/adminlte/plugins/Toastr/toastr.min.css"></style> 
   <?php include_once $path.'share/linkAsset.php'; ?>
 
 </head>
@@ -45,7 +45,7 @@
       </h1>
 
       <ol class="breadcrumb">
-        <li><a href="<?= $adminUrl ?>"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="<?= SITELINKADMIN ?>"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="active">Sản phẩm</li>
         <li class="active">Danh sách</li>
       </ol>
@@ -72,7 +72,7 @@
                   <th>Lượt xem</th>
                   <th style="width: 120px">
                     <a 
-                      href="<?= $adminUrl ?>san-pham/add.php" 
+                      href="add.php" 
                       class="btn btn-xs btn-success">
                       <i class="fa fa-plus"></i>  Thêm
                     </a>
@@ -93,7 +93,7 @@
 
                     <td><?= $item['sell_price']?></td>
 
-                    <td><img src="<?= $siteurl . $item['image']?>" class="img-responsive"></td>
+                    <td><img src="<?= SITELINK . $item['image']?>" class="img-responsive"></td>
 
                     <td><?= $item['status'] ?></td>
 
@@ -101,13 +101,13 @@
 
                     <td>
                       <a 
-                        href="<?= $adminUrl ?>san-pham/edit.php?id=<?= $item['id']?>" 
+                        href="edit.php?id=<?= $item['id']?>" 
                         class="btn btn-xs btn-primary">
                         <i class="fa fa-pencil"></i>  Sửa
                       </a>
                       <a 
                         href="javascript:;" 
-                        linkurl="<?= $adminUrl ?>san-pham/remove.php?id=<?= $item['id']?>" 
+                        linkurl="remove.php?id=<?= $item['id']?>" 
                         class="btn btn-xs btn-danger btn-remove">
                         <i class="fa fa-trash"></i>  Xoá
                       </a>
@@ -138,7 +138,7 @@
 <!-- ./wrapper -->
 
 
-<script type="text/javascript" src="<?= $adminAssetUrl?>plugins/Toastr/toastr.min.js""></script>
+<script type="text/javascript" src="<?= SITELINKADMIN ?>/adminlte/plugins/Toastr/toastr.min.js"></script>
 
 <script type="text/javascript">
   
@@ -180,7 +180,7 @@
       initiateStartPageClick: false,
       startPage: <?= $pageNumber?>,
       onPageClick: function (event, page) {
-        var url = '<?= $adminUrl?>san-pham';
+        var url = '<?php echo SITELINKADMIN ?>/san-pham';
         url += "?page=" + page;
         window.location.href = url;
       }

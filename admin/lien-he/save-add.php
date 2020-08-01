@@ -17,6 +17,6 @@
 	$stmt->execute();
 
 
-	header('location: '.$siteurl . 'contact.php?success=true');
+	header('location: '. SITELINK . 'contact.php?success=true');
 	die;
  ?>

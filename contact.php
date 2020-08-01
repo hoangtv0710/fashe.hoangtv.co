@@ -12,7 +12,7 @@
 	<title>Liên hệ</title>
 	<meta charset="UTF-8">
 	<?php include 'share/linkAsset.php'; ?>	
-	<link rel="stylesheet" href="<?= $adminAssetUrl?>plugins/Toastr/toastr.min.css">
+	<link rel="stylesheet" href="admin/adminlte/plugins/Toastr/toastr.min.css">
 </head>
 <body class="animsition">
 
@@ -43,7 +43,7 @@
 				</div>	
 
 				<div class="col-md-7 p-b-30">
-					<form class="leave-comment" method="POST" action="<?= $adminUrl ?>lien-he/save-add.php" name="form" onsubmit="return validate()">
+					<form class="leave-comment" method="POST" action="<?= SITELINK ?>/admin/lien-he/save-add.php" name="form" onsubmit="return validate()">
 						<h4 class="m-text26 p-b-36 p-t-15">
 							Gửi cho chúng tôi ý kiến của bạn
 						</h4>
@@ -145,7 +145,7 @@
 
 <!--===============================================================================================-->
 	<script type="text/javascript" src="vendor/jquery/jquery-3.2.1.min.js"></script>
-	<script type="text/javascript" src="<?= $adminAssetUrl?>plugins/Toastr/toastr.min.js""></script>
+	<script type="text/javascript" src="admin/adminlte/plugins/Toastr/toastr.min.js""></script>
 <!--===============================================================================================-->
 	<script type="text/javascript" src="vendor/animsition/js/animsition.min.js"></script>
 <!--===============================================================================================-->

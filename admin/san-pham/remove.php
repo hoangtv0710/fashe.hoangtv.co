@@ -21,7 +21,7 @@
 	$kq = $conn->prepare($sql);
 	$kq->execute();
 
-	header('location:' . $adminUrl . 'san-pham');
+	header('location:' . SITELINKADMIN . '/san-pham');
 	die;
 
  ?>

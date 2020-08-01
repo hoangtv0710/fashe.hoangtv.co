@@ -50,7 +50,7 @@
 
 			<div class="wrap_header">
 				<!-- Logo -->
-				<a href="<?= $siteurl ?>" class="logo">
+				<a href="<?= SITELINK ?>" class="logo">
 					<img src="<?= $ws['logo'] ?>" alt="IMG-LOGO">
 				</a>
 
@@ -77,7 +77,7 @@
 									|
 								</li>
 								<li>
-									<form action="<?= $siteurl ?>search_product.php" method="GET" name="search">
+									<form action="search_product.php" method="GET" name="search">
 										<input type="text" name="keyword" placeholder="Tìm kiếm" required="">
 										<button type="submit"><i class="fa fa-search"></i></button>
 									</form>
@@ -98,14 +98,14 @@
 								<div class="header-cart-buttons">
 									<div class="header-cart-wrapbtn">
 										<!-- Button -->
-										<a href="<?= $siteurl . 'account.php' ?>" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+										<a href="account.php" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
 											Thông tin
 										</a>
 									</div>
 
 									<div class="header-cart-wrapbtn">
 										<!-- Button -->
-										<a href="<?= $siteurlz . 'logout-client.php' ?>" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+										<a href="authenticator/logout-client.php" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
 											Đăng xuất
 										</a>
 									</div>
@@ -113,7 +113,7 @@
 							</div>
 						</div>
 					<?php else: ?>
-						<a href="<?= $siteurlz . 'login-client.php' ?>" class="header-wrapicon1 dis-block">
+						<a href="authenticator/login-client.php" class="header-wrapicon1 dis-block">
 							<i class="fa fa-sign-in fa-lg" title="Đăng nhập / Đăng kí"></i>
 						</a>
 					<?php endif ?>
@@ -214,7 +214,7 @@
 		<!-- Header Mobile -->
 		<div class="wrap_header_mobile">
 			<!-- Logo moblie -->
-			<a href="<?= $siteurl ?>" class="logo-mobile">
+			<a href="<?= SITELINK ?>" class="logo-mobile">
 				<img src="<?= $ws['logo'] ?>" alt="IMG-LOGO">
 			</a>
 
@@ -343,7 +343,7 @@
 					</li>
 
 					<li class="item-menu-mobile">
-						<a href="<?= $siteurl ?>">TRANG CHỦ</a>
+						<a href="<?= SITELINK ?>">TRANG CHỦ</a>
 					</li>
 
 					<li class="item-menu-mobile">
