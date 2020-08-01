@@ -41,7 +41,7 @@
     <!-- Main content -->
     <section class="content">
       <div class="row">
-        <form enctype="multipart/form-data" action="<?= $adminUrl?>san-pham/save-add.php" method="post" name="form" onsubmit="return checkProduct()">
+        <form enctype="multipart/form-data" action="save-add.php" method="post" name="form" onsubmit="return checkProduct()">
           <div class="col-md-6">
             <div class="form-group">
               <label>Tên sản phẩm</label>
@@ -97,7 +97,7 @@
           <div class="col-md-6">
             <div class="row">
               <div class="col-md-8 col-md-offset-2">
-                <img id="proImg" src="<?= $siteurl?>images/default/default.jpg" class="img-responsive">
+                <img id="proImg" src="<?= SITELINK ?>images/default/default.jpg" class="img-responsive">
               </div>
             </div>
 
@@ -129,7 +129,7 @@
           </div>
 
           <div class="col-md-12 text-right">
-            <a href="<?= $adminUrl?>san-pham" class="btn btn-sm btn-danger">Huỷ</a>
+            <a href="./" class="btn btn-sm btn-danger">Huỷ</a>
             <button type="submit" class="btn btn-sm btn-primary">Lưu</button>
           </div>
           
@@ -153,7 +153,7 @@
 
       var file = this.files[0];
       if(file == undefined){
-        document.querySelector('#proImg').src = '<?= $siteurl?>images/default/default.jpg';
+        document.querySelector('#proImg').src = '<?= SITELINK ?>images/default/default.jpg';
       }else{
         getBase64(file, '#proImg');
       }

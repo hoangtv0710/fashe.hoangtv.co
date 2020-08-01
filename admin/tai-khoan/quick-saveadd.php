@@ -57,13 +57,9 @@ $password = password_hash($password, PASSWORD_DEFAULT);
 
 
 	$sql = "insert into users (email, fullname, password, avatar, role) 
-			values (:email, :fullname, :password, :avatar, :role)";
+			values ('$email', '$fullname', '$password', '$filename', '$role')";
 	$stmt = $conn->prepare($sql);
-	$stmt->bindParam(':email', $email);
-	$stmt->bindParam(':fullname', $fullname);
-	$stmt->bindParam(':password', $password);
-	$stmt->bindParam(':avatar', $filename);
-	$stmt->bindParam(':role', $role);
+	
 	$stmt->execute();
 
 	$code = "insert into discount_code (code, percent) values ('$randomStr' , '$percent')";

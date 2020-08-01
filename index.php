@@ -45,7 +45,7 @@
 	<?php include 'share/header.php'; ?>
 	 <div class="flex-c-m size22 bg0 s-text21 pos-relative">
 		Đăng kí để nhận mã giảm giá 10% cho lần mua hàng đầu tiên tại shop
-		<a href="<?= $siteurlz . 'registration.php' ?>" class="s-text22 hov6 p-l-5">
+		<a href="authenticator/registration.php" class="s-text22 hov6 p-l-5">
 			Đăng kí ngay
 		</a>
 
@@ -69,7 +69,7 @@
 
 									<div class="block1-wrapbtn w-size2">
 										<!-- Button -->
-										<a href="<?= $siteurl . "product.php?id=".$b['cate_id'] ?>" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
+										<a href="product.php?id=<?= $b['cate_id'] ?>" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
 											<?= $b['description'] ?>
 										</a>
 									</div>
@@ -84,7 +84,7 @@
 
 									<div class="block1-wrapbtn w-size2">
 										<!-- Button -->
-										<a href="<?= $siteurl . "product.php?id=".$b['cate_id'] ?>" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
+										<a href="product.php?id=<?= $b['cate_id'] ?>" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
 											<?= $b['description'] ?>
 										</a>
 									</div>
@@ -144,15 +144,15 @@
 
 														<div class="block2-btn-addcart w-size1 trans-0-4">
 															<!-- Button -->
-																<a href="<?= $siteurl . "product-detail.php?id=".$p['id']."&categories=".$p['cate_id'] ?>" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 m-b-10">Xem chi tiết</a>
+																<a href="<?= "product-detail.php?id=".$p['id']."&categories=".$p['cate_id'] ?>" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 m-b-10">Xem chi tiết</a>
 
-															<a href="<?= $siteurl . "save-cart.php?id=".$p['id'] ?>" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 m-b-10">Thêm vào giỏ</a>
+															<a href="<?= "save-cart.php?id=".$p['id'] ?>" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 m-b-10">Thêm vào giỏ</a>
 														</div>
 													</div>
 												</div>
 
 												<div class="block2-txt p-t-20 text-center text-uppercase">
-													<a href="<?= $siteurl . "product-detail.php?id=".$p['id']."&categories=".$p['cate_id'] ?>" class="block2-name dis-block s-text3 p-b-5">
+													<a href="<?= "product-detail.php?id=".$p['id']."&categories=".$p['cate_id'] ?>" class="block2-name dis-block s-text3 p-b-5">
 														<?= $p['product_name'] ?>
 													</a>
 
@@ -194,14 +194,14 @@
 
 												<div class="block2-btn-addcart w-size1 trans-0-4">
 													<!-- Button -->
-													<a href="<?= $siteurl . "product-detail.php?id=".$p['id']."&categories=".$p['cate_id'] ?>" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 m-b-10">Xem chi tiết</a>
-													<a href="<?= $siteurl . "save-cart.php?id=".$p['id'] ?>" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 m-b-10">Thêm vào giỏ</a>
+													<a href="<?= "product-detail.php?id=".$p['id']."&categories=".$p['cate_id'] ?>" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 m-b-10">Xem chi tiết</a>
+													<a href="<?= "save-cart.php?id=".$p['id'] ?>" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 m-b-10">Thêm vào giỏ</a>
 												</div>
 											</div>
 										</div>
 
 										<div class="block2-txt p-t-20 text-center text-uppercase">
-											<a href="<?= $siteurl . "product-detail.php?id=".$p['id']."&categories=".$p['cate_id'] ?>" class="block2-name dis-block s-text3 p-b-5">
+											<a href="<?= "product-detail.php?id=".$p['id']."&categories=".$p['cate_id'] ?>" class="block2-name dis-block s-text3 p-b-5">
 												<?= $p['product_name'] ?>
 											</a>
 
@@ -274,14 +274,14 @@
 
 													<div class="block2-btn-addcart w-size1 trans-0-4">
 														<!-- Button -->
-														<a href="<?= $siteurl . "product-detail.php?id=".$p['id']."&categories=".$p['cate_id'] ?>" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 m-b-10">Xem chi tiết</a>
-														<a href="<?= $siteurl . "save-cart.php?id=".$p['id'] ?>" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 m-b-10">Thêm vào giỏ</a>
+														<a href="<?= "product-detail.php?id=".$p['id']."&categories=".$p['cate_id'] ?>" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 m-b-10">Xem chi tiết</a>
+														<a href="<?= "save-cart.php?id=".$p['id'] ?>" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 m-b-10">Thêm vào giỏ</a>
 													</div>
 												</div>
 											</div>
 
 											<div class="block2-txt p-t-20 text-center text-uppercase">
-												<a href="<?= $siteurl . "product-detail.php?id=".$p['id']."&categories=".$p['cate_id'] ?>" class="block2-name dis-block s-text3 p-b-5">
+												<a href="<?= "product-detail.php?id=".$p['id']."&categories=".$p['cate_id'] ?>" class="block2-name dis-block s-text3 p-b-5">
 													<?= $p['product_name'] ?>
 												</a>
 
@@ -312,14 +312,14 @@
 
 												<div class="block2-btn-addcart w-size1 trans-0-4">
 													<!-- Button -->
-													<a href="<?= $siteurl . "product-detail.php?id=".$p['id']."&categories=".$p['cate_id'] ?>" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 m-b-10">Xem chi tiết</a>
-													<a href="<?= $siteurl . "save-cart.php?id=".$p['id'] ?>" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 m-b-10">Thêm vào giỏ</a>
+													<a href="<?= "product-detail.php?id=".$p['id']."&categories=".$p['cate_id'] ?>" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 m-b-10">Xem chi tiết</a>
+													<a href="<?= "save-cart.php?id=".$p['id'] ?>" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 m-b-10">Thêm vào giỏ</a>
 												</div>
 											</div>
 										</div>
 
 										<div class="block2-txt p-t-20 text-center text-uppercase">
-											<a href="<?= $siteurl . "product-detail.php?id=".$p['id']."&categories=".$p['cate_id'] ?>" class="block2-name dis-block s-text3 p-b-5">
+											<a href="<?= "product-detail.php?id=".$p['id']."&categories=".$p['cate_id'] ?>" class="block2-name dis-block s-text3 p-b-5">
 												<?= $p['product_name'] ?>
 											</a>
 
@@ -379,13 +379,13 @@
 						<div class="col-sm-10 col-md-4 p-b-30 m-l-r-auto">
 							<!-- Block3 -->
 							<div class="block3">
-								<a href="<?= $siteurl . "blog-detail.php?id=".$mp['id']."&categories=".$mp['cate_id'] ?>" class="block3-img dis-block hov-img-zoom">
+								<a href="<?= "blog-detail.php?id=".$mp['id']."&categories=".$mp['cate_id'] ?>" class="block3-img dis-block hov-img-zoom">
 									<img src="<?= $mp['image'] ?>" alt="IMG-BLOG">
 								</a>
 
 								<div class="block3-txt p-t-14">
 									<h4 class="p-b-7">
-										<a href="<?= $siteurl . "blog-detail.php?id=".$mp['id']."&categories=".$mp['cate_id'] ?>" class="m-text11">
+										<a href="<?= "blog-detail.php?id=".$mp['id']."&categories=".$mp['cate_id'] ?>" class="m-text11">
 											<?= $mp['title'] ?>
 										</a>
 									</h4>

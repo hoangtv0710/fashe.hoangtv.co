@@ -124,7 +124,7 @@
 <!-- ./wrapper -->
 
 
-<script type="text/javascript" src="<?= $adminAssetUrl?>plugins/Toastr/toastr.min.js""></script>
+<script type="text/javascript" src="<?= $adminAssetUrl?>plugins/Toastr/toastr.min.js"></script>
 
 
 <script type="text/javascript">

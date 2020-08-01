@@ -15,6 +15,7 @@
 	$file = $_FILES['image'];
 	$author_name = $_POST['author_name'];
 	$content = $_POST['content'];
+	$views = 0;
 
 	$sql = "select * from posts where title = '$title'";
 	$kq = $conn->prepare($sql);
@@ -42,8 +43,8 @@ if ($file['size'] > 0) {
 
 
 
-	$sql = "insert into posts (title, cate_id, short_desc, created_by, created_date, author_name, content, image) 
-			values (:title, :cate_id, :short_desc, :created_by, :created_date, :author_name, :content, :image) ";
+	$sql = "insert into posts (title, cate_id, short_desc, created_by, created_date, author_name, content, image, views) 
+			values (:title, :cate_id, :short_desc, :created_by, :created_date, :author_name, :content, :image, :views) ";
 	$stmt = $conn->prepare($sql);
 	$stmt->bindParam(':title', $title);
 	$stmt->bindParam(':cate_id', $cate_id);
@@ -53,6 +54,7 @@ if ($file['size'] > 0) {
 	$stmt->bindParam(':author_name', $author_name);
 	$stmt->bindParam(':content', $content);
 	$stmt->bindParam(':image', $filename);
+	$stmt->bindParam(':views', $views);
 	$stmt->execute();
 
 

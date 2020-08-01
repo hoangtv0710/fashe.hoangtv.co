@@ -3,7 +3,7 @@
 
 	// kiem tra xem loai request co phai loai post hay khong
 	if($_SERVER['REQUEST_METHOD'] != "POST"){
-		header('location: '.$adminUrl . 'san-pham');
+		header('location: '. SITELINKADMIN . '/san-pham');
 		die;
 	}
 
@@ -17,7 +17,7 @@
 	$file = $_FILES['image'];
 
 	if ($product_name == "") {
-		header('location: '.$adminUrl . 'san-pham/edit.php?id='.$id.'&errName=Không để trống tên sản phẩm');
+		header('location: '. SITELINKADMIN . '/san-pham/edit.php?id='.$id.'&errName=Không để trống tên sản phẩm');
 	die;
 	}
 	
@@ -26,7 +26,7 @@
 	$stmt->execute();
 	$checkDuplicate = $stmt->fetch();
 	if($checkDuplicate != false){
-		header('location: '.$adminUrl . 'san-pham/edit.php?id='.$id.'&errName=Tên sản phẩm đã tồn tại!');
+		header('location: '. SITELINKADMIN . '/san-pham/edit.php?id='.$id.'&errName=Tên sản phẩm đã tồn tại!');
 		die;
 	}
 
@@ -69,6 +69,6 @@
 	$stmt->execute();
 
 
-	header('location: '.$adminUrl . 'san-pham');
+	header('location: '. SITELINKADMIN . '/san-pham');
 	die;
  ?>

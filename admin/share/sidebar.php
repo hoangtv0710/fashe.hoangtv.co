@@ -11,9 +11,9 @@
           <?php if ($avt['id']==$_SESSION['login']['id']): ?>
             
             <?php if (!empty($avt['avatar'])): ?>
-               <img src="<?= $siteurl . $avt['avatar'] ?>" class="img-circle" alt="User Image">
+               <img src="<?= SITELINK . $avt['avatar'] ?>" class="img-circle" alt="User Image">
             <?php else: ?>
-               <img src="<?= $adminAssetUrl ?>dist/img/logoadmin.png" class="img-circle" alt="User Image">
+               <img src="<?= SITELINKADMIN ?>/adminlte/dist/img/logoadmin.png" class="img-circle" alt="User Image">
             <?php endif ?>
 
           <?php endif ?>
@@ -49,7 +49,7 @@
         </a>
         <ul class="treeview-menu">
           <li class="">
-            <a href="<?= $adminUrl?>"><i class="fa fa-circle-o"></i> Thống kê</a>
+            <a href="<?= SITELINKADMIN ?>/"><i class="fa fa-circle-o"></i> Thống kê</a>
           </li>
         </ul>
       </li>
@@ -63,13 +63,13 @@
         </a>
         <ul class="treeview-menu">
           <li class="">
-            <a href="<?= $adminUrl?>danh-muc-sp"><i class="fa fa-circle-o"></i>Danh mục</a>
+            <a href="<?= SITELINKADMIN ?>/danh-muc-sp"><i class="fa fa-circle-o"></i>Danh mục</a>
           </li>
           <li class="">
-            <a href="<?= $adminUrl ?>san-pham"><i class="fa fa-circle-o"></i>Danh sách sản phẩm</a>
+            <a href="<?= SITELINKADMIN ?>/san-pham"><i class="fa fa-circle-o"></i>Danh sách sản phẩm</a>
           </li>
           <li class="">
-            <a href="<?= $adminUrl ?>phan-hoi-sp"><i class="fa fa-circle-o"></i>Bình luận</a>
+            <a href="<?= SITELINKADMIN ?>/phan-hoi-sp"><i class="fa fa-circle-o"></i>Bình luận</a>
           </li>
         </ul>
       </li>
@@ -83,10 +83,10 @@
         </a>
         <ul class="treeview-menu">
           <li class="">
-            <a href="<?= $adminUrl?>ma-giam-gia"><i class="fa fa-circle-o"></i>Danh sách</a>
+            <a href="<?= SITELINKADMIN ?>/ma-giam-gia"><i class="fa fa-circle-o"></i>Danh sách</a>
           </li>
           <li class="">
-            <a href="<?= $adminUrl ?>ma-giam-gia/add.php"><i class="fa fa-circle-o"></i>Thêm mã giảm giá</a>
+            <a href="<?= SITELINKADMIN ?>/ma-giam-gia/add.php"><i class="fa fa-circle-o"></i>Thêm mã giảm giá</a>
           </li>
         </ul>
       </li>
@@ -100,13 +100,13 @@
         </a>
         <ul class="treeview-menu">
           <li class="">
-            <a href="<?= $adminUrl?>danh-muc-bv"><i class="fa fa-circle-o"></i>Danh mục</a>
+            <a href="<?= SITELINKADMIN ?>/danh-muc-bv"><i class="fa fa-circle-o"></i>Danh mục</a>
           </li>
           <li class="">
-            <a href="<?= $adminUrl?>bai-viet"><i class="fa fa-circle-o"></i>Danh sách bài viết</a>
+            <a href="<?= SITELINKADMIN ?>/bai-viet"><i class="fa fa-circle-o"></i>Danh sách bài viết</a>
           </li>
           <li class="">
-            <a href="<?= $adminUrl?>phan-hoi-bv"><i class="fa fa-circle-o"></i>Bình luận</a>
+            <a href="<?= SITELINKADMIN ?>/phan-hoi-bv"><i class="fa fa-circle-o"></i>Bình luận</a>
           </li>
         </ul>
       </li>
@@ -120,7 +120,7 @@
         </a>
         <ul class="treeview-menu">
           <li class="">
-            <a href="<?= $adminUrl ?>lien-he"><i class="fa fa-circle-o"></i>Danh sách</a>
+            <a href="<?= SITELINKADMIN ?>/lien-he"><i class="fa fa-circle-o"></i>Danh sách</a>
           </li>
         </ul>
       </li>
@@ -134,10 +134,10 @@
         </a>
         <ul class="treeview-menu">
           <li class="">
-            <a href="<?= $adminUrl ?>hoa-don"><i class="fa fa-circle-o"></i>Danh sách</a>
+            <a href="<?= SITELINKADMIN ?>/hoa-don"><i class="fa fa-circle-o"></i>Danh sách</a>
           </li>
           <li class="">
-            <a href="<?= $adminUrl ?>hoa-don-chi-tiet"><i class="fa fa-circle-o"></i>Chi tiết hóa đơn</a>
+            <a href="<?= SITELINKADMIN ?>/hoa-don-chi-tiet"><i class="fa fa-circle-o"></i>Chi tiết hóa đơn</a>
           </li>
         </ul>
       </li>
@@ -151,10 +151,10 @@
         </a>
         <ul class="treeview-menu">
           <li class="">
-            <a href="<?= $adminUrl ?>slide-show"><i class="fa fa-circle-o"></i>Danh sách</a>
+            <a href="<?= SITELINKADMIN ?>/slide-show"><i class="fa fa-circle-o"></i>Danh sách</a>
           </li>
           <li class="">
-            <a href="<?= $adminUrl ?>slide-show/add.php"><i class="fa fa-circle-o"></i>Thêm slide</a>
+            <a href="<?= SITELINKADMIN ?>/slide-show/add.php"><i class="fa fa-circle-o"></i>Thêm slide</a>
           </li>
         </ul>
       </li>
@@ -168,10 +168,10 @@
         </a>
         <ul class="treeview-menu">
           <li class="">
-            <a href="<?= $adminUrl ?>doi-tac"><i class="fa fa-circle-o"></i>Danh sách</a>
+            <a href="<?= SITELINKADMIN ?>/doi-tac"><i class="fa fa-circle-o"></i>Danh sách</a>
           </li>
           <li class="">
-            <a href="<?= $adminUrl ?>doi-tac/add.php"><i class="fa fa-circle-o"></i>Thêm đối tác</a>
+            <a href="<?= SITELINKADMIN ?>/doi-tac/add.php"><i class="fa fa-circle-o"></i>Thêm đối tác</a>
           </li>
         </ul>
       </li>
@@ -185,7 +185,7 @@
         </a>
         <ul class="treeview-menu">
           <li class="">
-            <a href="<?= $adminUrl ?>banner"><i class="fa fa-circle-o"></i>Danh sách</a>
+            <a href="<?= SITELINKADMIN ?>/banner"><i class="fa fa-circle-o"></i>Danh sách</a>
           </li>
         </ul>
       </li>
@@ -199,10 +199,10 @@
         </a>
         <ul class="treeview-menu">
           <li class="">
-            <a href="<?= $adminUrl ?>menu"><i class="fa fa-circle-o"></i>Danh sách</a>
+            <a href="<?= SITELINKADMIN ?>/menu"><i class="fa fa-circle-o"></i>Danh sách</a>
           </li>
           <li class="">
-            <a href="<?= $adminUrl ?>dropdown-menu"><i class="fa fa-circle-o"></i>Dropdown-menu</a>
+            <a href="<?= SITELINKADMIN ?>/dropdown-menu"><i class="fa fa-circle-o"></i>Dropdown-menu</a>
           </li>
         </ul>
       </li>
@@ -216,10 +216,10 @@
         </a>
         <ul class="treeview-menu">
           <li class="">
-            <a href="<?= $adminUrl ?>tai-khoan"><i class="fa fa-circle-o"></i>Danh sách</a>
+            <a href="<?= SITELINKADMIN ?>/tai-khoan"><i class="fa fa-circle-o"></i>Danh sách</a>
           </li>
           <li class="">
-            <a href="<?= $adminUrl ?>tai-khoan/add.php"><i class="fa fa-circle-o"></i>Thêm tài khoản</a>
+            <a href="<?= SITELINKADMIN ?>/tai-khoan/add.php"><i class="fa fa-circle-o"></i>Thêm tài khoản</a>
           </li>
         </ul>
       </li>
@@ -233,7 +233,7 @@
         </a>
         <ul class="treeview-menu">
           <li class="">
-            <a href="<?= $adminUrl ?>thong-tin-chung"><i class="fa fa-circle-o"></i>Thông tin chung</a>
+            <a href="<?= SITELINKADMIN ?>/thong-tin-chung"><i class="fa fa-circle-o"></i>Thông tin chung</a>
           </li>
         </ul>
       </li>
