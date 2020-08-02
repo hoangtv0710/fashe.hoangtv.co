@@ -9,7 +9,7 @@
 	$product = $kq->fetch();
 
 	if (!$product) {
-		header('location:' . $adminUrl . 'san-pham');
+		header('location:' . SITELINKADMIN . '/san-pham');
 		die;
 	}
 

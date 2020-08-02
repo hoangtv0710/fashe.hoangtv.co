@@ -3,7 +3,7 @@
 	require_once '../../database/db_fashe.php';
 
 	if($_SERVER['REQUEST_METHOD'] != "POST"){
-		header('location: '.$adminUrl . 'ma-giam-gia');
+		header('location: '. SITELINKADMIN . '/ma-giam-gia');
 		die;
 	}
 
@@ -12,12 +12,12 @@
 	$percent = $_POST['percent'];
 
 	if($code == ""){
-		header('location: '.$adminUrl . 'ma-giam-gia/edit.php?id='.$id.'&errName=Không để trống mã giảm');
+		header('location: '. SITELINKADMIN . '/ma-giam-gia/edit.php?id='.$id.'&errName=Không để trống mã giảm');
 		die;
 	}
 
 	if($percent == ""){
-		header('location: '.$adminUrl . 'ma-giam-gia/edit.php?id='.$id.'&errName1=Không để trống % giảm');
+		header('location: '. SITELINKADMIN . '/ma-giam-gia/edit.php?id='.$id.'&errName1=Không để trống % giảm');
 		die;
 	}
 
@@ -26,7 +26,7 @@
 	$stmt->execute();
 	$checkDuplicate = $stmt->fetch();
 	if($checkDuplicate != false){
-		header('location: '.$adminUrl . 'ma-giam-gia/edit.php?id='.$id.'&errName=Mã giảm giá đã tồn tại!');
+		header('location: '. SITELINKADMIN . '/ma-giam-gia/edit.php?id='.$id.'&errName=Mã giảm giá đã tồn tại!');
 		die;
 	}
 
@@ -36,7 +36,7 @@
 	$stmt->execute();
 
 
-	header('location: '.$adminUrl . 'ma-giam-gia');
+	header('location: '. SITELINKADMIN . '/ma-giam-gia');
 	die;
 	
  ?>

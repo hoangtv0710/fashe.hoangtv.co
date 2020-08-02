@@ -13,7 +13,7 @@
 	
 
 	if (!$product) {
-		header("location: " . $siteurl);
+		header("location: " . SITELINK);
 		die;
 	}
 
@@ -24,7 +24,7 @@
 	$splq = $stmt->fetchall();
 
 	if (!$splq) {
-		header("location: " . $siteurl);
+		header("location: " . SITELINK);
 		die;
 	}
 
@@ -51,7 +51,7 @@
 	<title><?= $product['product_name'] ?></title>
 	<meta charset="UTF-8">
 	<?php include 'share/linkAsset.php'; ?>
-	<link rel="stylesheet" href="<?= $adminAssetUrl?>plugins/Toastr/toastr.min.css">
+	<link rel="stylesheet" href="<?= SITELINKADMIN ?>/adminlte/plugins/Toastr/toastr.min.css">
 </head>
 <body class="animsition">
 
@@ -60,7 +60,7 @@
 
 	<!-- breadcrumb -->
 	<div class="bread-crumb bgwhite flex-w p-l-52 p-r-15 p-t-30 p-l-15-sm">
-		<a href="<?= $siteurl ?>" class="s-text16 text-uppercase">
+		<a href="<?= SITELINK ?>" class="s-text16 text-uppercase">
 			trang chủ
 			<i class="fa fa-angle-right m-l-8 m-r-9" aria-hidden="true"></i>
 		</a>
@@ -70,7 +70,7 @@
 			<i class="fa fa-angle-right m-l-8 m-r-9" aria-hidden="true"></i>
 		</a>
 
-		<a href="<?= $siteurl . 'product.php?id='.$categories['id'] ?>" class="s-text16 text-uppercase">
+		<a href="<?= 'product.php?id='.$categories['id'] ?>" class="s-text16 text-uppercase">
 			<?= $categories['name'] ?>
 			<i class="fa fa-angle-right m-l-8 m-r-9" aria-hidden="true"></i>
 		</a>
@@ -94,9 +94,9 @@
 							</div>
 						</div>
 					<?php foreach ($pg as $p): ?>
-						<div class="item-slick3" data-thumb="<?= $siteurl . $p['image'] ?>">
+						<div class="item-slick3" data-thumb="<?= SITELINK . $p['image'] ?>">
 							<div class="wrap-pic-w">
-								<img src="<?= $siteurl . $p['image'] ?>" alt="IMG-PRODUCT">
+								<img src="<?= SITELINK . $p['image'] ?>" alt="IMG-PRODUCT">
 							</div>
 						</div>
 					<?php endforeach ?>
@@ -139,7 +139,7 @@
 
 							<div class="btn-addcart-product-detail size9 trans-0-4 m-t-10 m-b-10">
 								<!-- Button -->
-								<a href="<?= $siteurl . "save-cart.php?id=".$product['id'] ?>" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 m-b-10">Thêm vào giỏ</a>
+								<a href="<?= "save-cart.php?id=".$product['id'] ?>" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 m-b-10">Thêm vào giỏ</a>
 							</div>
 						</div>
 					</div>
@@ -147,7 +147,7 @@
 
 				<div class="p-b-45">
 					<span class="s-text8 m-r-35">Mã sản phẩm: <?= $product['id'] ?></span>
-					<span class="s-text8">Danh mục: <a href="<?= $siteurl . 'product.php?id='.$categories['id'] ?>"><?= $categories['name'] ?></a></span>
+					<span class="s-text8">Danh mục: <a href="<?= 'product.php?id='.$categories['id'] ?>"><?= $categories['name'] ?></a></span>
 				</div>
 
 				<!--  -->
@@ -172,7 +172,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6">
-				<form action="<?= $siteurl ?>submitcmt.php" method="POST" name="formcmt" onsubmit="return cmt()">
+				<form action="submitcmt.php" method="POST" name="formcmt" onsubmit="return cmt()">
 					<input type="hidden" name="productId" value="<?= $id?>">
 					<input type="hidden" name="productlq" value="<?= $cate_id ?>">
 					<h4 class="m-text26 p-b-36 p-t-15">
@@ -187,7 +187,7 @@
 						</button>
 					</div>
 					<div class="m-t-10"></div>
-					<a href="<?= $siteurlz ?>login-client.php" id="err" class="text-danger s-text2"></a>
+					<a href="<?= SITELINK ?>authenticarot/login-client.php" id="err" class="text-danger s-text2"></a>
 				</form>
 			</div>
 			<div class="col-md-6 m-t-30">
@@ -248,14 +248,14 @@
 												</a>
 
 												<div class="block2-btn-addcart w-size1 trans-0-4">
-													<a href="<?= $siteurl . "product-detail.php?id=".$item['id']."&categories=".$item['cate_id'] ?>" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 m-b-10">Xem chi tiết</a>
-													<a href="<?= $siteurl . "save-cart.php?id=".$item['id'] ?>" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 m-b-10">Thêm vào giỏ</a>
+													<a href="<?= "product-detail.php?id=".$item['id']."&categories=".$item['cate_id'] ?>" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 m-b-10">Xem chi tiết</a>
+													<a href="<?= "save-cart.php?id=".$item['id'] ?>" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 m-b-10">Thêm vào giỏ</a>
 												</div>
 											</div>
 										</div>
  
 										<div class="block2-txt p-t-20 text-center text-uppercase">
-											<a href="<?= $siteurl . "product-detail.php?id=".$item['id']."&categories=".$item['cate_id'] ?>" class="block2-name dis-block s-text3 p-b-5">
+											<a href="<?= "product-detail.php?id=".$item['id']."&categories=".$item['cate_id'] ?>" class="block2-name dis-block s-text3 p-b-5">
 												<?= $item['product_name'] ?>
 											</a>
 
@@ -281,14 +281,14 @@
 												</a>
 
 												<div class="block2-btn-addcart w-size1 trans-0-4">
-													<a href="<?= $siteurl . "product-detail.php?id=".$item['id']."&categories=".$item['cate_id'] ?>" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 m-b-10">Xem chi tiết</a>
-													<a href="<?= $siteurl . "save-cart.php?id=".$item['id'] ?>" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 m-b-10">Thêm vào giỏ</a>
+													<a href="<?= "product-detail.php?id=".$item['id']."&categories=".$item['cate_id'] ?>" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 m-b-10">Xem chi tiết</a>
+													<a href="<?= "save-cart.php?id=".$item['id'] ?>" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 m-b-10">Thêm vào giỏ</a>
 												</div>
 											</div>
 										</div>
 
 										<div class="block2-txt p-t-20 text-center text-uppercase">
-											<a href="<?= $siteurl . "product-detail.php?id=".$item['id']."&categories=".$item['cate_id'] ?>" class="block2-name dis-block s-text3 p-b-5">
+											<a href="<?= "product-detail.php?id=".$item['id']."&categories=".$item['cate_id'] ?>" class="block2-name dis-block s-text3 p-b-5">
 												<?= $item['product_name'] ?>
 											</a>
 

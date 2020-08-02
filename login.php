@@ -35,7 +35,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 							<?php if (isset($_GET['err'])): ?>
 								<h3 style="color: red; text-align: center; padding-bottom: 10px;"><?= $_GET['err'] ?></h3>
 							<?php endif ?>
-							<form action="<?= $siteurl ?>post-login.php" method="post">
+							<form action="post-login.php" method="post">
 
 								<div class="form-sub-w3">
 									<input type="text" name="email" placeholder="Email " <?php if (isset($_GET['email'])): ?>

@@ -13,7 +13,7 @@
 		$stmt->execute();
 		$discount_code = $stmt->fetch();
 		if (!$discount_code) {
-			header('location: ' . $siteurl . 'send_cart.php?error'.'&Code='.$code);
+			header('location: ' . SITELINK . 'send_cart.php?error'.'&Code='.$code);
 			die;
 		}
 	}
@@ -24,7 +24,7 @@
 	<title>Thanh toán</title>
 	<meta charset="UTF-8">
 	<?php include 'share/linkAsset.php'; ?>
-	<link rel="stylesheet" href="<?= $adminAssetUrl?>plugins/Toastr/toastr.min.css">
+	<link rel="stylesheet" href="<?= SITELINKADMIN ?>/adminlte/plugins/Toastr/toastr.min.css">
 </head>
 <body class="animsition">
 
@@ -111,7 +111,7 @@
 						<?php endif ?>
 						<hr>
 						<div>
-							<form action="<?= $siteurl ?>send_cart.php" method="post" class="flex-w flex-m w-full-sm" name="codeone" onsubmit="return checkCode()">
+							<form action="send_cart.php" method="post" class="flex-w flex-m w-full-sm" name="codeone" onsubmit="return checkCode()">
 								<div class="size11 bo4 m-r-10">
 									<input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="coupon_code" placeholder="Mã giảm giá" <?php if (isset($_GET['Code'])): ?>
 										value='<?= $_GET['Code'] ?>'
@@ -143,7 +143,7 @@
 						Mời nhập thông tin đề mua hàng
 						<hr>
 					</h4>
-		<form method="POST" action="<?= $siteurl ?>save-order.php" class="leave-comment" name="form" onsubmit="return validate()">	
+		<form method="POST" action="save-order.php" class="leave-comment" name="form" onsubmit="return validate()">	
 					<input type="hidden" name="discount_code" value="<?= $discount_code['code'] ?>">			
 					<input type="hidden" name="totalprice" value="<?= $total_ ?>">			
 					<!--  -->			
@@ -258,7 +258,7 @@
 	</script>
 <!--===============================================================================================-->
 	<script type="text/javascript" src="vendor/jquery/jquery-3.2.1.min.js"></script>
-	<script type="text/javascript" src="<?= $adminAssetUrl?>plugins/Toastr/toastr.min.js"></script>
+	<script type="text/javascript" src="<?= SITELINKADMIN ?>/adminlte/plugins/Toastr/toastr.min.js"></script>
 <!--===============================================================================================-->
 	<script type="text/javascript" src="vendor/animsition/js/animsition.min.js"></script>
 <!--===============================================================================================-->

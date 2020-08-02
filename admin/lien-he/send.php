@@ -5,7 +5,7 @@
 
   $id = $_GET['id'];
   if ($id == null) {
-    header('location:'.$adminUrl.'lien-he');
+    header('location:'. SITELINKADMIN .'/lien-he');
     die;
   }
 
@@ -15,7 +15,7 @@
   $contact = $stmt->fetch();
 
   if (!$contact) {
-    header('location:'.$adminUrl.'lien-he');
+    header('location:'. SITELINKADMIN .'/lien-he');
     die;  
   }
 
@@ -43,7 +43,7 @@
         Gửi phản hồi
       </h1>
       <ol class="breadcrumb">
-        <li><a href="<?= $adminUrl?>"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="<?= SITELINKADMIN ?>"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="active">Liên hệ</li>
         <li class="active">Gửi phản hồi</li>
       </ol>
@@ -53,18 +53,12 @@
     <section class="content">
 
        <div class="row">
-            <form action="<?=$adminUrl?>lien-he/save-send.php" method="post" id="formContact">
+            <form action="save-send.php" method="post" id="formContact">
               <input type="hidden" name="id" value="<?=$contact['id']?>">
               <div class="col-md-6">
                 <div class="form-group">
                   <label>Email</label>
-                  <input type="text" name="email" value="<?=$contact['email']?>" class="form-control">
-                  <?php if (isset($_GET['errEmail'])): ?>
-                    <span style="color: red;"><?=$_GET['errEmail']?></span>
-                  <?php endif ?>
-                  <?php if (isset($_GET['errAll'])): ?>
-                    <span style="color: red;"><?=$_GET['errAll']?></span>
-                  <?php endif ?>
+                  <input type="text" name="email" value="<?=$contact['email']?>" class="form-control" disabled>
                 </div>
                 <div class="form-group">
                   <label>Title</label>&nbsp;
@@ -78,14 +72,14 @@
                 <!-- /.form-group -->
                 <div class="form-group">
                   <label>Nội dung</label>
-                  <textarea name="content" rows="3" class="form-control"></textarea>
+                  <textarea name="content" rows="7" class="form-control"></textarea>
                 </div>
                 <?php if (isset($_GET['errAll'])): ?>
                     <span style="color: red;"><?=$_GET['errAll']?></span>
                   <?php endif ?>
                 <!-- /.form-group -->
                 <div class="text-right">
-                  <a href="<?= $adminUrl?>lien-he" class="btn btn-danger btn-xs">Huỷ</a>
+                  <a href="./" class="btn btn-danger btn-xs">Huỷ</a>
                   <button class="btn btn-xs btn-primary" type="submit">Gửi</button>
                 </div>
               </div>
@@ -110,15 +104,9 @@
   });
    $(document).ready(function(){
       $('[name="content"]').wysihtml5();
-      var inputImage = document.querySelector(`[name="image"]`);
-      inputImage.onchange = function(){
-        var file = this.files[0];
-        if(file == undefined){
-          document.querySelector('#proImg').src = '<?= $siteUrl?>img/default/default-picture.png';
-        }else{
-          getBase64(file, '#proImg');
-        }
-      }
+      $( "form" ).submit(function() {
+        $('input[name="email"]').prop('disabled', false);
+      });
     });
    <?php if (isset($_GET['success']) && $_GET['success'] == true) {
     ?>

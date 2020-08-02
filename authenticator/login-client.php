@@ -15,20 +15,20 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- Meta tag Keywords -->
 <!-- css files -->
 
-<link rel="stylesheet" href="<?= $siteurl ?>css/font-awesome.css"> <!-- Font-Awesome-Icons-CSS -->
-<link rel="stylesheet" href="<?= $siteurl ?>css/style.css" type="text/css" media="all" /> <!-- Style-CSS --> 
-<link rel="stylesheet" href="<?= $adminAssetUrl?>plugins/Toastr/toastr.min.css">
+<link rel="stylesheet" href="<?= SITELINK ?>css/font-awesome.css"> <!-- Font-Awesome-Icons-CSS -->
+<link rel="stylesheet" href="<?= SITELINK ?>css/style.css" type="text/css" media="all" /> <!-- Style-CSS --> 
+<link rel="stylesheet" href="<?= SITELINKADMIN ?>/adminlte/plugins/Toastr/toastr.min.css">
 <!-- //css files -->
 <!-- web-fonts -->
 
-<link href="<?= $siteurl ?>//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700" rel="stylesheet">
-<link href="<?= $siteurl ?>//fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700" rel="stylesheet">
+<link href="<?= SITELINK ?>//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700" rel="stylesheet">
+<link href="<?= SITELINK ?>//fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700" rel="stylesheet">
 <!-- //web-fonts -->
 </head>
 <body>
 		<!--header-->
 		<div class="header-w3l">
-			<h1>LOGIN - CLIENT</h1><div style="text-align: center; margin-bottom: 15px;"><a href="<?= $siteurl ?>">Về trang chủ</a></div>
+			<h1>LOGIN - CLIENT</h1><div style="text-align: center; margin-bottom: 15px;"><a href="<?= SITELINK ?>">Về trang chủ</a></div>
 		</div>
 		<!--//header-->
 		<!--main-->
@@ -39,7 +39,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 							<?php if (isset($_GET['err'])): ?>
 								<h3 style="color: red; text-align: center; padding-bottom: 10px;"><?= $_GET['err'] ?></h3>
 							<?php endif ?>
-							<form action="<?= $siteurlz ?>post-login-client.php" method="post">
+							<form action="post-login-client.php" method="post">
 
 								<div class="form-sub-w3">
 									<input type="text" name="email" placeholder="Email " <?php if (isset($_GET['email'])): ?>
@@ -79,8 +79,8 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 			
 		</div>
 		<!--//footer-->
-<script type="text/javascript" src="<?= $siteurl ?>vendor/jquery/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" src="<?= $adminAssetUrl?>plugins/Toastr/toastr.min.js""></script>
+<script type="text/javascript" src="<?= SITELINK ?>vendor/jquery/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="<?= SITELINKADMIN ?>/adminlte/plugins/Toastr/toastr.min.js""></script>
 <script type="text/javascript">
 		
 		<?php if (isset($_GET['sce']) && $_GET['sce'] == true) {

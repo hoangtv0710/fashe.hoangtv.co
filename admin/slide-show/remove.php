@@ -9,7 +9,7 @@
 	$slide = $kq->fetch();
 
 	if (!$slide) {
-		header('location:' . $adminUrl . 'slide-show');
+		header('location:' . SITELINKADMIN . '/slide-show');
 		die;
 	}
 
@@ -17,7 +17,7 @@
 	$kq = $conn->prepare($sql);
 	$kq->execute();
 
-	header('location:' . $adminUrl . 'slide-show');
+	header('location:' . SITELINKADMIN . '/slide-show');
 	die;
 
  ?>

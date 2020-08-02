@@ -17,7 +17,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Menu / Dropdown-menu</title>
-  <link rel="stylesheet" href="<?= $adminAssetUrl?>plugins/Toastr/toastr.min.css"></style>
+  <link rel="stylesheet" href="<?= SITELINKADMIN ?>/adminlte/plugins/Toastr/toastr.min.css"></style>
   <?php include_once $path.'share/linkAsset.php'; ?>
 
 </head>
@@ -37,7 +37,7 @@
       </h1>
 
       <ol class="breadcrumb">
-        <li><a href="<?= $adminUrl ?>"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="<?= SITELINKADMIN ?>"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="active">Menu</li>
         <li class="active">Dropdown_menu</li>
       </ol>
@@ -60,7 +60,7 @@
                   <th>Đường dẫn</th>
                   <th style="width: 120px;">
                     <a 
-                      href="<?= $adminUrl ?>dropdown-menu/add.php" 
+                      href="add.php" 
                       class="btn btn-xs btn-success">
                       <i class="fa fa-plus"></i>  Thêm
                     </a>
@@ -80,13 +80,13 @@
                     <td><a href="<?= $item['url']?>"><?= $item['url']?></a></td>
                     <td>
                       <a 
-                        href="<?= $adminUrl ?>dropdown-menu/edit.php?id=<?= $item['id']?>" 
+                        href="edit.php?id=<?= $item['id']?>" 
                         class="btn btn-xs btn-primary">
                         <i class="fa fa-pencil"></i>  Sửa
                       </a>
                       <a 
                         href="javascript:;" 
-                        linkurl="<?= $adminUrl ?>dropdown-menu/remove.php?id=<?= $item['id']?>" 
+                        linkurl="remove.php?id=<?= $item['id']?>" 
                         class="btn btn-xs btn-danger btn-remove">
                         <i class="fa fa-trash"></i>  Xoá
                       </a>
@@ -114,7 +114,7 @@
 
 
 
-<script type="text/javascript" src="<?= $adminAssetUrl?>plugins/Toastr/toastr.min.js""></script>
+<script type="text/javascript" src="<?= SITELINKADMIN ?>/adminlte/plugins/Toastr/toastr.min.js""></script>
 <script type="text/javascript">
   <?php if (isset($_GET['success']) && $_GET['success'] == true) {
     ?>

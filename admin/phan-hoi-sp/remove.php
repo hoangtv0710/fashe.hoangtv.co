@@ -9,7 +9,7 @@
 	$comment = $kq->fetch();
 
 	if (!$comment) {
-		header('location:' .$adminUrl . 'phan-hoi-sp');
+		header('location:' . SITELINKADMIN . '/phan-hoi-sp');
 		die;
 	}
 
@@ -17,7 +17,7 @@
 	$kq = $conn->prepare($sql);
 	$kq->execute();
 
-	header('location:' . $adminUrl . 'phan-hoi-sp');
+	header('location:' . SITELINKADMIN . '/phan-hoi-sp');
 	die;
 
 

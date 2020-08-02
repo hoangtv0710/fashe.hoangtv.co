@@ -32,7 +32,7 @@
         Thêm dropdown-menu
       </h1>
       <ol class="breadcrumb">
-        <li><a href="<?= $adminUrl?>"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="<?= SITELINKADMIN ?>"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="active">Dropdown-menu</li>
         <li class="active">Thêm dropdown-menu</li>
       </ol>
@@ -42,7 +42,7 @@
     <section class="content">
 
       <div class="row">
-        <form action="<?= $adminUrl?>dropdown-menu/save-add.php" method="post">
+        <form action="save-add.php" method="post">
 
           <div class="col-md-6">
             <div class="form-group">
@@ -74,7 +74,7 @@
             </div>
             
             <div class="text-right">
-              <a href="<?= $adminUrl?>dropdown-menu" class="btn btn-danger btn-xs">Huỷ</a>
+              <a href="./" class="btn btn-danger btn-xs">Huỷ</a>
               <button class="btn btn-xs btn-primary" type="submit">Lưu</button>
             </div>
           </div>

@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Slideshows</title>
-  <link rel="stylesheet" href="<?= $adminAssetUrl?>plugins/Toastr/toastr.min.css"></style> 
+  <link rel="stylesheet" href="<?= SITELINKADMIN ?>/adminlte/plugins/Toastr/toastr.min.css"></style> 
   <?php include_once $path.'share/linkAsset.php'; ?>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
@@ -60,7 +60,7 @@
                   <th>Người tạo</th>
                   <th style="width: 120px">
                     <a 
-                      href="<?= $adminUrl ?>slide-show/add.php" 
+                      href="add.php" 
                       class="btn btn-xs btn-success">
                       <i class="fa fa-plus"></i>  Thêm
                     </a>
@@ -72,7 +72,7 @@
                   <tr>
                     <td><?= $item['id']?>.</td>
 
-                    <td><img src="<?= $siteurl . $item['image']?>" class="img-responsive"></td>
+                    <td><img src="<?= SITELINK . $item['image']?>" class="img-responsive"></td>
 
                     <td><?= $item['title']?></td>
 
@@ -88,13 +88,13 @@
 
                     <td>
                        <a 
-                        href="<?= $adminUrl ?>slide-show/edit.php?id=<?= $item['id']?>" 
+                        href="edit.php?id=<?= $item['id']?>" 
                         class="btn btn-xs btn-primary">
                         <i class="fa fa-pencil"></i>  Sửa
                       </a>
                       <a 
                         href="javascript:;" 
-                        linkurl="<?= $adminUrl ?>slide-show/remove.php?id=<?= $item['id']?>" 
+                        linkurl="remove.php?id=<?= $item['id']?>" 
                         class="btn btn-xs btn-danger btn-remove">
                         <i class="fa fa-trash"></i>  Xoá
                       </a>
@@ -122,7 +122,7 @@
 
 
 
-<script type="text/javascript" src="<?= $adminAssetUrl?>plugins/Toastr/toastr.min.js""></script>
+<script type="text/javascript" src="<?= SITELINKADMIN ?>/adminlte/plugins/Toastr/toastr.min.js""></script>
 <script type="text/javascript">
   
   <?php if (isset($_GET['success']) && $_GET['success'] == true) {

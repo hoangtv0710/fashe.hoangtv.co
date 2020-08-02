@@ -2,7 +2,7 @@
 	require_once 'database/db_fashe.php';
 	session_start();
 	if ($_SERVER['REQUEST_METHOD'] != "POST") {
-		header("location:" .$siteurl);
+		header("location:" . SITELINK);
 	}
 
 	$post_id = $_POST['id'];
@@ -16,6 +16,6 @@
 	$sql = "insert into post_comments (email,content,post_id, created_date, avatar) values ('$email', '$content', $post_id,'$created_date', '$avatar')";
 	$kq = $conn->prepare($sql);
 	$kq->execute();
-	header("location:" . $siteurl . "blog-detail.php?id=".$post_id.'&categories='.$categories.'&success=true');
+	header("location:" . SITELINK . "blog-detail.php?id=".$post_id.'&categories='.$categories.'&success=true');
 	die;
  ?>

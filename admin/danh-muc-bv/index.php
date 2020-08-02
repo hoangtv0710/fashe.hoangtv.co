@@ -15,7 +15,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Bài viết / Danh mục bài viết</title>
-  <link rel="stylesheet" href="<?= $adminAssetUrl?>plugins/Toastr/toastr.min.css"></style>  
+  <link rel="stylesheet" href="<?= SITELINKADMIN ?>/adminlte/plugins/Toastr/toastr.min.css"></style>  
   <?php include_once $path.'share/linkAsset.php'; ?>
 
 </head>
@@ -58,7 +58,7 @@
                   <th style="width: 240px">Mô tả</th>
                   <th style="width: 120px">
                     <a 
-                      href="<?= $adminUrl ?>danh-muc-bv/add.php" 
+                      href="add.php" 
                       class="btn btn-xs btn-success">
                       <i class="fa fa-plus"></i>  Thêm
                     </a>
@@ -78,13 +78,13 @@
                     </td>
                     <td>
                       <a 
-                        href="<?= $adminUrl ?>danh-muc-bv/edit.php?id=<?= $item['id']?>" 
+                        href="edit.php?id=<?= $item['id']?>" 
                         class="btn btn-xs btn-primary">
                         <i class="fa fa-pencil"></i>  Sửa
                       </a>
                       <a 
                         href="javascript:;" 
-                        linkurl="<?= $adminUrl ?>danh-muc-bv/remove.php?id=<?= $item['id']?>" 
+                        linkurl="remove.php?id=<?= $item['id']?>" 
                         class="btn btn-xs btn-danger btn-remove">
                         <i class="fa fa-trash"></i>  Xoá
                       </a>
@@ -111,7 +111,7 @@
 
 
 
-<script type="text/javascript" src="<?= $adminAssetUrl?>plugins/Toastr/toastr.min.js""></script>
+<script type="text/javascript" src="<?= SITELINKADMIN ?>/adminlte/plugins/Toastr/toastr.min.js""></script>
 <script type="text/javascript">
   <?php if (isset($_GET['success']) && $_GET['success'] == true) {
     ?>
@@ -120,7 +120,7 @@
       "debug": false,
       "newestOnTop": false,
       "progressBar": false,
-      "positionClass": "toast-bottom-right",
+      "positionClass": "toast-top-right",
       "preventDuplicates": false,
       "onclick": null,
       "showDuration": "300",

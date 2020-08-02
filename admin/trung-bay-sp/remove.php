@@ -9,7 +9,7 @@
 	$pg = $kq->fetch();
 
 	if (!$pg) {
-		header('location:' . $adminUrl . 'trung-bay-sp');
+		header('location:' . SITELINKADMIN . '/trung-bay-sp');
 		die;
 	}
 
@@ -17,7 +17,7 @@
 	$kq = $conn->prepare($sql);
 	$kq->execute();
 
-	header('location:' . $adminUrl . 'trung-bay-sp');
+	header('location:' . SITELINKADMIN . '/trung-bay-sp');
 	die;
 
  ?>

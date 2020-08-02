@@ -301,7 +301,7 @@
 	
 <!--===============================================================================================-->
 	<script type="text/javascript" src="vendor/jquery/jquery-3.2.1.min.js"></script>
-	<script src="<?= $adminAssetUrl ?>plugins/twbs-pagination/jquery.twbsPagination.min.js"></script>
+	<script src="<?= SITELINKADMIN ?>/adminlte/plugins/twbs-pagination/jquery.twbsPagination.min.js"></script>
 <!--===============================================================================================-->
 	<script type="text/javascript" src="vendor/animsition/js/animsition.min.js"></script>
 <!--===============================================================================================-->

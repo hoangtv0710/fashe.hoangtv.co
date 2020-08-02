@@ -3,7 +3,7 @@
 	require_once '../../database/db_fashe.php';
 
 	if($_SERVER['REQUEST_METHOD'] != "POST"){
-		header('location: '.$adminUrl . 'bai-viet');
+		header('location: '. SITELINKADMIN . '/bai-viet');
 		die;
 	}
 
@@ -22,12 +22,12 @@
 	$kq->execute();
 	$checkProductName = $kq->fetch();
 	if ($checkProductName != false) {
-		header('location:' . $adminUrl . 'bai-viet/add.php?errName=Tiêu đề bài viết đã tồn tại!&title='.$title.'&short_desc='.$short_desc.'&created_date='.$created_date.'&content='.$content);
+		header('location:' . SITELINKADMIN . '/bai-viet/add.php?errName=Tiêu đề bài viết đã tồn tại!&title='.$title.'&short_desc='.$short_desc.'&created_date='.$created_date.'&content='.$content);
 		die;
 	}
 
 	if ($title == "" || $short_desc == ""  || $content == "" || file_exists($file)) {
-		header('location:' . $adminUrl . 'bai-viet/add.php?err=Không để trống mục này!&title='.$title.'&short_desc='.$short_desc.'&created_date='.$created_date.'&content='.$content);
+		header('location:' . SITELINKADMIN . '/bai-viet/add.php?err=Không để trống mục này!&title='.$title.'&short_desc='.$short_desc.'&created_date='.$created_date.'&content='.$content);
 		die;
 	}
 
@@ -58,6 +58,6 @@ if ($file['size'] > 0) {
 	$stmt->execute();
 
 
-	header('location: '.$adminUrl . 'bai-viet?success=true');
+	header('location: '. SITELINKADMIN . '/bai-viet?success=true');
 	die;
 ?>

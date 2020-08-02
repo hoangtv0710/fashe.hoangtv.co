@@ -10,7 +10,7 @@
   $product = $stmt->fetch();    
 
   if(!$product){
-    header("location: ".$adminUrl."san-pham");
+    header("location: ".SITELINKADMIN."/san-pham");
     die;
   }    
 
@@ -43,7 +43,7 @@
         Sửa sản phẩm
       </h1>
       <ol class="breadcrumb">
-        <li><a href="<?= $adminUrl?>"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="<?= SITELINKADMIN ?>"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="active">Sản phẩm</li>
         <li class="active">Sửa sản phẩm</li>
       </ol>

@@ -32,7 +32,7 @@
         Thêm sản phẩm
       </h1>
       <ol class="breadcrumb">
-        <li><a href="<?= $adminUrl?>"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="<?= SITELINKADMIN ?>"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="active">Sản phẩm</li>
         <li class="active">Thêm sản phẩm</li>
       </ol>

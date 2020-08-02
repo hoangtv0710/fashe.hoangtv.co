@@ -2,7 +2,7 @@
 	require_once '../../database/db_fashe.php';
 
 	if($_SERVER['REQUEST_METHOD'] != "POST"){
-		header('location: '.$adminUrl . 'ma-giam-gia');
+		header('location: '. SITELINKADMIN . '/ma-giam-gia');
 		die;
 	}
 
@@ -14,7 +14,7 @@
 	$stmt->execute();
 	$checkDuplicate = $stmt->fetch();
 	if($checkDuplicate != false){
-		header('location: '.$adminUrl . 'ma-giam-gia/add.php?errCode=Mã giảm giá đã tồn tại!&code='.$code.'&percent='.$percent);
+		header('location: ' .SITELINKADMIN . '/ma-giam-gia/add.php?errCode=Mã giảm giá đã tồn tại!&code='.$code.'&percent='.$percent);
 		die;
 	}
 
@@ -24,6 +24,6 @@
 	$stmt->execute();
 
 
-	header('location: '.$adminUrl . 'ma-giam-gia?success=true');
+	header('location: '. SITELINKADMIN . '/ma-giam-gia?success=true');
 	die;
  ?>

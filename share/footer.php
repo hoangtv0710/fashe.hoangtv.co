@@ -11,7 +11,7 @@
 
 					<div>
 						<p class="s-text7 w-size27 text-justify">
-							Bạn có bất kì câu hỏi gì. Hãy cho chúng tôi biết tại của hàng <?= $ws['address'] ?> hoặc gọi cho chúng tôi theo số <?= $ws['hotline'] ?> 
+							Bạn có bất kì câu hỏi gì. Hãy cho chúng tôi biết tại cửa hàng hàng <?= $ws['address'] ?> hoặc gọi cho chúng tôi theo số <?= $ws['hotline'] ?> 
 						</p>
 
 						<div class="flex-m p-t-30">
@@ -44,7 +44,7 @@
 				</div>
 			<div class="col-md-12">
 				<div class="t-center s-text8 p-t-40">
-					Copyright © 2018 All rights reserved. | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="<?= $siteurl ?>" target="_blank">Fashe</a>
+					Copyright © 2020 All rights reserved. | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="<?= SITELINK ?>" target="_blank">Fashe</a>
 				</div>
 			</div>
 		</div>

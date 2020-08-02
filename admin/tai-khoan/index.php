@@ -17,7 +17,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Tải khoản</title>
   <?php include_once $path.'share/linkAsset.php'; ?>
-  <link rel="stylesheet" href="<?= $adminAssetUrl?>plugins/Toastr/toastr.min.css"></style>  
+  <link rel="stylesheet" href="<?= SITELINKADMIN ?>/adminlte/plugins/Toastr/toastr.min.css"></style>  
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
@@ -34,7 +34,7 @@
         Tài khoản
       </h1>
       <ol class="breadcrumb">
-        <li><a href="<?= $adminUrl ?>"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="<?= SITELINKADMIN ?>"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="active">Tài khoản</li>
         <li class="active">Danh sách</li>
       </ol>
@@ -60,7 +60,7 @@
                   <th>SĐT</th>
                   <th style="width: 120px">
                     <a 
-                      href="<?= $adminUrl ?>tai-khoan/add.php" 
+                      href="add.php" 
                       class="btn btn-xs btn-success">
                       <i class="fa fa-plus"></i>  Thêm
                     </a>
@@ -76,7 +76,7 @@
 
                     <td><?= $item['fullname']?></td>
 
-                    <td><img src="<?= $siteurl . $item['avatar']?> " class="img-responsive"></td>
+                    <td><img src="<?= SITELINK . $item['avatar']?> " class="img-responsive"></td>
 
                     <td><?= $item['role']?></td>
 
@@ -88,14 +88,14 @@
 
                     <td>
                         <a 
-                          href="<?= $adminUrl ?>tai-khoan/edit.php?id=<?= $item['id']?>" 
+                          href="edit.php?id=<?= $item['id']?>" 
                           class="btn btn-xs btn-primary">
                           <i class="fa fa-pencil"></i>  Sửa
                         </a>
                       <?php if ($item['role'] != 3 ): ?>
                         <a 
                           href="javascript:;" 
-                          linkurl="<?= $adminUrl ?>tai-khoan/remove.php?id=<?= $item['id']?>" 
+                          linkurl="remove.php?id=<?= $item['id']?>" 
                           class="btn btn-xs btn-danger btn-remove">
                           <i class="fa fa-trash"></i>  Xoá
                         </a>
@@ -124,7 +124,7 @@
 <!-- ./wrapper -->
 
 
-<script type="text/javascript" src="<?= $adminAssetUrl?>plugins/Toastr/toastr.min.js"></script>
+<script type="text/javascript" src="<?= SITELINKADMIN ?>/adminlte/plugins/Toastr/toastr.min.js"></script>
 
 
 <script type="text/javascript">

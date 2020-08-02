@@ -2,7 +2,7 @@
 	require_once '../../database/db_fashe.php';
 
 	if($_SERVER['REQUEST_METHOD'] != "POST"){
-		header('location: '.$adminUrl . 'danh-muc-sp');
+		header('location: '. SITELINKADMIN . '/danh-muc-sp');
 		die;
 	}
 
@@ -10,7 +10,7 @@
 	$description = $_POST['description'];
 
 	if($name == ""){
-		header('location: '.$adminUrl . 'danh-muc-sp/add.php?errName=Không để trống tên danh mục!&name='.$name.'&description='.$description);
+		header('location: '. SITELINKADMIN . '/danh-muc-sp/add.php?errName=Không để trống tên danh mục!&name='.$name.'&description='.$description);
 		die;
 	}
 
@@ -19,7 +19,7 @@
 	$stmt->execute();
 	$checkDuplicate = $stmt->fetch();
 	if($checkDuplicate != false){
-		header('location: '.$adminUrl . 'danh-muc-sp/add.php?errName=Tên danh mục đã tồn tại!&name='.$name.'&description='.$description);
+		header('location: '. SITELINKADMIN . '/danh-muc-sp/add.php?errName=Tên danh mục đã tồn tại!&name='.$name.'&description='.$description);
 		die;
 	}
 
@@ -29,6 +29,6 @@
 	$stmt->execute();
 
 
-	header('location: '.$adminUrl . 'danh-muc-sp?success=true');
+	header('location: '. SITELINKADMIN . '/danh-muc-sp?success=true');
 	die;
  ?>

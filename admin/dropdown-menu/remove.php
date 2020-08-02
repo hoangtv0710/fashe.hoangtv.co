@@ -9,7 +9,7 @@
 	$mg = $kq->fetch();
 
 	if (!$mg) {
-		header('location:' . $adminUrl . 'dropdown-menu');
+		header('location:' . SITELINKADMIN . '/dropdown-menu');
 		die;
 	}
 
@@ -17,7 +17,7 @@
 	$kq = $conn->prepare($sql);
 	$kq->execute();
 
-	header('location:' . $adminUrl . 'dropdown-menu');
+	header('location:' . SITELINKADMIN . '/dropdown-menu');
 	die;
 
  ?>

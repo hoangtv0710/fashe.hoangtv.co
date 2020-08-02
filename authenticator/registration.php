@@ -13,12 +13,12 @@
 function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- Meta tag Keywords -->
 <!-- css files -->
-<link rel="stylesheet" href="<?= $siteurl ?>css/font-awesome.css"> <!-- Font-Awesome-Icons-CSS -->
-<link rel="stylesheet" href="<?= $siteurl ?>css/style.css" type="text/css" media="all" /> <!-- Style-CSS --> 
+<link rel="stylesheet" href="<?= SITELINK ?>css/font-awesome.css"> <!-- Font-Awesome-Icons-CSS -->
+<link rel="stylesheet" href="<?= SITELINK ?>css/style.css" type="text/css" media="all" /> <!-- Style-CSS --> 
 <!-- //css files -->
 <!-- web-fonts -->
-<link href="<?= $siteurl ?>//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700" rel="stylesheet">
-<link href="<?= $siteurl ?>//fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700" rel="stylesheet">
+<link href="<?= SITELINK ?>//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700" rel="stylesheet">
+<link href="<?= SITELINK ?>//fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700" rel="stylesheet">
 <!-- //web-fonts -->
 </head>
 <body>
@@ -32,7 +32,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 	           <!--form-stars-here-->
 						<div class="wthree-form">
 							<h2>Tạo tài khoản</h2>
-							<form action="<?= $adminUrl ?>tai-khoan/quick-saveadd.php" method="post">
+							<form action="<?= SITELINKADMIN ?>/tai-khoan/quick-saveadd.php" method="post">
 								
 								<div class="form-sub-w3">
 									<input type="text" name="fullname" placeholder="Họ tên" <?php if (isset($_GET['fullname'])): ?>
@@ -93,7 +93,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<input type="submit" value="Đăng ký">
 								</div>
 								<div style="margin-top: 15px; text-align: center;font-size: 20px;">
-									<a href="<?= $siteurlz ?>login-client.php">Đăng nhập</a>
+									<a href="login-client.php">Đăng nhập</a>
 								</div>
 
 							</form>

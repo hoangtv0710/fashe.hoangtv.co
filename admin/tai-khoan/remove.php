@@ -9,7 +9,7 @@
 	$user = $kq->fetch();
 
 	if (!$user) {
-		header('location:' . $adminUrl . 'tai-khoan');
+		header('location:' . SITELINKADMIN . '/tai-khoan');
 		die;
 	}
 
@@ -17,7 +17,7 @@
 	$kq = $conn->prepare($sql);
 	$kq->execute();
 
-	header('location:' . $adminUrl . 'tai-khoan');
+	header('location:' . SITELINKADMIN . '/tai-khoan');
 	die;
 
  ?>

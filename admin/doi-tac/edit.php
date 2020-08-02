@@ -12,7 +12,7 @@
   $brand = $kq->fetch();
 
   if (!$brand) {
-    header('location:' . $adminUrl . 'doi-tac');
+    header('location:' . SITELINKADMIN . '/doi-tac');
     die;
   }
 
@@ -40,7 +40,7 @@
        Sửa đối tác
       </h1>
       <ol class="breadcrumb">
-        <li><a href="<?= $adminUrl?>"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="<?= SITELINKADMIN ?>"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="active">Đối tác</li>
         <li class="active">Sửa đối tác</li>
       </ol>
@@ -49,7 +49,7 @@
     <!-- Main content -->
     <section class="content">
       <div class="row">
-        <form enctype="multipart/form-data" action="<?= $adminUrl?>doi-tac/save-edit.php" method="post">
+        <form enctype="multipart/form-data" action="save-edit.php" method="post">
           <input type="hidden" name="id" value="<?= $brand['id'] ?>">
           <div class="col-md-6">
             <div class="form-group">
@@ -70,9 +70,9 @@
             <div class="row">
               <div class="col-md-8 col-md-offset-2">
                 <?php if ($brand['image'] == null || $brand['image'] == ""): ?>
-                  <img id="proImg" src="<?= $siteurl?>images/default/default.jpg" class="img-responsive">
+                  <img id="proImg" src="<?= SITELINK ?>images/default/default.jpg" class="img-responsive">
                 <?php else: ?>
-                   <img id="proImg" src="<?= $siteurl .$brand['image'] ?>" class="img-responsive">
+                   <img id="proImg" src="<?= SITELINK .$brand['image'] ?>" class="img-responsive">
                 <?php endif ?>
               </div>
             </div>
@@ -85,7 +85,7 @@
           </div>
 
           <div class="col-md-12 text-right">
-            <a href="<?= $adminUrl?>doi-tac" class="btn btn-sm btn-danger">Huỷ</a>
+            <a href="./" class="btn btn-sm btn-danger">Huỷ</a>
             <button type="submit" class="btn btn-sm btn-primary">Lưu</button>
           </div>
           
@@ -108,7 +108,7 @@
 
       var file = this.files[0];
       if(file == undefined){
-        document.querySelector('#proImg').src = '<?= $siteurl?>images/default/default.jpg';
+        document.querySelector('#proImg').src = '<?= SITELINK ?>images/default/default.jpg';
       }else{
         getBase64(file, '#proImg');
       }

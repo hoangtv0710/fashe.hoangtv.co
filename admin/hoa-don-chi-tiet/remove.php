@@ -10,7 +10,7 @@
 	$cate = $stmt->fetch();
 	
 	if(!$cate){
-		header('location: '. $adminUrl . 'hoa-don-chi-tiet');
+		header('location: '. SITELINKADMIN . '/hoa-don-chi-tiet');
 		die;
 	}
 
@@ -30,7 +30,7 @@
 	}
 
 
-	header('location: '. $adminUrl . 'hoa-don-chi-tiet');
+	header('location: '. SITELINKADMIN . '/hoa-don-chi-tiet');
 	die;
 
  ?>

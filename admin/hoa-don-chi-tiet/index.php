@@ -65,7 +65,7 @@
 
                     <td><?= $item['product_id']?></td>
 
-                    <td><a href="<?= $siteurl . 'product-detail.php?id=' . $item['product_id']. '&categories='.$item['cate'] ?>"><?= $item['productname'] ?></a></td>
+                    <td><a href="<?= SITELINK . 'product-detail.php?id=' . $item['product_id']. '&categories='.$item['cate'] ?>" target="_blank"><?= $item['productname'] ?></a></td>
 
                     <td><?= $item['invoice_id']?></td>
 
@@ -78,7 +78,7 @@
                     <td>
                       <a 
                         href="javascript:;" 
-                        linkurl="<?= $adminUrl ."hoa-don-chi-tiet/remove.php?id=".$item['id'].'&invoice_id='.$item['invoice_id'] ?>" 
+                        linkurl="<?= SITELINKADMIN ."/hoa-don-chi-tiet/remove.php?id=".$item['id'].'&invoice_id='.$item['invoice_id'] ?>" 
                         class="btn btn-xs btn-danger btn-remove">
                         <i class="fa fa-trash"></i>  Xoá
                       </a>

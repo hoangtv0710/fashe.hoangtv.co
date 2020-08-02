@@ -36,7 +36,7 @@
       </h1>
 
       <ol class="breadcrumb">
-        <li><a href="<?= $adminUrl ?>"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="<?= SITELINKADMIN ?>"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="active">Bài viết</li>
         <li class="active">Danh sách phản hồi</li>
       </ol>
@@ -71,7 +71,7 @@
                     <td><?= $item['content']?></td>
 
                     <td>
-                        <a href="<?= $siteurl . 'blog-detail.php?id=' . $item['post_id']. '&categories='.$item['cate'] ?>"><?= $item['postname'] ?></a>
+                        <a href="<?= SITELINK . 'blog-detail.php?id=' . $item['post_id']. '&categories='.$item['cate'] ?>" target="_blank"><?= $item['postname'] ?></a>
                     </td>
 
                     <td><?= $item['post_id']?></td>
@@ -80,7 +80,7 @@
 
                       <a 
                         href="javascript:;" 
-                        linkurl="<?= $adminUrl ?>phan-hoi-bv/remove.php?id=<?= $item['id']?>" 
+                        linkurl="remove.php?id=<?= $item['id']?>" 
                         class="btn btn-xs btn-danger btn-remove">
                         <i class="fa fa-trash"></i>  Xoá
                       </a>

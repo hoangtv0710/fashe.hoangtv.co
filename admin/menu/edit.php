@@ -10,7 +10,7 @@
   $menu = $stmt->fetch();
 
   if(!$menu){
-    header('location: ' . $adminUrl . 'menu');
+    header('location: ' . SITELINKADMIN . '/menu');
     die;
   }
 
@@ -38,7 +38,7 @@
         Sửa menu
       </h1>
       <ol class="breadcrumb">
-        <li><a href="<?= $adminUrl?>"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="<?= SITELINKADMIN ?>"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="active">Menu</li>
         <li class="active">Sửa menu</li>
       </ol>
@@ -47,7 +47,7 @@
     <!-- Main content -->
     <section class="content">
       <div class="row">
-        <form action="<?= $adminUrl?>menu/save-edit.php" method="post">
+        <form action="save-edit.php" method="post">
 
           <input type="hidden" name="id" value="<?= $menu['id']?>">
 
@@ -66,7 +66,7 @@
             </div>
 
             <div class="text-right">
-              <a href="<?= $adminUrl?>menu" class="btn btn-danger btn-xs">Huỷ</a>
+              <a href="./" class="btn btn-danger btn-xs">Huỷ</a>
               <button class="btn btn-xs btn-primary" type="submit">Lưu</button>
             </div>
           </div>

@@ -1,13 +1,13 @@
 <?php
 	//url
-	define('SITELINK', 'http://localhost/Fashe/');
-	define('SITELINKADMIN', 'http://localhost/Fashe/admin');
+	define('SITELINK', 'http://localhost:8080/Fashe/');
+	define('SITELINKADMIN', 'http://localhost:8080/Fashe/admin');
 
 	//database
 	$host = "localhost";
 	$dbname = "db_fashe";
 	$username = "root";
-	$password = "root";
+	$password = "";
 
 	$conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8",$username,$password);
 

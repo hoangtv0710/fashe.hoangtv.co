@@ -40,7 +40,7 @@
 
 				<div class="col-md-10 p-b-20 p-t-20" style="background: #0101">
 					<p class="s-text12">sửa mật khẩu</p><hr>
-					<form action="<?= $adminUrl . 'tai-khoan/edit-password.php' ?>" method="post" name="ff" onsubmit="return err()">
+					<form action="<?= SITELINKADMIN . 'tai-khoan/edit-password.php' ?>" method="post" name="ff" onsubmit="return err()">
 						<div class="row">
 
 							<div class="col-md-6">
@@ -73,7 +73,7 @@
 							</div>
 							<div class="header-cart-wrapbtn">
 								<!-- Button -->
-								<a href="<?= $siteurl . 'account.php' ?>" class="flex-c-m size2 bg1 bo-rad-5 hov1 s-text1 trans-0-4">
+								<a href="account.php" class="flex-c-m size2 bg1 bo-rad-5 hov1 s-text1 trans-0-4">
 									Hủy
 								</a>
 							</div>

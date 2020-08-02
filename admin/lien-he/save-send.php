@@ -14,8 +14,8 @@ use PHPMailer\PHPMailer\Exception;
 	 $content = $_POST['content'];
 
 	 //check rỗng
-	 if (empty($email) || empty($title) || empty($content)) {
-	 	header('location:'.$adminUrl.'lien-he/send.php?id='.$id.'&errAll=Không được để trống trường trên !&email='.$email.'&title='.$title.'&content='.$content);
+	 if (empty($title) || empty($content)) {
+	 	header('location:'. SITELINKADMIN . '/lien-he/send.php?id='.$id.'&errAll=Không được để trống trường trên !&title='.$title.'&content='.$content);
 	 	die;
 	 }
 	 //check định dạng mail
@@ -34,7 +34,7 @@ use PHPMailer\PHPMailer\Exception;
     $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
     $mail->SMTPAuth = true;                               // Enable SMTP authentication
     $mail->Username = 'tvhkaizen@gmail.com';                 // SMTP username
-    $mail->Password = '01674969474aA';                           // SMTP password
+    $mail->Password = 'jkdnglchuizjcafx';                           // SMTP password
     $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
     $mail->Port = 587;                                    // TCP port to connect to
 
@@ -48,7 +48,7 @@ use PHPMailer\PHPMailer\Exception;
     $mail->Body    = $content;
     //Gửi
     $mail->send();
-   header('location:'.$adminUrl.'lien-he?success=true');
+   echo '<script type="text/javascript">window.location = "./?success=true"</script>';
 } catch (Exception $e) {
 	echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
 }

@@ -11,7 +11,7 @@
   $users = $kq->fetch();
 
   if (!$users) {
-    header('location:' . $adminUrl . 'tai-khoan');
+    header('location:' . SITELINKADMIN . '/tai-khoan');
   }
 
  ?>
@@ -38,7 +38,7 @@
         Sửa tài khoản
       </h1>
       <ol class="breadcrumb">
-        <li><a href="<?= $adminUrl?>"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="<?= SITELINKADMIN ?>"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="active">Tài khoản</li>
         <li class="active">Sửa tài khoản</li>
       </ol>
@@ -47,7 +47,7 @@
     <!-- Main content -->
     <section class="content">
       <div class="row">
-        <form action="<?= $adminUrl?>tai-khoan/save-edit.php" method="post" enctype="multipart/form-data">
+        <form action="save-edit.php" method="post" enctype="multipart/form-data">
             <input type="hidden" name="id" value="<?= $users['id'] ?>">
             <div class="col-md-6">
               <div class="form-group">
@@ -83,9 +83,9 @@
               <div class="row">
                 <div class="col-md-8 col-md-offset-3">
                   <?php if ($users['avatar'] == null || $users['avatar'] == ""): ?>
-                     <img id="proImg" src="<?= $siteurl ?>images/default/avatar.jpg" class="img-responsive">
+                     <img id="proImg" src="<?= SITELINK ?>images/default/avatar.jpg" class="img-responsive">
                   <?php else: ?>
-                     <img id="proImg" src="<?= $siteurl . $users['avatar'] ?>" class="img-responsive">
+                     <img id="proImg" src="<?= SITELINK . $users['avatar'] ?>" class="img-responsive">
                   <?php endif ?> 
                 </div>
               </div>
@@ -116,7 +116,7 @@
               </div>
 
               <div class="text-right">
-                <a href="<?= $adminUrl?>tai-khoan" class="btn btn-danger btn-xs">Huỷ</a>
+                <a href=./" class="btn btn-danger btn-xs">Huỷ</a>
                 <button class="btn btn-xs btn-primary" type="submit">Lưu</button>
               </div>  
 
@@ -141,7 +141,7 @@
 
       var file = this.files[0];
       if(file == undefined){
-        document.querySelector('#proImg').src = '<?= $siteurl?>images/default/avatar.jpg';
+        document.querySelector('#proImg').src = '<?= SITELINK ?>images/default/avatar.jpg';
       }else{
         getBase64(file, '#proImg');
       }

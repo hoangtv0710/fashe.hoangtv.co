@@ -33,7 +33,7 @@
         Thông tin chung
       </h1>
       <ol class="breadcrumb">
-        <li><a href="<?= $adminUrl ?>"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="<?= SITELINKADMIN ?>"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="active">Cấu hình hệ thống</li>
         <li class="active">Thông tin chung</li>
       </ol>
@@ -68,7 +68,7 @@
                   <tr>
                     <td><?= $item['id']?>.</td>
 
-                    <td><img src="<?= $siteurl . $item['logo'] ?>" class="img-responsive"></td>
+                    <td><img src="<?= SITELINK . $item['logo'] ?>" class="img-responsive"></td>
 
                     <td><?= $item['slogan']?></td>
 
@@ -92,7 +92,7 @@
 
                     <td>
                       <a 
-                        href="<?= $adminUrl ?>thong-tin-chung/edit.php?id=<?= $item['id']?>" 
+                        href="edit.php?id=<?= $item['id']?>" 
                         class="btn btn-xs btn-primary">
                         <i class="fa fa-pencil"></i>  Sửa
                       </a>

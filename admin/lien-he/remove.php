@@ -9,7 +9,7 @@
 	$contact = $kq->fetch();
 
 	if (!$contact) {
-		header('location:' . $adminUrl . 'lien-he');
+		header('location:' . SITELINKADMIN . '/lien-he');
 		die;
 	}
 
@@ -17,7 +17,7 @@
 	$kq = $conn->prepare($sql);
 	$kq->execute();
 
-	header('location:' . $adminUrl . 'lien-he');
+	header('location:' . SITELINKADMIN . '/lien-he');
 	die;
 
  ?>

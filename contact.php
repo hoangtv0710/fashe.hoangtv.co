@@ -43,7 +43,7 @@
 				</div>	
 
 				<div class="col-md-7 p-b-30">
-					<form class="leave-comment" method="POST" action="<?= SITELINK ?>/admin/lien-he/save-add.php" name="form" onsubmit="return validate()">
+					<form class="leave-comment" method="POST" action="<?= SITELINKADMIN ?>/lien-he/save-add.php" name="form" onsubmit="return validate()">
 						<h4 class="m-text26 p-b-36 p-t-15">
 							Gửi cho chúng tôi ý kiến của bạn
 						</h4>

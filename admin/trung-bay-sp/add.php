@@ -33,7 +33,7 @@
        Thêm ảnh trưng bày
       </h1>
       <ol class="breadcrumb">
-        <li><a href="<?= $adminUrl?>"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="<?= SITELINKADMIN ?>"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="active">Trưng bày sản phẩm</li>
         <li class="active">Thêm ảnh trưng bày</li>
       </ol>
@@ -42,12 +42,12 @@
     <!-- Main content -->
     <section class="content">
       <div class="row">
-        <form enctype="multipart/form-data" action="<?= $adminUrl?>trung-bay-sp/save-add.php" method="post">
+        <form enctype="multipart/form-data" action="save-add.php" method="post">
 
           <div class="col-md-6">
             <div class="row">
               <div class="col-md-8 col-md-offset-2">
-                <img id="proImg" src="<?= $siteurl?>images/default/default.jpg" class="img-responsive">
+                <img id="proImg" src="<?= SITELINK ?>images/default/default.jpg" class="img-responsive">
               </div>
             </div>
 
@@ -71,7 +71,7 @@
 
 
           <div class="col-md-12 text-right">
-            <a href="<?= $adminUrl?>trung-bay-sp" class="btn btn-sm btn-danger">Huỷ</a>
+            <a href="./" class="btn btn-sm btn-danger">Huỷ</a>
             <button type="submit" class="btn btn-sm btn-primary">Lưu</button>
           </div>
           
@@ -94,7 +94,7 @@
 
       var file = this.files[0];
       if(file == undefined){
-        document.querySelector('#proImg').src = '<?= $siteurl?>images/default/default.jpg';
+        document.querySelector('#proImg').src = '<?= SITELINK ?>images/default/default.jpg';
       }else{
         getBase64(file, '#proImg');
       }
