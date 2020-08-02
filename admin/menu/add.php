@@ -27,7 +27,7 @@
         Thêm menu
       </h1>
       <ol class="breadcrumb">
-        <li><a href="<?= $adminUrl?>"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="<?= SITELINKADMIN ?>"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="active">Menu</li>
         <li class="active">Thêm menu</li>
       </ol>
@@ -37,7 +37,7 @@
     <section class="content">
 
       <div class="row">
-        <form action="<?= $adminUrl?>menu/save-add.php" method="post">
+        <form action="save-add.php" method="post">
 
           <div class="col-md-6">
             <div class="form-group">
@@ -58,7 +58,7 @@
             </div>
             
             <div class="text-right">
-              <a href="<?= $adminUrl?>menu" class="btn btn-danger btn-xs">Huỷ</a>
+              <a href="./" class="btn btn-danger btn-xs">Huỷ</a>
               <button class="btn btn-xs btn-primary" type="submit">Lưu</button>
             </div>
           </div>

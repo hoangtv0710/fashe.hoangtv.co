@@ -27,7 +27,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Sản phẩm / Trưng bày sản phẩm</title>
   <?php include_once $path.'share/linkAsset.php'; ?>
-  <link rel="stylesheet" href="<?= $adminAssetUrl?>plugins/Toastr/toastr.min.css"></style> 
+  <link rel="stylesheet" href="<?= SITELINKADMIN ?>/adminlte/plugins/Toastr/toastr.min.css"></style> 
 
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
@@ -46,7 +46,7 @@
       </h1>
 
       <ol class="breadcrumb">
-        <li><a href="<?= $adminUrl ?>"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="<?= SITELINKADMIN ?>"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="active">Sản phẩm</li>
         <li class="active">Trưng bày</li>
       </ol>
@@ -69,7 +69,7 @@
                   <th style="width: 150px;">Ảnh</th>
                   <th style="width: 120px;">
                     <a 
-                      href="<?= $adminUrl ?>trung-bay-sp/add.php" 
+                      href="add.php" 
                       class="btn btn-xs btn-success">
                       <i class="fa fa-plus"></i>  Thêm
                     </a>
@@ -83,23 +83,23 @@
                     <td><?= $item['id'] ?></td>
                     
                     <td>
-                        <a href="<?= $siteurl . 'product-detail.php?id=' . $item['product_id']. '&categories='.$item['cate'] ?>"><?= $item['productname'] ?></a>
+                        <a href="<?= SITELINK . 'product-detail.php?id=' . $item['product_id']. '&categories='.$item['cate'] ?>" target="_blank"><?= $item['productname'] ?></a>
                     </td>
 
                     <td><?= $item['product_id']?></td>
 
-                    <td><img src="<?= $siteurl . $item['image'] ?>" alt="" class="img-responsive"></td>
+                    <td><img src="<?= SITELINK . $item['image'] ?>" alt="" class="img-responsive"></td>
 
                     <td>
                       <a 
-                        href="<?= $adminUrl ?>trung-bay-sp/edit.php?id=<?= $item['id']?>" 
+                        href="edit.php?id=<?= $item['id']?>" 
                         class="btn btn-xs btn-primary">
                         <i class="fa fa-pencil"></i>  Sửa
                       </a>
 
                       <a 
                         href="javascript:;" 
-                        linkurl="<?= $adminUrl ?>trung-bay-sp/remove.php?id=<?= $item['id']?>" 
+                        linkurl="remove.php?id=<?= $item['id']?>" 
                         class="btn btn-xs btn-danger btn-remove">
                         <i class="fa fa-trash"></i>  Xoá
                       </a>
@@ -131,7 +131,7 @@
 
 
 
-<script type="text/javascript" src="<?= $adminAssetUrl?>plugins/Toastr/toastr.min.js""></script>
+<script type="text/javascript" src="<?= SITELINKADMIN ?>/adminlte/plugins/Toastr/toastr.min.js"></script>
 <script type="text/javascript">
   
   <?php if (isset($_GET['success']) && $_GET['success'] == true) {
@@ -172,7 +172,7 @@
       initiateStartPageClick: false,
       startPage: <?= $pageNumber?>,
       onPageClick: function (event, page) {
-        var url = '<?= $adminUrl?>trung-bay-sp';
+        var url = '<?= SITELINKADMIN ?>/trung-bay-sp';
         url += "?page=" + page;
         window.location.href = url;
       }

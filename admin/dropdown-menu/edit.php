@@ -11,7 +11,7 @@
   $mg = $stmt->fetch(); 
 
   if(!$mg){
-    header("location: ".$adminUrl."dropdown-menu");
+    header("location: ".SITELINKADMIN."/dropdown-menu");
     die;
   }   
 
@@ -44,7 +44,7 @@
         Sửa dropdown-menu
       </h1>
       <ol class="breadcrumb">
-        <li><a href="<?= $adminUrl?>"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="<?= SITELINKADMIN ?>"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="active">Dropdown-menu</li>
         <li class="active">Sửa dropdown-menu</li>
       </ol>
@@ -54,7 +54,7 @@
     <section class="content">
 
       <div class="row">
-        <form action="<?= $adminUrl?>dropdown-menu/save-edit.php" method="post">
+        <form action="save-edit.php" method="post">
           <input type="hidden" name="id" value="<?= $mg['id'] ?>">
           <div class="col-md-6">
             <div class="form-group">
@@ -86,7 +86,7 @@
             </div>
             
             <div class="text-right">
-              <a href="<?= $adminUrl?>dropdown-menu" class="btn btn-danger btn-xs">Huỷ</a>
+              <a href="./" class="btn btn-danger btn-xs">Huỷ</a>
               <button class="btn btn-xs btn-primary" type="submit">Lưu</button>
             </div>
           </div>

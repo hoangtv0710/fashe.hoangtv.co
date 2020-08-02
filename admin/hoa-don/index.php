@@ -34,7 +34,7 @@
         Hóa đơn
       </h1>
       <ol class="breadcrumb">
-        <li><a href="<?= $adminUrl ?>"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="<?= SITELINKADMIN ?>"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="active">Hóa đơn</li>
         <li class="active">Danh sách hóa đơn</li>
       </ol>
@@ -62,8 +62,8 @@
                   
                   <td style="width: 150px">
                       <a 
-                        href="<?= $adminUrl ?>hoa-don-chi-tiet" 
-                        class="btn btn-xs btn-primary">
+                        href="<?= SITELINKADMIN ?>/hoa-don-chi-tiet" 
+                        class="btn btn-xs btn-primary" target="_blank">
                         <i class="fa fa-pencil"></i> Xem hóa đơn chi tiết
                       </a>
                     </td>
@@ -102,7 +102,7 @@
                     <td>
                       <a 
                         href="javascript:;" 
-                        linkurl="<?= $adminUrl ?>hoa-don/remove.php?id=<?= $item['id']?>" 
+                        linkurl="remove.php?id=<?= $item['id']?>" 
                         class="btn btn-xs btn-danger btn-remove">
                         <i class="fa fa-trash"></i>  Xoá
                       </a>

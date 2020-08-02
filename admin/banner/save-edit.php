@@ -2,7 +2,7 @@
 	require_once '../../database/db_fashe.php';
 
 	if($_SERVER['REQUEST_METHOD'] != "POST"){
-		header('location: '.$adminUrl . 'banner');
+		header('location: '. SITELINKADMIN . '/banner');
 		die;
 	}
 
@@ -37,6 +37,6 @@ if ($file['size'] > 0) {
 	$stmt->execute();
 
 
-	header('location: '.$adminUrl . 'banner');
+	header('location: '. SITELINKADMIN . '/banner');
 	die;
 ?>

@@ -40,7 +40,7 @@
 
 				<div class="col-md-10 p-b-20 p-t-20" style="background: #0101">
 					<p class="s-text12">sửa THÔNG TIN CÁ NHÂN</p><hr>
-					<form action="<?= $adminUrl . 'tai-khoan/quick-saveeditprofile.php' ?>" method="post" enctype="multipart/form-data" name="ff" onsubmit="return err()">
+					<form action="<?= SITELINKADMIN . 'tai-khoan/quick-saveeditprofile.php' ?>" method="post" enctype="multipart/form-data" name="ff" onsubmit="return err()">
 						<div class="row">
 							<input type="hidden" name="id" value="<?= $account['id'] ?>">
 							<div class="col-md-5 p-l-50">
@@ -80,7 +80,7 @@
 							</div>
 							<div class="header-cart-wrapbtn">
 								<!-- Button -->
-								<a href="<?= $siteurl . 'account.php' ?>" class="flex-c-m size2 bg1 bo-rad-5 hov1 s-text1 trans-0-4">
+								<a href="<?= SITELINK . 'account.php' ?>" class="flex-c-m size2 bg1 bo-rad-5 hov1 s-text1 trans-0-4">
 									Hủy
 								</a>
 							</div>

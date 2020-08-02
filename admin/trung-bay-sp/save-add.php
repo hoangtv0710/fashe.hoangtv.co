@@ -2,7 +2,7 @@
 	require_once '../../database/db_fashe.php';
 
 	if($_SERVER['REQUEST_METHOD'] != "POST"){
-		header('location: '.$adminUrl . 'trung-bay-sp');
+		header('location: '. SITELINKADMIN . '/trung-bay-sp');
 		die;
 	}
 
@@ -28,6 +28,6 @@
 	$stmt->execute();
 
 
-	header('location: '.$adminUrl . 'trung-bay-sp?success=true');
+	header('location: '. SITELINKADMIN . '/trung-bay-sp?success=true');
 	die;
 ?>

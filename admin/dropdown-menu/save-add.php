@@ -2,7 +2,7 @@
 	require_once '../../database/db_fashe.php';
 
 	if($_SERVER['REQUEST_METHOD'] != "POST"){
-		header('location: '.$adminUrl . 'menu');
+		header('location: '. SITELINKADMIN . '/dropdown-menu');
 		die;
 	}
 
@@ -11,7 +11,7 @@
 	$url = $_POST['url'];
 
 	if($title == ""){
-		header('location: '.$adminUrl . 'dropdown-menu/add.php?errName=Không để trống tiêu đề!&title='.$title.'&url='.$url);
+		header('location: '. SITELINKADMIN . '/dropdown-menu/add.php?errName=Không để trống tiêu đề!&title='.$title.'&url='.$url);
 		die;
 	}
 
@@ -20,7 +20,7 @@
 	$stmt->execute();
 	$checkDuplicate = $stmt->fetch();
 	if($checkDuplicate == true){
-		header('location: '.$adminUrl . 'dropdown-menu/add.php?errName=Tiêu đề đã tồn tại!&title='.$title.'&url='.$url);
+		header('location: '. SITELINKADMIN . '/dropdown-menu/add.php?errName=Tiêu đề đã tồn tại!&title='.$title.'&url='.$url);
 		die;
 	}
 
@@ -30,6 +30,6 @@
 	$stmt->execute();
 
 
-	header('location: '.$adminUrl . 'dropdown-menu?success=true');
+	header('location: '. SITELINKADMIN . '/dropdown-menu?success=true');
 	die;
  ?>

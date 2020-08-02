@@ -10,7 +10,7 @@
   $cate = $stmt->fetch();
 
   if(!$cate){
-    header('location: ' . $adminUrl . 'danh-muc-bv');
+    header('location: ' . SITELINKADMIN . '/danh-muc-bv');
     die;
   }
 
@@ -38,7 +38,7 @@
         Sửa danh mục bài viết
       </h1>
       <ol class="breadcrumb">
-        <li><a href="<?= $adminUrl?>"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="<?= SITELINKADMIN ?>"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="active">Danh mục bài viết</li>
         <li class="active">Sửa danh mục</li>
       </ol>
@@ -47,7 +47,7 @@
     <!-- Main content -->
     <section class="content">
       <div class="row">
-        <form action="<?= $adminUrl?>danh-muc-bv/save-edit.php" method="post">
+        <form action="<?= SITELINKADMIN ?>/danh-muc-bv/save-edit.php" method="post">
 
           <input type="hidden" name="id" value="<?= $cate['id']?>">
 
@@ -66,7 +66,7 @@
             </div>
 
             <div class="text-right">
-              <a href="<?= $adminUrl?>danh-muc-bv" class="btn btn-danger btn-xs">Huỷ</a>
+              <a href="<?= SITELINKADMIN ?>/danh-muc-bv" class="btn btn-danger btn-xs">Huỷ</a>
               <button class="btn btn-xs btn-primary" type="submit">Lưu</button>
             </div>
           </div>

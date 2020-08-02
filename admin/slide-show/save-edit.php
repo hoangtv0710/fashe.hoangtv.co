@@ -2,7 +2,7 @@
 	require_once '../../database/db_fashe.php';
 
 	if($_SERVER['REQUEST_METHOD'] != "POST"){
-		header('location: '.$adminUrl . 'slide-show');
+		header('location: '. SITELINKADMIN . '/slide-show');
 		die;
 	}
 
@@ -19,7 +19,7 @@
 	$kq->execute();
 	$checkOrderNumber = $kq->fetch();
 	if ($checkOrderNumber != false) {
-		header('location: '.$adminUrl . 'slide-show/edit.php?id='.$id.'&errOrder=Số thứ tự đã tồn tại!');
+		header('location: '. SITELINKADMIN . '/slide-show/edit.php?id='.$id.'&errOrder=Số thứ tự đã tồn tại!');
 		die;
 	}
 
@@ -60,6 +60,6 @@
 	$stmt->execute();
 
 
-	header('location: '.$adminUrl . 'slide-show');
+	header('location: '. SITELINKADMIN . '/slide-show');
 	die;
 ?>

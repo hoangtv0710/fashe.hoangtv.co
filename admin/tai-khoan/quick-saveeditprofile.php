@@ -2,7 +2,7 @@
 	require_once '../../database/db_fashe.php';
 
 	if($_SERVER['REQUEST_METHOD'] != "POST"){
-		header('location: '.$siteurl . 'edit-profile.php');
+		header('location: '. SITELINK . 'edit-profile.php');
 		die;
 	}
 
@@ -47,6 +47,6 @@ if ($file['size'] > 0) {
 	$stmt->bindParam(':id', $id);
 	$stmt->execute();
 	
-	header('location: '.$siteurlz . 'login-client.php?sc=true');
+	header('location: '. SITELINK . 'authenticator/login-client.php?sc=true');
 	die;
 ?>

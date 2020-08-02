@@ -227,14 +227,14 @@
 
 												<div class="block2-btn-addcart w-size1 trans-0-4">
 													<!-- Button -->
-													<a href="<?= $siteurl . "product-detail.php?id=".$p['id']."&categories=".$p['cate_id'] ?>" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 m-b-10">Xem chi tiết</a>
-													<a href="<?= $siteurl . "save-cart.php?id=".$p['id'] ?>" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 m-b-10">Thêm vào giỏ</a>
+													<a href="<?= "product-detail.php?id=".$p['id']."&categories=".$p['cate_id'] ?>" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 m-b-10">Xem chi tiết</a>
+													<a href="<?= "save-cart.php?id=".$p['id'] ?>" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 m-b-10">Thêm vào giỏ</a>
 												</div>
 											</div>
 										</div>
 
 										<div class="block2-txt p-t-20 text-center text-uppercase">
-											<a href="<?= $siteurl . "product-detail.php?id=".$p['id']."&categories=".$p['cate_id'] ?>" class="block2-name dis-block s-text3 p-b-5">
+											<a href="<?= "product-detail.php?id=".$p['id']."&categories=".$p['cate_id'] ?>" class="block2-name dis-block s-text3 p-b-5">
 												<?= $p['product_name'] ?>
 											</a>
 

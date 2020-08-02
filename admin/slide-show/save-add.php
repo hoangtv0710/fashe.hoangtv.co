@@ -3,7 +3,7 @@
 	require_once '../../database/db_fashe.php';
 
 	if($_SERVER['REQUEST_METHOD'] != "POST"){
-		header('location: '.$adminUrl . 'slide-show');
+		header('location: '. SITELINKADMIN . '/slide-show');
 		die;
 	}
 
@@ -16,7 +16,7 @@
 	$created_by = $_SESSION['login']['id'];
 
 	if ($title == "" || $sort_order == "" || file_exists($file)) {
-		header('location:' . $adminUrl . 'slide-show/add.php?err=Không để trống mục này!&title='.$title.'&link_url='.$link_url.'&sort_order='.$sort_order);
+		header('location:' . SITELINKADMIN . '/slide-show/add.php?err=Không để trống mục này!&title='.$title.'&link_url='.$link_url.'&sort_order='.$sort_order);
 		die;
 	}
 
@@ -25,7 +25,7 @@
 	$kq->execute();
 	$checkOrderNumber = $kq->fetch();
 	if ($checkOrderNumber != false) {
-		header('location:' . $adminUrl . 'slide-show/add.php?errOrder=Số thứ tự đã tồn tại!&title='.$title.'&link_url='.$link_url.'&sort_order='.$sort_order);
+		header('location:' . SITELINKADMIN . '/slide-show/add.php?errOrder=Số thứ tự đã tồn tại!&title='.$title.'&link_url='.$link_url.'&sort_order='.$sort_order);
 		die;
 	}
 
@@ -53,6 +53,6 @@
 	$stmt->execute();
 
 
-	header('location: '.$adminUrl . 'slide-show?success=true');
+	header('location: '. SITELINKADMIN . '/slide-show?success=true');
 	die;
 ?>

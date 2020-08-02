@@ -3,7 +3,7 @@
 	require_once '../../database/db_fashe.php';
 
 	if($_SERVER['REQUEST_METHOD'] != "POST"){
-		header('location: '.$adminUrl . 'menu');
+		header('location: '. SITELINKADMIN . '/menu');
 		die;
 	}
 
@@ -12,7 +12,7 @@
 	$created_by = $_SESSION['login']['id'];
 
 	if($name == ""){
-		header('location: '.$adminUrl . 'menu/add.php?errName=Không để trống tên menu!&name='.$name.'&link_url='.$link_url);
+		header('location: '. SITELINKADMIN . '/menu/add.php?errName=Không để trống tên menu!&name='.$name.'&link_url='.$link_url);
 		die;
 	}
 
@@ -21,7 +21,7 @@
 	$stmt->execute();
 	$checkDuplicate = $stmt->fetch();
 	if($checkDuplicate == true){
-		header('location: '.$adminUrl . 'menu/add.php?errName=Tên menu đã tồn tại!&name='.$name.'&link_url='.$link_url);
+		header('location: '. SITELINKADMIN . '/menu/add.php?errName=Tên menu đã tồn tại!&name='.$name.'&link_url='.$link_url);
 		die;
 	}
 
@@ -31,6 +31,6 @@
 	$stmt->execute();
 
 
-	header('location: '.$adminUrl . 'menu?success=true');
+	header('location: '. SITELINKADMIN . '/menu?success=true');
 	die;
  ?>

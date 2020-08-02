@@ -3,7 +3,7 @@
 	require_once '../../database/db_fashe.php';
 
 	if($_SERVER['REQUEST_METHOD'] != "POST"){
-		header('location: '.$adminUrl . 'doi-tac');
+		header('location: '. SITELINKADMIN . '/doi-tac');
 		die;
 	}
 
@@ -17,7 +17,7 @@
 	$kq->execute();
 	$checkName = $kq->fetch();
 	if ($checkName != false) {
-		header('location:' . $adminUrl . 'doi-tac/add.php?errName=Tên đã tồn tại!&name='.$name.'&url='.$url);
+		header('location:' . SITELINKADMIN . '/doi-tac/add.php?errName=Tên đã tồn tại!&name='.$name.'&url='.$url);
 		die;
 	}
 
@@ -42,6 +42,6 @@
 	$stmt->execute();
 
 
-	header('location: '.$adminUrl . 'doi-tac?success=true');
+	header('location: '. SITELINKADMIN . '/doi-tac?success=true');
 	die;
 ?>

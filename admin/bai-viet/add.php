@@ -32,7 +32,7 @@
         Thêm bài viết
       </h1>
       <ol class="breadcrumb">
-        <li><a href="<?= $adminUrl?>"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="<?= SITELINKADMIN ?>"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="active">Bài viết</li>
         <li class="active">Thêm bài viết</li>
       </ol>
@@ -41,7 +41,7 @@
     <!-- Main content -->
     <section class="content">
       <div class="row">
-        <form enctype="multipart/form-data" action="<?= $adminUrl?>bai-viet/save-add.php" method="post">
+        <form enctype="multipart/form-data" action="save-add.php" method="post">
           <div class="col-md-6">
             <div class="form-group">
               <label>Tiêu đề</label>
@@ -92,7 +92,7 @@
           <div class="col-md-6">
             <div class="row">
               <div class="col-md-8 col-md-offset-2">
-                <img id="proImg" src="<?= $siteurl?>images/default/default.jpg" class="img-responsive">
+                <img id="proImg" src="<?= SITELINK ?>images/default/default.jpg" class="img-responsive">
               </div>
             </div>
 
@@ -120,7 +120,7 @@
           </div>
 
           <div class="col-md-12 text-right">
-            <a href="<?= $adminUrl?>bai-viet" class="btn btn-sm btn-danger">Huỷ</a>
+            <a href="./" class="btn btn-sm btn-danger">Huỷ</a>
             <button type="submit" class="btn btn-sm btn-primary">Lưu</button>
           </div>
           
@@ -144,7 +144,7 @@
 
       var file = this.files[0];
       if(file == undefined){
-        document.querySelector('#proImg').src = '<?= $siteurl?>images/default/default.jpg';
+        document.querySelector('#proImg').src = '<?= SITELINK ?>images/default/default.jpg';
       }else{
         getBase64(file, '#proImg');
       }

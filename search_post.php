@@ -66,7 +66,7 @@
 							<?php foreach ($searchpost as $p): ?>
 								
 								<div class="item-blog p-b-80">
-									<a href="<?= $siteurl . "blog-detail.php?id=".$p['id']."&categories=".$p['cate_id'] ?>" class="item-blog-img pos-relative dis-block hov-img-zoom">
+									<a href="<?= "blog-detail.php?id=".$p['id']."&categories=".$p['cate_id'] ?>" class="item-blog-img pos-relative dis-block hov-img-zoom">
 										<img src="<?= $p['image'] ?>" alt="IMG-BLOG">
 
 										<span class="item-blog-date dis-block flex-c-m pos1 size17 bg4 s-text1">
@@ -76,7 +76,7 @@
 
 									<div class="item-blog-txt p-t-33">
 										<h4 class="p-b-11">
-											<a href="<?= $siteurl . "blog-detail.php?id=".$p['id']."&categories=".$p['cate_id'] ?>" class="m-text24">
+											<a href="<?= "blog-detail.php?id=".$p['id']."&categories=".$p['cate_id'] ?>" class="m-text24">
 												<?= $p['title'] ?>
 											</a>
 										</h4>
@@ -101,7 +101,7 @@
 											<?= $p['short_desc'] ?>
 										</p>
 
-										<a href="<?= $siteurl . "blog-detail.php?id=".$p['id']."&categories=".$p['cate_id'] ?>" class="s-text20">
+										<a href="<?= "blog-detail.php?id=".$p['id']."&categories=".$p['cate_id'] ?>" class="s-text20">
 											Đọc tiếp
 											<i class="fa fa-long-arrow-right m-l-8" aria-hidden="true"></i>
 										</a>
@@ -116,7 +116,7 @@
 					<div class="rightbar">
 						<!-- Search -->
 						<div class="pos-relative bo11 of-hidden">
-							<form action="<?= $siteurl ?>search_post.php" method="GET">
+							<form action="search_post.php" method="GET">
 								<input class="s-text7 size16 p-l-23 p-r-50" type="text" name="keyword" placeholder="Search" required="">
 
 								<button type="submit" class="flex-c-m size5 ab-r-m color1 color0-hov trans-0-4">
@@ -132,13 +132,13 @@
 
 						<ul>
 							<li class="p-t-6 p-b-8 bo6 text-uppercase">
-								<a href="<?= $siteurl ?>blog.php" class="s-text13 p-t-5 p-b-5">
+								<a href="blog.php" class="s-text13 p-t-5 p-b-5">
 									Tất cả
 								</a>
 							</li>
 							<?php foreach ($cB as $c): ?>
 								<li class="p-t-6 p-b-8 bo6 text-uppercase">
-									<a href="<?= $siteurl . "blog.php?id=".$c['id'] ?>" class="s-text13 p-t-5 p-b-5">
+									<a href="<?= "blog.php?id=".$c['id'] ?>" class="s-text13 p-t-5 p-b-5">
 										<?= $c['name'] ?>
 									</a>
 								</li>
@@ -155,12 +155,12 @@
 
 							<?php foreach ($mostpost as $mp): ?>
 								<li class="p-b-20">
-									<a href="<?= $siteurl . "blog-detail.php?id=".$mp['id']."&categories=".$mp['cate_id'] ?>" class="dis-block wrap-pic-w trans-0-4 hov4">
+									<a href="<?= "blog-detail.php?id=".$mp['id']."&categories=".$mp['cate_id'] ?>" class="dis-block wrap-pic-w trans-0-4 hov4">
 										<img src="<?= $mp['image'] ?>" alt="IMG-PRODUCT">
 									</a>
 
 									<div class="p-t-5">
-										<a href="<?= $siteurl . "blog-detail.php?id=".$mp['id']."&categories=".$mp['cate_id'] ?>" class="s-text100">
+										<a href="<?= "blog-detail.php?id=".$mp['id']."&categories=".$mp['cate_id'] ?>" class="s-text100">
 											<?= $mp['title'] ?>
 										</a>
 									</div>

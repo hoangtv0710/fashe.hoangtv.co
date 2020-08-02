@@ -27,7 +27,7 @@
         Thêm mã giảm giá
       </h1>
       <ol class="breadcrumb">
-        <li><a href="<?= $adminUrl?>"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="<?= SITELINKADMIN ?>"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="active">Mã giảm giá</li>
         <li class="active">Thêm</li>
       </ol>
@@ -37,7 +37,7 @@
     <section class="content">
 
       <div class="row">
-        <form action="<?= $adminUrl?>ma-giam-gia/save-add.php" method="post" name="form" onsubmit="return checkCode()">
+        <form action="save-add.php" method="post" name="form" onsubmit="return checkCode()">
 
           <div class="col-md-6">
             <div class="form-group">
@@ -62,7 +62,7 @@
             </div>
             
             <div class="text-right">
-              <a href="<?= $adminUrl?>ma-giam-gia" class="btn btn-danger btn-xs">Huỷ</a>
+              <a href="./" class="btn btn-danger btn-xs">Huỷ</a>
               <button class="btn btn-xs btn-primary" type="submit">Lưu</button>
             </div>
           </div>
@@ -86,7 +86,7 @@
 
       if (f.code.value == "" || f.percent.value == "" ) {
         document.getElementById("err").innerHTML = "Không để trống mã giảm";
-        document.getElementById("err1").innerHTML = "Không để % giảm";
+        document.getElementById("err1").innerHTML = "Không để trống % giảm";
         return false;
       } else {
         document.getElementById("err").style.display = 'none';

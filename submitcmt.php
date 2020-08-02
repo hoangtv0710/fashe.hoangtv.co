@@ -2,7 +2,7 @@
 	require_once 'database/db_fashe.php';
 	session_start();
 	if ($_SERVER['REQUEST_METHOD'] != "POST") {
-		header("location:" .$siteurl);
+		header("location:" . SITELINK);
 	}
 
 	$productId = $_POST['productId'];
@@ -16,6 +16,6 @@
 	$sql = "insert into product_comments (email,content,product_id, created_date, avatar) values ('$email', '$content', $productId,'$created_date', '$avatar')";
 	$kq = $conn->prepare($sql);
 	$kq->execute();
-	header("location:" . $siteUrl . "product-detail.php?id=" . $productId.'&categories='.$productlq.'&success=true');
+	header("location:" . SITELINK . "product-detail.php?id=" . $productId.'&categories='.$productlq.'&success=true');
 	die;
  ?>

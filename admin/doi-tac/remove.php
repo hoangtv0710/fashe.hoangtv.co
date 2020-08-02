@@ -9,7 +9,7 @@
 	$brands = $kq->fetch();
 
 	if (!$brands) {
-		header('location:' . $adminUrl . 'doi-tac');
+		header('location:' . SITELINKADMIN . '/doi-tac');
 		die;
 	}
 
@@ -17,7 +17,7 @@
 	$kq = $conn->prepare($sql);
 	$kq->execute();
 
-	header('location:' . $adminUrl . 'doi-tac');
+	header('location:' . SITELINKADMIN . '/doi-tac');
 	die;
 
  ?>

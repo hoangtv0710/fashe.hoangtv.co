@@ -2,7 +2,7 @@
 	require_once '../../database/db_fashe.php';
 
 	if($_SERVER['REQUEST_METHOD'] != "POST"){
-		header('location: '.$adminUrl . 'tai-khoan');
+		header('location: '. SITELINKADMIN . '/tai-khoan');
 		die;
 	}
 
@@ -21,17 +21,17 @@
 	$kq->execute();
 	$checkUserEmail = $kq->fetch();
 	if ($checkUserEmail != false) {
-		header('location:' . $adminUrl . 'tai-khoan/add.php?errEmail=Email đã tồn tại!&email='.$email.'&fullname='.$fullname.'&password='.$password.'&address='.$address.'&phone_number='.$phone_number);
+		header('location:' . SITELINKADMIN . '/tai-khoan/add.php?errEmail=Email đã tồn tại!&email='.$email.'&fullname='.$fullname.'&password='.$password.'&address='.$address.'&phone_number='.$phone_number);
 		die;
 	}
 
 	if ($cfpassword != $password) {
-		header('location:' . $adminUrl . 'tai-khoan/add.php?errcfPassword=Mật khẩu không khớp!&email='.$email.'&fullname='.$fullname.'&password='.$password.'&address='.$address.'&phone_number='.$phone_number);
+		header('location:' . SITELINKADMIN . '/tai-khoan/add.php?errcfPassword=Mật khẩu không khớp!&email='.$email.'&fullname='.$fullname.'&password='.$password.'&address='.$address.'&phone_number='.$phone_number);
 		die;
 	}
 
 	if ($email == "" || $password == "" || $cfpassword == "" || $fullname == "" || $gender == "") {
-		header('location:' . $adminUrl . 'tai-khoan/add.php?err=Không để trống mục này!&email='.$email.'&fullname='.$fullname.'&password='.$password.'&address='.$address.'&phone_number='.$phone_number);
+		header('location:' . SITELINKADMIN . '/tai-khoan/add.php?err=Không để trống mục này!&email='.$email.'&fullname='.$fullname.'&password='.$password.'&address='.$address.'&phone_number='.$phone_number);
 		die;
 	}
 
@@ -63,6 +63,6 @@ if ($file['size'] > 0) {
 	$stmt->execute();
 
 
-	header('location: '.$adminUrl . 'tai-khoan?success=true');
+	header('location: '. SITELINKADMIN . '/tai-khoan?success=true');
 	die;
 ?>

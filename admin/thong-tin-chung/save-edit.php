@@ -2,7 +2,7 @@
 	require_once '../../database/db_fashe.php';
 
 	if($_SERVER['REQUEST_METHOD'] != "POST"){
-		header('location: '.$adminUrl . 'thong-tin-chung');
+		header('location: '. SITELINKADMIN . '/thong-tin-chung');
 		die;
 	}
 
@@ -63,6 +63,6 @@ if ($file['size'] > 0) {
 	$stmt->execute();
 
 
-	header('location: '.$adminUrl . 'thong-tin-chung');
+	header('location: '. SITELINKADMIN . '/thong-tin-chung');
 	die;
 ?>

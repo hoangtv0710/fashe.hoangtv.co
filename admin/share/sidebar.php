@@ -71,6 +71,9 @@
           <li class="">
             <a href="<?= SITELINKADMIN ?>/phan-hoi-sp"><i class="fa fa-circle-o"></i>Bình luận</a>
           </li>
+          <li class="">
+            <a href="<?= SITELINKADMIN ?>/trung-bay-sp"><i class="fa fa-circle-o"></i>Trưng bày sản phẩm</a>
+          </li>
         </ul>
       </li>
 

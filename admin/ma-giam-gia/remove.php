@@ -11,7 +11,7 @@
 
 	$cate = $stmt->fetch();
 	if(!$cate){
-		header('location: '. $adminUrl . 'ma-giam-gia');
+		header('location: '. SITELINKADMIN . '/ma-giam-gia');
 		die;
 	}
 
@@ -21,7 +21,7 @@
 	$stmt->execute();
 
 
-	header('location: '. $adminUrl . 'ma-giam-gia');
+	header('location: '. SITELINKADMIN . '/ma-giam-gia');
 	die;
 
  ?>

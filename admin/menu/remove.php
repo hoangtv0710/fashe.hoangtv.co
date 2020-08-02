@@ -11,7 +11,7 @@
 
 	$menu = $stmt->fetch();
 	if(!$menu){
-		header('location: '. $adminUrl . 'menu');
+		header('location: '. SITELINKADMIN . '/menu');
 		die;
 	}
 
@@ -26,7 +26,7 @@
 	$stmt->execute();
 
 
-	header('location: '. $adminUrl . 'menu');
+	header('location: '. SITELINKADMIN . '/menu');
 	die;
 
  ?>

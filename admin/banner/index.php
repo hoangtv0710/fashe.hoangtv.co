@@ -33,7 +33,7 @@
           Banner
       </h1>
       <ol class="breadcrumb">
-        <li><a href="<?= $adminUrl ?>"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="<?= SITELINKADMIN ?>"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="active">Banner</li>
         <li class="active">Danh sách</li>
       </ol>
@@ -63,7 +63,7 @@
                   <tr>
                     <td><?= $item['id']?>.</td>
 
-                    <td><img src="<?= $siteurl . $item['image'] ?>" class="img-responsive"></td>
+                    <td><img src="<?= SITELINK . $item['image'] ?>" class="img-responsive"></td>
 
                     <td><?= $item['description']?></td>
 
@@ -76,7 +76,7 @@
 
                     <td>
                       <a 
-                        href="<?= $adminUrl ?>banner/edit.php?id=<?= $item['id']?>" 
+                        href="edit.php?id=<?= $item['id']?>" 
                         class="btn btn-xs btn-primary">
                         <i class="fa fa-pencil"></i>  Sửa
                       </a>

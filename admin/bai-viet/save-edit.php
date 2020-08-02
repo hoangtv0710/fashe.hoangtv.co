@@ -3,7 +3,7 @@
 
 	// kiem tra xem loai request co phai loai post hay khong
 	if($_SERVER['REQUEST_METHOD'] != "POST"){
-		header('location: '.$adminUrl . 'bai-viet');
+		header('location: '. SITELINKADMIN . '/bai-viet');
 		die;
 	}
 
@@ -16,7 +16,7 @@
 	$content = $_POST['content'];
 
 	if ($title == "") {
-		header('location: '.$adminUrl . 'san-pham/edit.php?id='.$id.'&errName=Không để trống tiêu đề bài viết');
+		header('location: '. SITELINKADMIN . '/san-pham/edit.php?id='.$id.'&errName=Không để trống tiêu đề bài viết');
 	die;
 	}
 	
@@ -25,7 +25,7 @@
 	$stmt->execute();
 	$checkDuplicate = $stmt->fetch();
 	if($checkDuplicate != false){
-		header('location: '.$adminUrl . 'bai-viet/edit.php?id='.$id.'&errName=Tiêu đề bài viết đã tồn tại!');
+		header('location: '. SITELINKADMIN . '/bai-viet/edit.php?id='.$id.'&errName=Tiêu đề bài viết đã tồn tại!');
 		die;
 	}
 
@@ -66,6 +66,6 @@
 	$stmt->execute();
 
 
-	header('location: '.$adminUrl . 'bai-viet');
+	header('location: '. SITELINKADMIN . '/bai-viet');
 	die;
  ?>

@@ -11,7 +11,7 @@
 
 	$cate = $stmt->fetch();
 	if(!$cate){
-		header('location: '. $adminUrl . 'danh-muc-sp');
+		header('location: '. SITELINKADMIN . '/danh-muc-sp');
 		die;
 	}
 
@@ -26,7 +26,7 @@
 	$stmt->execute();
 
 
-	header('location: '. $adminUrl . 'danh-muc-sp');
+	header('location: '. SITELINKADMIN . '/danh-muc-sp');
 	die;
 
  ?>

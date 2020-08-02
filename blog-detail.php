@@ -11,7 +11,7 @@
 	$stmt->execute();
 	$posts = $stmt->fetch();
 	if (!$posts) {
-		header("location:".$siteurl);
+		header("location:". SITELINK);
 		die;
 	}
 
@@ -23,7 +23,7 @@
 	$bloglq = $stmt->fetchall();
 
 	if (!$bloglq) {
-		header("location: " . $siteurl);
+		header("location: " . SITELINK);
 		die;
 	}
 
@@ -49,7 +49,7 @@
 	<title><?= $posts['title'] ?></title>
 	<meta charset="UTF-8">
 	<?php include 'share/linkAsset.php'; ?>
-	<link rel="stylesheet" href="<?= $adminAssetUrl?>plugins/Toastr/toastr.min.css">
+	<link rel="stylesheet" href="<?= SITELINKADMIN ?>/adminlte/plugins/Toastr/toastr.min.css">
 </head>
 <body class="animsition">
 
@@ -58,7 +58,7 @@
 
 	<!-- breadcrumb -->
 	<div class="bread-crumb bgwhite flex-w p-l-52 p-r-15 p-t-30 p-l-15-sm">
-		<a href="<?= $siteurl ?>" class="s-text16">
+		<a href="<?= SITELINK ?>" class="s-text16">
 			Home
 			<i class="fa fa-angle-right m-l-8 m-r-9" aria-hidden="true"></i>
 		</a>
@@ -68,7 +68,7 @@
 			<i class="fa fa-angle-right m-l-8 m-r-9" aria-hidden="true"></i>
 		</a>
 		
-		<a href="<?= $siteurl . "blog.php?id=".$categories['id'] ?>" class="s-text16 text-uppercase">
+		<a href="<?= "blog.php?id=".$categories['id'] ?>" class="s-text16 text-uppercase">
 			<?= $categories['name'] ?>
 			<i class="fa fa-angle-right m-l-8 m-r-9" aria-hidden="true"></i>
 		</a>
@@ -133,7 +133,7 @@
 					<div class="rightbar">
 						<!-- Search -->
 						<div class="pos-relative bo11 of-hidden">
-							<form action="<?= $siteurl ?>search_post.php" method="GET">
+							<form action="search_post.php" method="GET">
 								<input class="s-text7 size16 p-l-23 p-r-50" type="text" name="keyword" placeholder="Search" required="">
 
 								<button type="submit" class="flex-c-m size5 ab-r-m color1 color0-hov trans-0-4">
@@ -149,13 +149,13 @@
 						
 						<ul>
 							<li class="p-t-6 p-b-8 bo6 text-uppercase">
-								<a href="<?= $siteurl ?>blog.php" class="s-text13 p-t-5 p-b-5">
+								<a href="blog.php" class="s-text13 p-t-5 p-b-5">
 									Tất cả
 								</a>
 							</li>
 							<?php foreach ($cB as $c): ?>
 								<li class="p-t-6 p-b-8 bo6 text-uppercase">
-									<a href="<?= $siteurl . "blog.php?id=".$c['id'] ?>" class="s-text13 p-t-5 p-b-5">
+									<a href="<?= "blog.php?id=".$c['id'] ?>" class="s-text13 p-t-5 p-b-5">
 										<?= $c['name'] ?>
 									</a>
 								</li>
@@ -172,12 +172,12 @@
 							<?php foreach ($bloglq as $mp): ?>
 								<?php if ($mp != $posts): ?>
 									<li class="p-b-20">
-										<a href="<?= $siteurl . "blog-detail.php?id=".$mp['id']."&categories=".$mp['cate_id'] ?>" class="dis-block wrap-pic-w trans-0-4 hov4">
+										<a href="<?= "blog-detail.php?id=".$mp['id']."&categories=".$mp['cate_id'] ?>" class="dis-block wrap-pic-w trans-0-4 hov4">
 											<img src="<?= $mp['image'] ?>" alt="IMG-PRODUCT">
 										</a>
 
 										<div class="p-t-5">
-											<a href="<?= $siteurl . "blog-detail.php?id=".$mp['id']."&categories=".$mp['cate_id'] ?>" class="s-text100">
+											<a href="<?= "blog-detail.php?id=".$mp['id']."&categories=".$mp['cate_id'] ?>" class="s-text100">
 												<?= $mp['title'] ?>
 											</a>
 										</div>
@@ -190,7 +190,7 @@
 					</div>
 				</div>
 				<div class="col-md-12 dis-flex">
-						<form class="col-md-6" action="<?= $siteurl ?>submitcmtpost.php" method="POST" name="formcmt" onsubmit="return cmt()">
+						<form class="col-md-6" action="<?= SITELINK ?>submitcmtpost.php" method="POST" name="formcmt" onsubmit="return cmt()">
 							<input type="hidden" name="id" value="<?= $id?>">
 							<input type="hidden" name="categories" value="<?= $cate_id ?>">
 							<h4 class="m-text25 p-b-30">
@@ -209,7 +209,7 @@
 								</button>
 							</div>
 							<div class="m-t-10"></div>
-							<a href="<?= $siteurlz ?>login-client.php" id="err" class="text-danger s-text2"></a>						
+							<a href="<?= SITELINK ?>authenticator/login-client.php" id="err" class="text-danger s-text2"></a>						
 						</form>
 
 						<div class="col-md-6">
@@ -279,7 +279,7 @@
 
 <!--===============================================================================================-->
 	<script type="text/javascript" src="vendor/jquery/jquery-3.2.1.min.js"></script>
-	<script type="text/javascript" src="<?= $adminAssetUrl?>plugins/Toastr/toastr.min.js""></script>
+	<script type="text/javascript" src="<?= SITELINKADMIN ?>/adminlte/plugins/Toastr/toastr.min.js""></script>
 <!--===============================================================================================-->
 	<script type="text/javascript" src="vendor/animsition/js/animsition.min.js"></script>
 <!--===============================================================================================-->

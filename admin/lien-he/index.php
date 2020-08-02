@@ -15,7 +15,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="stylesheet" href="<?= $adminAssetUrl?>plugins/Toastr/toastr.min.css"></style> 
+  <link rel="stylesheet" href="<?= SITELINKADMIN ?>/adminlte/plugins/Toastr/toastr.min.css"></style> 
   <title>Liên hệ</title>
   <?php include_once $path.'share/linkAsset.php'; ?>
 </head>
@@ -34,7 +34,7 @@
         Liên hệ
       </h1>
       <ol class="breadcrumb">
-        <li><a href="<?= $adminUrl ?>"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="<?= SITELINKADMIN ?>"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="active">Liên hệ</li>
         <li class="active">Danh sách liên hệ</li>
       </ol>
@@ -71,10 +71,10 @@
                     <td><?= $item['message']?></td>
 
                     <td>
-                      <a href="<?= $adminUrl ?>lien-he/send.php?id=<?= $item['id']?>" class="btn btn-xs btn-primary"><i class="fa fa-pencil"></i>  Gủi phản hồi</a>
+                      <a href=send.php?id=<?= $item['id']?> class="btn btn-xs btn-primary"><i class="fa fa-pencil"></i>  Gủi phản hồi</a>
                       <a 
                         href="javascript:;" 
-                        linkurl="<?= $adminUrl ?>lien-he/remove.php?id=<?= $item['id']?>" 
+                        linkurl="remove.php?id=<?= $item['id']?>" 
                         class="btn btn-xs btn-danger btn-remove">
                         <i class="fa fa-trash"></i>  Xoá
                       </a>
@@ -102,7 +102,7 @@
 
 
 
-<script type="text/javascript" src="<?= $adminAssetUrl?>plugins/Toastr/toastr.min.js""></script>
+<script type="text/javascript" src="<?= SITELINKADMIN ?>/adminlte/plugins/Toastr/toastr.min.js""></script>
 <script type="text/javascript">
   <?php if (isset($_GET['success']) && $_GET['success'] == true) {
     ?>

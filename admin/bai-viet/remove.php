@@ -9,7 +9,7 @@
 	$post = $kq->fetch();
 
 	if (!$post) {
-		header('location:' . $adminUrl . 'bai-viet');
+		header('location:' . SITELINKADMIN . '/bai-viet');
 		die;
 	}
 
@@ -21,7 +21,7 @@
 	$kq = $conn->prepare($sql);
 	$kq->execute();
 
-	header('location:' . $adminUrl . 'bai-viet');
+	header('location:' . SITELINKADMIN . '/bai-viet');
 	die;
 
  ?>

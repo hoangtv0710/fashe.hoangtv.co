@@ -3,7 +3,7 @@
 
 
 	if($_SERVER['REQUEST_METHOD'] != "POST"){
-		header('location: '.$siteurl . 'registration');
+		header('location: '. SITELINK . 'authenticator/registration.php');
 		die;
 	}
 
@@ -37,17 +37,17 @@
 	$kq->execute();
 	$checkUserEmail = $kq->fetch();
 	if ($checkUserEmail != false) {
-		header('location:' . $siteurlz . 'registration.php?errEmail=Email đã tồn tại!&email='.$email.'&fullname='.$fullname.'&password='.$password);
+		header('location:' . SITELINK . 'authenticator/registration.php?errEmail=Email đã tồn tại!&email='.$email.'&fullname='.$fullname.'&password='.$password);
 		die;
 	}
 
 	if ($cfpassword != $password) {
-		header('location:' . $siteurlz . 'registration.php?errcfPassword=Mật khẩu không khớp!&email='.$email.'&fullname='.$fullname.'&password='.$password);
+		header('location:' . SITELINK . 'authenticator/registration.php?errcfPassword=Mật khẩu không khớp!&email='.$email.'&fullname='.$fullname.'&password='.$password);
 		die;
 	}
 
 	if ($email == "" || $password == "" || $cfpassword == "" || $fullname == "") {
-		header('location:' . $siteurlz . 'registration.php?err=Không để trống mục này!&email='.$email.'&fullname='.$fullname.'&password='.$password);
+		header('location:' . SITELINK . 'authenticator/registration.php?err=Không để trống mục này!&email='.$email.'&fullname='.$fullname.'&password='.$password);
 		die;
 	}
 
@@ -66,6 +66,6 @@ $password = password_hash($password, PASSWORD_DEFAULT);
 	$st = $conn->prepare($code);
 	$st->execute();
 
-	header('location: '.$adminUrl . 'send_dc?email='.$email.'&discount_code='.$randomStr);
+	header('location: '. SITELINKADMIN . '/send_dc?email='.$email.'&discount_code='.$randomStr);
 	die;
 ?>
