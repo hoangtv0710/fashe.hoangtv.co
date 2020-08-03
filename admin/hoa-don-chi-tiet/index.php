@@ -4,7 +4,9 @@
   $path = "../";
   require_once $path.'../database/db_fashe.php';
 
-  $sql = "select id.*, p.product_name as productname, p.cate_id as cate from invoice_detail id join products p on id.product_id = p.id";
+  $id = $_GET['id'];
+
+  $sql = "select id.*, p.product_name as productname, p.cate_id as cate from invoice_detail id join products p on id.product_id = p.id where invoice_id = '$id'";
   $stmt = $conn->prepare($sql);
   $stmt->execute();
   $invoice = $stmt->fetchAll();

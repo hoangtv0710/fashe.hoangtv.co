@@ -59,14 +59,10 @@
                   <th>Email</th>
                   <th>Ngày mua</th>
                   <th>Mã giảm giá</th>
+                  <th width="170">Trạng thái</th>
                   
                   <td style="width: 150px">
-                      <a 
-                        href="<?= SITELINKADMIN ?>/hoa-don-chi-tiet" 
-                        class="btn btn-xs btn-primary" target="_blank">
-                        <i class="fa fa-pencil"></i> Xem hóa đơn chi tiết
-                      </a>
-                    </td>
+                  </td>
                 </tr>
 
                 <?php foreach ($invoice as $item): ?>
@@ -99,12 +95,30 @@
                     <?php else: ?>
                       <td></td>
                     <?php endif ?>
+
+                    <td>
+                      <form action="update_status.php" method="post">
+                        <input type="hidden" name="id" value="<?= $item['id'] ?>">
+                        <select class="form-control" name="status" onchange="this.form.submit()">
+                          <option value="0" <?php if($item['status'] == 0) :?> selected <?php endif ?> >Chờ xử lý</option>
+                          <option value="1" <?php if($item['status'] == 1) :?> selected <?php endif ?> >Đã xử lý</option>
+                          <option value="2" <?php if($item['status'] == 2) :?> selected <?php endif ?> >Đang vận chuyển</option>
+                          <option value="3" <?php if($item['status'] == 3) :?> selected <?php endif ?> >Hoàn thành</option>
+                        </select>
+                      </form>
+                    </td>
+
                     <td>
                       <a 
                         href="javascript:;" 
                         linkurl="remove.php?id=<?= $item['id']?>" 
                         class="btn btn-xs btn-danger btn-remove">
                         <i class="fa fa-trash"></i>  Xoá
+                      </a>
+                      <a 
+                        href="<?= SITELINKADMIN ?>/hoa-don-chi-tiet?id=<?= $item['id']?>" 
+                        class="btn btn-xs btn-primary" target="_blank">
+                        <i class="fa fa-pencil"></i> Xem chi tiết
                       </a>
                     </td>
 
