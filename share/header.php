@@ -58,8 +58,10 @@
 				<div class="wrap_menu">
 					<nav class="menu">
 							<ul class="main_menu">
+								<li class="text-uppercase">
+									<a href="<?= SITELINK ?>">Trang chủ</a>
+								</li>
 								<?php foreach ($menu as $m): ?>
-
 									<li class="text-uppercase">
 										<a href="<?= $m['link_url'] ?>"><?= $m['name'] ?></a>
 										<ul class="sub_menu">
