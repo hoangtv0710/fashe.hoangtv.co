@@ -4,7 +4,12 @@
   $path = "../";
   require_once $path.'../database/db_fashe.php';
 
-  $usersQuery = "select * from users";
+  if($_SESSION['login']['role'] < 3){
+    header('location: '. SITELINKADMIN );
+    die;
+  }
+  
+  $usersQuery = "select * from users order by role desc";
   $stmt = $conn->prepare($usersQuery);
   $stmt->execute();
   $users = $stmt->fetchAll();

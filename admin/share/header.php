@@ -68,7 +68,7 @@
                   <?php if ($avt['id']==$_SESSION['login']['id']): ?>
                     
                     <?php if (!empty($avt['avatar'])): ?>
-                       <img src="<?= SITELINK . $avt['avatar'] ?>" class="img-circle" height="21" width="30" alt="User Image">
+                       <img src="<?= SITELINK . $avt['avatar'] ?>" class="img-circle" height="21" width="22" alt="User Image">
                     <?php else: ?>
                        <img src="<?= SITELINKADMIN ?>dist/img/logoadmin.png" class="img-circle" alt="User Image" height="21" width="30">
                     <?php endif ?>

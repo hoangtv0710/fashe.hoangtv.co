@@ -209,7 +209,9 @@
           </li>
         </ul>
       </li>
-
+    
+    <?php if ($_SESSION['login']['role'] == 3): ?>
+    
       <li class="treeview">
         <a href="#">
           <i class="fa fa-users"></i> <span>Tài khoản</span>
@@ -240,6 +242,8 @@
           </li>
         </ul>
       </li>
+
+    <?php endif ?>
       
     </ul>
   </section>

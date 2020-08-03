@@ -181,6 +181,8 @@
           </div>
         </div>
 
+      <?php if ($_SESSION['login']['role'] == 3): ?>
+
         <div class="col-lg-3 col-xs-6">
           <!-- small box -->
           <div class="small-box bg-aqua">
@@ -195,6 +197,8 @@
             <a href="<?= SITELINKADMIN ?>/tai-khoan" class="small-box-footer">Quản lý tài khoản  <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
+        
+      <?php endif ?>
 
 
         <!-- ./col -->
