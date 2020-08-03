@@ -31,8 +31,11 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Tài khoản
+        Tài khoản :
       </h1>
+        1: Member,&ensp;
+        2: Moderator,&ensp;
+        3: Admin	
       <ol class="breadcrumb">
         <li><a href="<?= SITELINKADMIN ?>"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="active">Tài khoản</li>

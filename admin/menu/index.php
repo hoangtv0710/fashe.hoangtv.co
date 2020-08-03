@@ -55,8 +55,7 @@
                   <th style="width: 10px">#</th>
                   <th>Tên</th>
                   <th>Dropdown-menu</th>
-                  <th style="width: 240px">Đường dẫn</th>
-                  <th style="width: 240px">Người tạo</th>
+                  <th>Đường dẫn</th>
                   <th style="width: 120px">
                     <a 
                       href="add.php" 
@@ -77,7 +76,6 @@
                     <td>
                       <a href="<?= $item['link_url']?>" target="_blank"><?= $item['link_url']?></a>
                     </td>
-                    <td><?= $item['created_by']?></td>
                     <td>
                       <a 
                         href="edit.php?id=<?= $item['id']?>" 

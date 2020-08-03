@@ -13,7 +13,6 @@
 	$sort_order = $_POST['sort_order'];
 	$effect = $_POST['effect'];
 	$link_url = $_POST['link_url'];
-	$created_by = $_SESSION['login']['id'];
 
 	if ($title == "" || $sort_order == "" || file_exists($file)) {
 		header('location:' . SITELINKADMIN . '/slide-show/add.php?err=Không để trống mục này!&title='.$title.'&link_url='.$link_url.'&sort_order='.$sort_order);
@@ -41,7 +40,7 @@
 
 
 
-	$sql = "insert into slideshows (image, title, caption, sort_order, effect, link_url, created_by) values (:image, :title, :caption, :sort_order, :effect, :link_url, :created_by)";
+	$sql = "insert into slideshows (image, title, caption, sort_order, effect, link_url) values (:image, :title, :caption, :sort_order, :effect, :link_url)";
 	$stmt = $conn->prepare($sql);
 	$stmt->bindParam(':image', $filename);
 	$stmt->bindParam(':title', $title);
@@ -49,7 +48,6 @@
 	$stmt->bindParam(':sort_order', $sort_order);
 	$stmt->bindParam(':effect', $effect);
 	$stmt->bindParam(':link_url', $link_url);
-	$stmt->bindParam(':created_by', $created_by);
 	$stmt->execute();
 
 

@@ -9,7 +9,6 @@
 
 	$name = trim($_POST['name']);
 	$link_url = $_POST['link_url'];
-	$created_by = $_SESSION['login']['id'];
 
 	if($name == ""){
 		header('location: '. SITELINKADMIN . '/menu/add.php?errName=Không để trống tên menu!&name='.$name.'&link_url='.$link_url);
@@ -26,7 +25,7 @@
 	}
 
 
-	$sql = "insert into menus (name, link_url, created_by) values ('$name', '$link_url', '$created_by')";
+	$sql = "insert into menus (name, link_url) values ('$name', '$link_url')";
 	$stmt = $conn->prepare($sql);
 	$stmt->execute();
 

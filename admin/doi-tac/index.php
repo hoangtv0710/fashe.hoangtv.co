@@ -56,7 +56,6 @@
                   <th>Tên đối tác</th>
                   <th style="width: 150px">Ảnh</th>
                   <th>Url</th>
-                  <th>Người tạo</th>
                   <th style="width: 120px">
                     <a 
                       href="add.php" 
@@ -77,8 +76,6 @@
                      <td><img src="<?= SITELINK . $item['image']?>" class="img-responsive"></td>
 
                     <td><a href="<?= $item['url']?>"><?= $item['url']?></a></td>
-
-                    <td><?= $item['created_by']?></td>
 
                     <td>
                       <a 

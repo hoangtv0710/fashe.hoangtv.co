@@ -10,7 +10,6 @@
 	$file = $_FILES['image'];
 	$name = $_POST['name'];
 	$url = $_POST['url'];
-	$created_by = $_SESSION['login']['id'];
 
 	$sql = "select * from brands where name = '$name'";
 	$kq = $conn->prepare($sql);
@@ -33,12 +32,11 @@
 
 
 
-	$sql = "insert into brands (image, name, url, created_by) values (:image, :name, :url, :created_by)";
+	$sql = "insert into brands (image, name, url) values (:image, :name, :url)";
 	$stmt = $conn->prepare($sql);
 	$stmt->bindParam(':image', $filename);
 	$stmt->bindParam(':name', $name);
 	$stmt->bindParam(':url', $url);
-	$stmt->bindParam(':created_by', $created_by);
 	$stmt->execute();
 
 

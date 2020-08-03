@@ -57,7 +57,6 @@
                   <th>Số thứ tự</th>
                   <th>Hiệu ứng</th>
                   <th>Đường dẫn</th>
-                  <th>Người tạo</th>
                   <th style="width: 120px">
                     <a 
                       href="add.php" 
@@ -83,8 +82,6 @@
                     <td><?= $item['effect']?></td>
 
                     <td><?= $item['link_url']?></td>
-
-                    <td><?= $item['created_by']?></td>
 
                     <td>
                        <a 

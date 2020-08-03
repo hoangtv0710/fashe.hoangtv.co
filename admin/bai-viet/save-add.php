@@ -7,7 +7,7 @@
 		die;
 	}
 
-	$created_by = $_SESSION['login']['id'];
+	$created_by = $_SESSION['login']['fullname'];
 	$title = trim($_POST['title']);
 	$cate_id = $_POST['cate_id'];
 	$short_desc = $_POST['short_desc'];

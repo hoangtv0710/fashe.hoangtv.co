@@ -116,7 +116,7 @@
               </div>
 
               <div class="text-right">
-                <a href=./" class="btn btn-danger btn-xs">Huỷ</a>
+                <a href="./" class="btn btn-danger btn-xs">Huỷ</a>
                 <button class="btn btn-xs btn-primary" type="submit">Lưu</button>
               </div>  
 
