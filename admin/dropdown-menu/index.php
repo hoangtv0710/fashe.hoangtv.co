@@ -77,7 +77,7 @@
 
                     <td><?= $item['title']?></td>
 
-                    <td><a href="<?= $item['url']?>"><?= $item['url']?></a></td>
+                    <td><a href="<?= SITELINK . $item['url']?>" target="_blank"><?= $item['url']?></a></td>
                     <td>
                       <a 
                         href="edit.php?id=<?= $item['id']?>" 

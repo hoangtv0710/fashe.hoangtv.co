@@ -74,7 +74,7 @@
                       <?= $item['total_menu']?>
                     </td>
                     <td>
-                      <a href="<?= $item['link_url']?>" target="_blank"><?= $item['link_url']?></a>
+                      <a href="<?= SITELINK . $item['link_url']?>" target="_blank"><?= $item['link_url']?></a>
                     </td>
                     <td>
                       <a 

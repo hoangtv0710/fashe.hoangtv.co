@@ -29,6 +29,9 @@
 					</h4>
 
 					<ul>
+						<li class="p-b-9"">
+							<a href="<?= SITELINK ?>" class="s-text7 text-uppercase">Trang chủ</a>
+						</li>
 						<?php foreach ($menu as $m): ?>
 							<li class="p-b-9">
 								<a href="<?= $m['link_url'] ?>" class="s-text7 text-uppercase">
