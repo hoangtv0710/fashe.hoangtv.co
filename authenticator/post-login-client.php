@@ -4,7 +4,7 @@
 
 	// kiem tra xem loai request co phai loai post hay khong
 	if($_SERVER['REQUEST_METHOD'] != "POST"){
-		header('location: '.$siteurl );
+		header('location: '. SITELINK );
 		die;
 	}
 	$email = $_POST['email'];
@@ -16,23 +16,23 @@
 	$user = $stmt->fetch();
 
 	if ($email == "") {
-		header('location:' . $siteurlz . "login-client.php?errorEmail=Email không được bỏ trống!");
+		header('location:'  . "login-client.php?errorEmail=Email không được bỏ trống!");
 		die;
 	}
 	if ($password == "") {
-		header('location:' . $siteurlz . "login-client.php?errorPass=Mật khẩu không được bỏ trống!&email=".$email);
+		header('location:'  . "login-client.php?errorPass=Mật khẩu không được bỏ trống!&email=".$email);
 		die;
 	}
 
 	if($user == false || password_verify($password, $user['password']) == false){
-		header('location: '.$siteurlz. "login-client.php?msg=Sai email hoặc mật khẩu&email=".$email);
+		header('location: ' . "login-client.php?msg=Sai email hoặc mật khẩu&email=".$email);
 		die;
 	}
 
 
 	$_SESSION['login'] = $user;
 
-	header("location: ". $siteurl);
+	header("location: ". SITELINK);
 	die;
 
 	

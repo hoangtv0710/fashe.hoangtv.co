@@ -4,83 +4,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>LOGIN - CLIENT</title>
-<!-- Meta tag Keywords -->
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Glassy Login Form Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements" />
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
-function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!-- Meta tag Keywords -->
-<!-- css files -->
-
-<link rel="stylesheet" href="<?= SITELINK ?>css/font-awesome.css"> <!-- Font-Awesome-Icons-CSS -->
-<link rel="stylesheet" href="<?= SITELINK ?>css/style.css" type="text/css" media="all" /> <!-- Style-CSS --> 
-<link rel="stylesheet" href="<?= SITELINKADMIN ?>/adminlte/plugins/Toastr/toastr.min.css">
-<!-- //css files -->
-<!-- web-fonts -->
-
-<link href="<?= SITELINK ?>//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700" rel="stylesheet">
-<link href="<?= SITELINK ?>//fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700" rel="stylesheet">
-<!-- //web-fonts -->
+	<title>LOGIN - CLIENT</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="<?= SITELINKADMIN ?>/adminlte/plugins/Toastr/toastr.min.css">
+	<link rel="stylesheet" href="<?= SITELINK ?>/css/authenticator.css">
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 </head>
 <body>
-		<!--header-->
-		<div class="header-w3l">
-			<h1>LOGIN - CLIENT</h1><div style="text-align: center; margin-bottom: 15px;"><a href="<?= SITELINK ?>">Về trang chủ</a></div>
+
+	<div class="wrapper fadeInDown">
+		<div id="formContent">
+
+			<div class="fadeIn first">
+				<a href="<?= SITELINK ?>"><img src="<?= SITELINK ?>images/icons/logo.png" id="icon" alt="User Icon"></a>
+			</div>
+
+			<!-- Login Form -->
+			<form action="post-login-client.php" method="post">
+				<?php if (isset($_GET['err'])): ?>
+					<h3 style="color: red; text-align: center; padding-bottom: 10px;"><?= $_GET['err'] ?></h3><br>
+				<?php endif ?>
+
+				<input type="text" name="email" class="fadeIn third" placeholder="Email " <?php if (isset($_GET['email'])): ?>
+					value="<?= $_GET['email'] ?>"
+				<?php endif ?>><br>
+				<?php if (isset($_GET['errorEmail'])): ?>
+					<span style="color: red"><?= $_GET["errorEmail"] ?></span>
+				<?php endif ?>
+
+				<input type="password" id="password" class="fadeIn third" name="password" placeholder="Mật khẩu"><br>
+				<?php if (isset($_GET['errorPass'])): ?>
+					<span style="color: red"><?= $_GET["errorPass"] ?></span>
+				<?php endif ?>
+
+				<?php if (isset($_GET['msg'])): ?>
+					<span style="color: red"><?= $_GET["msg"] ?></span>
+				<?php endif ?>
+
+				<input type="submit" class="fadeIn fourth mt-2" value="Đăng nhập">
+
+				<div class="text-center m-2">Nếu bạn chưa có tài khoản hãy <a href="registration.php"> đăng ký</a></div>
+			</form>
+
 		</div>
-		<!--//header-->
-		<!--main-->
-		<div class="main-w3layouts-agileinfo">
-	           <!--form-stars-here-->
-						<div class="wthree-form">
-							<h2>Đăng nhập để tiếp tục</h2>
-							<?php if (isset($_GET['err'])): ?>
-								<h3 style="color: red; text-align: center; padding-bottom: 10px;"><?= $_GET['err'] ?></h3>
-							<?php endif ?>
-							<form action="post-login-client.php" method="post">
+	</div>
 
-								<div class="form-sub-w3">
-									<input type="text" name="email" placeholder="Email " <?php if (isset($_GET['email'])): ?>
-										value="<?= $_GET['email'] ?>"
-									<?php endif ?>>
-								<div class="icon-w3">
-									<i class="fa fa-user" aria-hidden="true"></i>
-								</div>
-								</div>
-								<?php if (isset($_GET['errorEmail'])): ?>
-			 						<span style="color: red"><?= $_GET["errorEmail"] ?></span>
-			 					<?php endif ?>
-
-								<div class="form-sub-w3">
-									<input type="password" name="password" placeholder="Password" />
-								<div class="icon-w3">
-									<i class="fa fa-unlock-alt" aria-hidden="true"></i>
-								</div>
-								</div>
-								<?php if (isset($_GET['errorPass'])): ?>
-			 						<span style="color: red"><?= $_GET["errorPass"] ?></span>
-			 					<?php endif ?>
-								<?php if (isset($_GET['msg'])): ?>
-			 						<span style="color: red"><?= $_GET["msg"] ?></span>
-			 					<?php endif ?>
-								<div class="clear"></div>
-
-								<div class="submit-agileits">
-									<input type="submit" value="Đăng nhập">
-								</div>
-								<div style="text-align: center; margin-top: 15px; color: #fff">Nếu bạn chưa có tài khoản hãy<a href="registration.php"> đăng ký</a></div>
-
-							</form>
-
-						</div>
-				<!--//form-ends-here-->
-			
-		</div>
-		<!--//footer-->
 <script type="text/javascript" src="<?= SITELINK ?>vendor/jquery/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" src="<?= SITELINKADMIN ?>/adminlte/plugins/Toastr/toastr.min.js""></script>
+<script type="text/javascript" src="<?= SITELINKADMIN ?>/adminlte/plugins/Toastr/toastr.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 		
 		<?php if (isset($_GET['sce']) && $_GET['sce'] == true) {
