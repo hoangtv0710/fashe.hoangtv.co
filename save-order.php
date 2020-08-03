@@ -28,10 +28,12 @@
 	$note = $_POST['message'];
 	date_default_timezone_set('Asia/Ho_Chi_Minh');
 	$created_date = date('d-m-Y H:i');
+	$status = 0;
 
 	
 
-	$sql = "insert into invoices (customer_name, phone_number, address, note, email, created_date, discount_code, discount_percent ) values ('$customer_name', '$phone_number', '$address', '$note', '$email', '$created_date' ,'$dc', '$discount_percent')";
+	$sql = "insert into invoices (customer_name, phone_number, address, note, email, created_date, discount_code, discount_percent, status) 
+			values ('$customer_name', '$phone_number', '$address', '$note', '$email', '$created_date' ,'$dc', '$discount_percent', '$status')";
 	$stmt = $conn->prepare($sql);
 	$stmt->execute();
 	
