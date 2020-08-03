@@ -3,6 +3,11 @@
   $path = "../";
   require_once $path.'../database/db_fashe.php';
 
+  if($_SESSION['login']['role'] < 3){
+    header('location: '. SITELINKADMIN );
+    die;
+  }
+  
   $id = $_GET['id'];
 
   $sql = "select * from users where id = $id";

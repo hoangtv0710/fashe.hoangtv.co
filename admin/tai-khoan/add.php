@@ -3,6 +3,11 @@
   $path = "../";
   require_once $path.'../database/db_fashe.php';
 
+  if($_SESSION['login']['role'] < 3){
+    header('location: '. SITELINKADMIN );
+    die;
+  }
+
  ?>
 <!DOCTYPE html>
 <html>
