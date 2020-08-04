@@ -33,7 +33,7 @@ use PHPMailer\PHPMailer\Exception;
     $mail->Body    = $discount_code;
     //Gửi
     $mail->send();
-   header('location:'. SITELINK .'authenticator/login-client.php?success=true'.'&dc='.$discount_code);
+   header('location:'. SITELINK .'authenticator/login-client.php?success=true');
 } catch (Exception $e) {
 	echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
 }

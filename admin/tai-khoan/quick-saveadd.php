@@ -7,6 +7,7 @@
 		die;
 	}
 
+	// sinh mã giảm giá
 	$randomNumber = rand(10000, 99999);
 	function randomString($length = 5)
 	{
@@ -22,6 +23,8 @@
 	}
 	$randomString = randomString();
 	$randomStr = $randomString.$randomNumber;
+	// end
+
 	$percent = 10;
 
 	$email = trim($_POST['email']);

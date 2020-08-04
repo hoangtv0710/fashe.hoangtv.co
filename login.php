@@ -19,6 +19,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- web-fonts -->
 <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700" rel="stylesheet">
 <link href="//fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700" rel="stylesheet">
+<link rel="icon" type="image/png" href="images/icons/favicon.png"/>
 <!-- //web-fonts -->
 </head>
 <body>

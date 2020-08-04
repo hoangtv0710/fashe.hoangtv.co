@@ -13,7 +13,7 @@
 
 	        	<?php foreach ($brand as $b): ?>
 	        		<div>
-		                <a href="<?= $b['url'] ?>"><img data-u="image" src="<?= $b['image'] ?>" /></a>
+		                <a href="<?= $b['url'] ?>" target="_blank"><img data-u="image" src="<?= $b['image'] ?>" /></a>
 		            </div>
 	        	<?php endforeach ?>
 		            

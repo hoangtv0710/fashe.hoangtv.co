@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="<?= SITELINKADMIN ?>/adminlte/plugins/Toastr/toastr.min.css">
 	<link rel="stylesheet" href="<?= SITELINK ?>/css/authenticator.css">
 	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<link rel="icon" type="image/png" href="../images/icons/favicon.png"/>
 </head>
 <body>
 
