@@ -193,22 +193,6 @@
         </ul>
       </li>
 
-      <li class="treeview">
-        <a href="#">
-          <i class="fa fa-list-alt"></i> <span>Menus</span>
-          <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
-          </span>
-        </a>
-        <ul class="treeview-menu">
-          <li class="">
-            <a href="<?= SITELINKADMIN ?>/menu"><i class="fa fa-circle-o"></i>Danh sách</a>
-          </li>
-          <li class="">
-            <a href="<?= SITELINKADMIN ?>/dropdown-menu"><i class="fa fa-circle-o"></i>Dropdown-menu</a>
-          </li>
-        </ul>
-      </li>
     
     <?php if ($_SESSION['login']['role'] == 3): ?>
     

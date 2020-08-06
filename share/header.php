@@ -14,15 +14,15 @@
 	$stmt->execute();
 	$ws = $stmt->fetch();
 
-	$menusQuery = "select * from menus";
-	$stmt = $conn->prepare($menusQuery);
+	$sub_cate = "select * from product_categories";
+	$stmt = $conn->prepare($sub_cate);
 	$stmt->execute();
-	$menu = $stmt->fetchall();
+	$subcate = $stmt->fetchall();
 
-	$menusQuery = "select * from menu_galleries";
-	$stmt = $conn->prepare($menusQuery);
+	$sub_cate_post = "select * from post_categories";
+	$stmt = $conn->prepare($sub_cate_post);
 	$stmt->execute();
-	$menu_galleries = $stmt->fetchall();
+	$subcatepost = $stmt->fetchall();
 
  ?>
 	<header class="header1">
@@ -61,20 +61,29 @@
 								<li class="text-uppercase">
 									<a href="<?= SITELINK ?>">Trang chủ</a>
 								</li>
-								<?php foreach ($menu as $m): ?>
-									<li class="text-uppercase">
-										<a href="<?= $m['link_url'] ?>"><?= $m['name'] ?></a>
-										<ul class="sub_menu">
-											<?php foreach ($menu_galleries as $mg): ?>
-												<?php if ($mg['menu_id']==$m['id']): ?>
-													<li><a href="<?= $mg['url'] ?>"><?= $mg['title'] ?></a></li>
-												<?php endif ?>
-											<?php endforeach ?>
-										</ul>
-									</li>
-								
-								<?php endforeach ?>
-
+								<li class="text-uppercase">
+									<a href="product.php">Sản phẩm</a>
+									<ul class="sub_menu">
+										<?php foreach ($subcate as $sc): ?>
+											<li><a href="product.php?id=<?= $sc['id'] ?>"><?= $sc['name'] ?></a></li>
+										<?php endforeach ?>
+									</ul>
+								</li>
+								<li class="text-uppercase">
+									<a href="about.php">giới thiệu</a>
+								</li>
+								<li class="text-uppercase">
+									<a href="contact.php">liên hệ</a>
+								</li>
+								<li class="text-uppercase">
+									<a href="blog.php">Blog</a>
+									<ul class="sub_menu">
+										<?php foreach ($subcatepost as $scp): ?>
+											<li><a href="blog.php?id=<?= $scp['id'] ?>"><?= $scp['name'] ?></a></li>
+										<?php endforeach ?>
+									</ul>
+								</li>
+									
 								<li>
 									|
 								</li>

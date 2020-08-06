@@ -29,16 +29,21 @@
 					</h4>
 
 					<ul>
-						<li class="p-b-9"">
+						<li class="p-b-9">
 							<a href="<?= SITELINK ?>" class="s-text7 text-uppercase">Trang chủ</a>
 						</li>
-						<?php foreach ($menu as $m): ?>
-							<li class="p-b-9">
-								<a href="<?= $m['link_url'] ?>" class="s-text7 text-uppercase">
-									<?= $m['name'] ?>
-								</a>
-							</li>
-						<?php endforeach ?>
+						<li class="p-b-9">
+							<a href="product.php" class="s-text7 text-uppercase">Sản phẩm</a>
+						</li>
+						<li class="p-b-9">
+							<a href="about.php" class="s-text7 text-uppercase">Giới thiệu</a>
+						</li>
+						<li class="p-b-9">
+							<a href="contact.php" class="s-text7 text-uppercase">Liên hệ</a>
+						</li>
+						<li class="p-b-9">
+							<a href="blog.php" class="s-text7 text-uppercase">Blog</a>
+						</li>
 					</ul>
 				</div>
 				<div class="m-r-50"></div>
