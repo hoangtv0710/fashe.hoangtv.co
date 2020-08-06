@@ -6,7 +6,7 @@
 	$stmt->execute();
 	$brand = $stmt->fetchall();
 
-	$bannersQuery = "select * from banners where page ='home' order by sort_order asc";
+	$bannersQuery = "select * from banners where page ='home' order by sort_order asc limit 3";
 	$stmt = $conn->prepare($bannersQuery);
 	$stmt->execute();
 	$banner = $stmt->fetchall();

@@ -17,11 +17,7 @@
 	}
 
 	$cart = isset($_SESSION['CART']) == true ? $_SESSION['CART'] : [];
-	// if (isset($_SESSION['CART']) == true)){
-	// 	 $_SESSION['CART'] = $_SESSION['CART']
-	// } else {
-	// 	 $_SESSION['CART'] = []
-	// }
+	
 	if (count($cart) == 0) {
 		$item['quantity'] = 1;
 		array_push($cart, $item);
