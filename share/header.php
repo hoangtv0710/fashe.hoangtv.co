@@ -233,87 +233,123 @@
 			<div class="btn-show-menu">
 				<!-- Header Icon mobile -->
 				<div class="header-icons-mobile">
-					<a href="#" class="header-wrapicon1 dis-block">
-						<img src="images/icons/icon-header-01.png" class="header-icon1" alt="ICON">
-					</a>
+					<?php if (isset($_SESSION['login'])): ?>
+						<div class="header-wrapicon2">
+
+								<img src="<?= $_SESSION['login']['avatar']  ?>" class="header-icon1 js-show-header-dropdown"> <?= $_SESSION['login']['fullname'] ?>
+
+							<!-- Header cart noti -->
+							<div class="header-cart header-dropdown">
+								<div class="header-cart-buttons">
+									<div class="header-cart-wrapbtn">
+										<!-- Button -->
+										<a href="account.php" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+											Thông tin
+										</a>
+									</div>
+
+									<div class="header-cart-wrapbtn">
+										<!-- Button -->
+										<a href="authenticator/logout-client.php" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+											Đăng xuất
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					<?php else: ?>
+						<a href="authenticator/login-client.php" class="header-wrapicon1 dis-block">
+							<i class="fa fa-sign-in fa-lg" title="Đăng nhập / Đăng kí"></i>
+						</a>
+					<?php endif ?>
+
 
 					<span class="linedivide2"></span>
 
 					<div class="header-wrapicon2">
 						<img src="images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
-						<span class="header-icons-noti">0</span>
+						<span class="header-icons-noti"><?= $totalCart ?></span>
+
 
 						<!-- Header cart noti -->
 						<div class="header-cart header-dropdown">
 							<ul class="header-cart-wrapitem">
-								<li class="header-cart-item">
-									<div class="header-cart-item-img">
-										<img src="images/item-cart-01.jpg" alt="IMG">
-									</div>
+								<?php if (!empty($cart)): ?>
+									<?php foreach ($cart as $cart_product): ?>
+										<?php if (empty($cart_product['sell_price'])): ?>
+											<li class="header-cart-item">
+												<div class="header-cart-item-img">
+													<img src="<?= $cart_product['image'] ?>" alt="IMG">
+												</div>
 
-									<div class="header-cart-item-txt">
-										<a href="#" class="header-cart-item-name">
-											White Shirt With Pleat Detail Back
-										</a>
+												<div class="header-cart-item-txt">
+													<a href="#" class="header-cart-item-name text-uppercase">
+														<?= $cart_product['product_name'] ?>
+													</a>
 
-										<span class="header-cart-item-info">
-											1 x $19.00
-										</span>
-									</div>
-								</li>
+													<span class="header-cart-item-info">
+														<?= $cart_product['quantity'] ?> x <?= number_format($cart_product['price']) ?>
+													</span>
+												</div>
+											</li>
+											<?php 
+												$total_price += $cart_product['price']*$cart_product['quantity'];
+											 ?>
+										<?php else: ?>
+											<li class="header-cart-item">
+												<div class="header-cart-item-img">
+													<img src="<?= $cart_product['image'] ?>" alt="IMG">
+												</div>
 
-								<li class="header-cart-item">
-									<div class="header-cart-item-img">
-										<img src="images/item-cart-02.jpg" alt="IMG">
-									</div>
+												<div class="header-cart-item-txt">
+													<a href="#" class="header-cart-item-name text-uppercase">
+														<?= $cart_product['product_name'] ?>
+													</a>
 
-									<div class="header-cart-item-txt">
-										<a href="#" class="header-cart-item-name">
-											Converse All Star Hi Black Canvas
-										</a>
+													<span class="header-cart-item-info">
+														<?= $cart_product['quantity'] ?> x <?= number_format($cart_product['sell_price']) ?>
+													</span>
+												</div>
+											</li>
+											<?php 
+												$total_price += $cart_product['sell_price']*$cart_product['quantity'];
+											 ?>
+										<?php endif ?>
+										
+									<?php endforeach ?>
+								<?php else: ?>
+									<?= "Không có sản phẩm trong giỏ hàng"; ?>
+								<?php endif ?>
+									
+								
 
-										<span class="header-cart-item-info">
-											1 x $39.00
-										</span>
-									</div>
-								</li>
-
-								<li class="header-cart-item">
-									<div class="header-cart-item-img">
-										<img src="images/item-cart-03.jpg" alt="IMG">
-									</div>
-
-									<div class="header-cart-item-txt">
-										<a href="#" class="header-cart-item-name">
-											Nixon Porter Leather Watch In Tan
-										</a>
-
-										<span class="header-cart-item-info">
-											1 x $17.00
-										</span>
-									</div>
-								</li>
 							</ul>
+							
+							<?php if ($total_price > 0): ?>
 
-							<div class="header-cart-total">
-								Total: $75.00
-							</div>
-
-							<div class="header-cart-buttons">
-								<div class="header-cart-wrapbtn">
-									<!-- Button -->
-									<a href="cart.html" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
-										Xem giỏ hàng
-									</a>
+								<div class="header-cart-total">
+									Tổng: <?= number_format($total_price) ?>
 								</div>
 
-								<div class="header-cart-wrapbtn">
-									<!-- Button -->
-									<a href="#" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
-										Check Out
-									</a>
+								
+
+								<div class="header-cart-buttons">
+									<div class="header-cart-wrapbtn">
+										<!-- Button -->
+										<a href="cart.php" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+											Xem giỏ hàng
+										</a>
+									</div>
+
+									<div class="header-cart-wrapbtn">
+										<a href="send_cart.php" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+											Mua hàng
+										</a>										
+									</div>
 								</div>
-							</div>
+
+							<?php endif ?>
+							
 						</div>
 					</div>
 				</div>
@@ -332,14 +368,14 @@
 				<ul class="main-menu">
 					<li class="item-topbar-mobile p-l-20 p-t-8 p-b-8">
 						<span class="topbar-child1">
-							Miễn phí giao hàng cho đơn hàng trên 400.000 VND
+							<?= $ws['slogan'] ?>
 						</span>
 					</li>
 
 					<li class="item-topbar-mobile p-l-20 p-t-8 p-b-8">
 						<div class="topbar-child2-mobile">
 							<span class="topbar-email">
-								fashe@example.com
+								<?= $ws['email'] ?>
 							</span>
 						</div>
 					</li>
@@ -360,9 +396,9 @@
 					<li class="item-menu-mobile">
 						<a href="product.php">SẢN PHẨM</a>
 						<ul class="sub-menu">
-							<li><a href="index.php">Homepage V1</a></li>
-							<li><a href="home-02.html">Homepage V2</a></li>
-							<li><a href="home-03.html">Homepage V3</a></li>
+							<?php foreach ($subcate as $sc): ?>
+								<li><a href="product.php?id=<?= $sc['id'] ?>"><?= $sc['name'] ?></a></li>
+							<?php endforeach ?>
 						</ul>
 						<i class="arrow-main-menu fa fa-angle-right" aria-hidden="true"></i>
 					</li>
@@ -373,6 +409,16 @@
 
 					<li class="item-menu-mobile">
 						<a href="contact.php">LIÊN HỆ</a>
+					</li>
+
+					<li class="item-menu-mobile">
+						<a href="blog.php">BLOG</a>
+						<ul class="sub-menu">
+							<?php foreach ($subcatepost as $scp): ?>
+								<li><a href="blog.php?id=<?= $scp['id'] ?>"><?= $scp['name'] ?></a></li>
+							<?php endforeach ?>
+						</ul>
+						<i class="arrow-main-menu fa fa-angle-right" aria-hidden="true"></i>
 					</li>
 				</ul>
 			</nav>

@@ -4,76 +4,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>LOGIN - ADMIN</title>
-<!-- Meta tag Keywords -->
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Glassy Login Form Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements" />
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
-function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!-- Meta tag Keywords -->
-<!-- css files -->
-<link rel="stylesheet" href="css/font-awesome.css"> <!-- Font-Awesome-Icons-CSS -->
-<link rel="stylesheet" href="css/style.css" type="text/css" media="all" /> <!-- Style-CSS --> 
-<!-- //css files -->
-<!-- web-fonts -->
-<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700" rel="stylesheet">
-<link href="//fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700" rel="stylesheet">
-<link rel="icon" type="image/png" href="images/icons/favicon.png"/>
-<!-- //web-fonts -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Admin | Log in</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://unpkg.com/tailwindcss@1.0.4/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="icon" type="image/png" href="images/icons/favicon.png"/>
 </head>
-<body>
-		<!--header-->
-		<div class="header-w3l">
-			<h1>LOGIN - ADMIN</h1>
-		</div>
-		<!--//header-->
-		<!--main-->
-		<div class="main-w3layouts-agileinfo">
-	           <!--form-stars-here-->
-						<div class="wthree-form">
-							<h2>Đăng nhập để tiếp tục</h2>
-							<?php if (isset($_GET['err'])): ?>
-								<h3 style="color: red; text-align: center; padding-bottom: 10px;"><?= $_GET['err'] ?></h3>
+
+<body class="font-mono h-screen overflow-hidden flex items-center justify-center" style="background: #edf2f7;">
+	<!-- Container -->
+	<div class="container">
+		<div class="flex justify-center px-6 my-12">
+			<div class="w-full xl:w-3/4 lg:w-11/12 flex">
+				<!-- Col -->
+				<div
+					class="w-full h-auto bg-gray-400 hidden lg:block lg:w-1/2 bg-cover rounded-l-lg"
+					style="background-image: url('images/icon-login-admin.jpg')"
+				></div>
+				<!-- Col -->
+				<div class="w-full lg:w-1/2 bg-white p-5 rounded-lg lg:rounded-l-none">
+					<div class="flex justify-center">
+						<a href="<?= SITELINK ?>">
+							<img src="<?= SITELINK ?>images/icons/logo.png" id="icon">
+						</a>
+					</div>
+					<h3 class="pt-4 text-2xl text-center">Đăng nhập để tiếp tục!</h3>
+					
+					<?php if (isset($_GET['err'])): ?>
+						<h3 style="color: red; text-align: center; padding-bottom: 10px;"><?= $_GET['err'] ?></h3>
+					<?php endif ?>
+					<form class="px-8 pt-6 pb-8 mb-4 bg-white rounded" action="post-login.php" method="post">
+						<div class="mb-4">
+							<label class="block mb-2 text-sm font-bold text-gray-700">
+								Email
+							</label>
+							<input class="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+							type="text" name="email" placeholder="Email" autofocus <?php if (isset($_GET['email'])): ?>
+								value="<?= $_GET['email'] ?>"
+							<?php endif ?>>
+
+							<?php if (isset($_GET['errorEmail'])): ?>
+								<span class="text-xs italic text-red-500"><?= $_GET["errorEmail"] ?></span>
 							<?php endif ?>
-							<form action="post-login.php" method="post">
-
-								<div class="form-sub-w3">
-									<input type="text" name="email" placeholder="Email " <?php if (isset($_GET['email'])): ?>
-										value="<?= $_GET['email'] ?>"
-									<?php endif ?>>
-								<div class="icon-w3">
-									<i class="fa fa-user" aria-hidden="true"></i>
-								</div>
-								</div>
-								<?php if (isset($_GET['errorEmail'])): ?>
-			 						<span style="color: red"><?= $_GET["errorEmail"] ?></span>
-			 					<?php endif ?>
-
-								<div class="form-sub-w3">
-									<input type="password" name="password" placeholder="Password" />
-								<div class="icon-w3">
-									<i class="fa fa-unlock-alt" aria-hidden="true"></i>
-								</div>
-								</div>
-								<?php if (isset($_GET['errorPass'])): ?>
-			 						<span style="color: red"><?= $_GET["errorPass"] ?></span>
-			 					<?php endif ?>
-								<?php if (isset($_GET['msg'])): ?>
-			 						<span style="color: red"><?= $_GET["msg"] ?></span>
-			 					<?php endif ?>
-								<div class="clear"></div>
-
-								<div class="submit-agileits">
-									<input type="submit" value="Đăng nhập">
-								</div>
-
-							</form>
-
 						</div>
-				<!--//form-ends-here-->
-			
+
+						<div class="mb-4">
+							<label class="block mb-2 text-sm font-bold text-gray-700" for="password">
+								Mật khẩu
+							</label>
+							<input class="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+							type="password" name="password" placeholder="***********" />
+							<?php if (isset($_GET['errorPass'])): ?>
+								<span class="text-xs italic text-red-500"><?= $_GET["errorPass"] ?></span>
+							<?php endif ?>
+							
+							<?php if (isset($_GET['msg'])): ?>
+								<span class="text-xs italic text-red-500"><?= $_GET["msg"] ?></span>
+							<?php endif ?>
+						</div>
+					
+						<div class="mb-6 text-center">
+							<button class="w-full px-4 py-2 font-bold text-white bg-blue-500 rounded-full hover:bg-blue-700 focus:outline-none focus:shadow-outline" type="submit">
+								Đăng nhập
+							</button>
+						</div>
+					</form>
+				</div>
+			</div>
 		</div>
-		<!--//footer-->
+	</div>
 </body>
 </html>
+

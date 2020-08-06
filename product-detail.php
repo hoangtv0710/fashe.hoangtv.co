@@ -133,7 +133,7 @@
 				</p>
 				
 				<!--  -->
-				<div class="p-t-33 p-b-60">
+				<div class="p-t-10 p-b-20">
 					<div class="flex-r-m flex-w p-t-10">
 						<div class="w-size16 flex-m flex-w">
 
@@ -145,13 +145,13 @@
 					</div>
 				</div>
 
-				<div class="p-b-45">
+				<div class="p-b-40">
 					<span class="s-text8 m-r-35">Mã sản phẩm: <?= $product['id'] ?></span>
 					<span class="s-text8">Danh mục: <a href="<?= 'product.php?id='.$categories['id'] ?>"><?= $categories['name'] ?></a></span>
 				</div>
 
 				<!--  -->
-				<div class="wrap-dropdown-content bo6 p-t-15 p-b-14">
+				<div class="wrap-dropdown-content bo6 p-t-15 p-b-14 active-dropdown-content">
 					<h5 class="js-toggle-dropdown-content flex-sb-m cs-pointer m-text19 color0-hov trans-0-4">
 						Mô tả sản phẩm
 						<i class="down-mark fs-12 color1 fa fa-minus dis-none" aria-hidden="true"></i>
