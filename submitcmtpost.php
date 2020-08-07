@@ -12,8 +12,10 @@
 	date_default_timezone_set('Asia/Ho_Chi_Minh');
 	$created_date = date('H:i d-m-Y');
 	$avatar = $_SESSION['login']['avatar'];
+	$status = 0;
 
-	$sql = "insert into post_comments (email,content,post_id, created_date, avatar) values ('$email', '$content', $post_id,'$created_date', '$avatar')";
+	$sql = "insert into post_comments (email, content, post_id, created_date, avatar, status) 
+			values ('$email', '$content', $post_id,'$created_date', '$avatar', '$status')";
 	$kq = $conn->prepare($sql);
 	$kq->execute();
 	header("location:" . SITELINK . "blog-detail.php?id=".$post_id.'&categories='.$categories.'&success=true');

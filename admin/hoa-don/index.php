@@ -4,7 +4,7 @@
   $path = "../";
   require_once $path.'../database/db_fashe.php';
 
-  $invoiceQuery = "select * from invoices";
+  $invoiceQuery = "select * from invoices order by status asc";
   $stmt = $conn->prepare($invoiceQuery);
   $stmt->execute();
   $invoice = $stmt->fetchAll();

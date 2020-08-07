@@ -40,18 +40,10 @@
 
       <li class="header">MAIN NAVIGATION</li>
 
-      <li class="treeview">
-        <a href="#">
+      <li>
+        <a href="<?= SITELINKADMIN ?>">
           <i class="fa fa-dashboard"></i> <span>Tổng quan</span>
-          <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
-          </span>
         </a>
-        <ul class="treeview-menu">
-          <li class="">
-            <a href="<?= SITELINKADMIN ?>/"><i class="fa fa-circle-o"></i> Thống kê</a>
-          </li>
-        </ul>
       </li>
 
       <li class="treeview">
@@ -114,35 +106,16 @@
         </ul>
       </li>
 
-      <li class="treeview">
-        <a href="#">
+      <li>
+        <a href="<?= SITELINKADMIN ?>/lien-he">
           <i class="fa fa-envelope"></i> <span>Liên hệ</span>
-          <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
-          </span>
         </a>
-        <ul class="treeview-menu">
-          <li class="">
-            <a href="<?= SITELINKADMIN ?>/lien-he"><i class="fa fa-circle-o"></i>Danh sách</a>
-          </li>
-        </ul>
       </li>
 
-      <li class="treeview">
-        <a href="#">
+      <li>
+        <a href="<?= SITELINKADMIN ?>/hoa-don">
           <i class="fa fa-shopping-cart"></i> <span>Hóa đơn</span>
-          <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
-          </span>
         </a>
-        <ul class="treeview-menu">
-          <li class="">
-            <a href="<?= SITELINKADMIN ?>/hoa-don"><i class="fa fa-circle-o"></i>Danh sách</a>
-          </li>
-          <li class="">
-            <a href="<?= SITELINKADMIN ?>/hoa-don-chi-tiet"><i class="fa fa-circle-o"></i>Chi tiết hóa đơn</a>
-          </li>
-        </ul>
       </li>
 
       <li class="treeview">
@@ -179,18 +152,10 @@
         </ul>
       </li>
 
-      <li class="treeview">
-        <a href="#">
+      <li>
+        <a href="<?= SITELINKADMIN ?>/banner">
           <i class="fa fa-picture-o"></i> <span>Banners</span>
-          <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
-          </span>
         </a>
-        <ul class="treeview-menu">
-          <li class="">
-            <a href="<?= SITELINKADMIN ?>/banner"><i class="fa fa-circle-o"></i>Danh sách</a>
-          </li>
-        </ul>
       </li>
 
     
@@ -213,18 +178,10 @@
         </ul>
       </li>
 
-      <li class="treeview">
-        <a href="#">
+      <li>
+        <a href="<?= SITELINKADMIN ?>/thong-tin-chung">
           <i class="fa fa-gears"></i> <span>Cấu hình hệ thống</span>
-          <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
-          </span>
         </a>
-        <ul class="treeview-menu">
-          <li class="">
-            <a href="<?= SITELINKADMIN ?>/thong-tin-chung"><i class="fa fa-circle-o"></i>Thông tin chung</a>
-          </li>
-        </ul>
       </li>
 
     <?php endif ?>

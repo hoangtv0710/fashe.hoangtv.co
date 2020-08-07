@@ -4,11 +4,10 @@
   $path = "../";
   require_once $path.'../database/db_fashe.php';
 
-  $sql = "select c.*, p.title as postname, p.cate_id as cate from post_comments c join posts p on c.post_id = p.id";
+  $sql = "select c.*, p.title as postname, p.cate_id as cate from post_comments c join posts p on c.post_id = p.id order by status asc";
   $stmt = $conn->prepare($sql);
   $stmt->execute();
   $comment = $stmt->fetchAll();
-
 
 ?>
 <!DOCTYPE html>
@@ -57,7 +56,7 @@
                   <th>Email</th>
                   <th>Nội dung</th>
                   <th>Tiêu đề bài viết</th>
-                  <th width="100">Mã bài viết</th>
+                  <th>Trạng thái</th>
                 </tr>
 
                 <?php foreach ($comment as $item): ?>
@@ -74,7 +73,15 @@
                         <a href="<?= SITELINK . 'blog-detail.php?id=' . $item['post_id']. '&categories='.$item['cate'] ?>" target="_blank"><?= $item['postname'] ?></a>
                     </td>
 
-                    <td><?= $item['post_id']?></td>
+                    <td>
+                      <form action="update_status.php" method="post">
+                        <input type="hidden" name="id" value="<?= $item['id'] ?>">
+                        <select class="form-control" name="status" onchange="this.form.submit()">
+                          <option value="0" <?php if($item['status'] == 0) :?> selected <?php endif ?> >Ẩn</option>
+                          <option value="1" <?php if($item['status'] == 1) :?> selected <?php endif ?> >Hiện</option>
+                        </select>
+                      </form>
+                    </td>
 
                     <td>
 

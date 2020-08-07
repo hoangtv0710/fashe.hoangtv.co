@@ -11,7 +11,8 @@ use PHPMailer\PHPMailer\Exception;
 	 $id = $_POST['id'];
 	 $email = $_POST['email'];
 	 $title = $_POST['title'];
-	 $content = $_POST['content'];
+    $content = $_POST['content'];
+    $status = 1;
 
 	 //check rỗng
 	 if (empty($title) || empty($content)) {
@@ -24,6 +25,9 @@ use PHPMailer\PHPMailer\Exception;
 	 	die;
 	 }*/
 
+   $sql = "update contacts set status = '$status' where id = '$id'";
+   $stmt = $conn->prepare($sql);
+   $stmt->execute();
 	
 
    $mail = new PHPMailer(true);                              // Passing `true` enables exceptions

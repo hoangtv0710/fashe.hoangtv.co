@@ -11,22 +11,22 @@
       die;
     }
     
-    $countInvoiceQuery = "select count(*) as total from invoices";
+    $countInvoiceQuery = "select count(*) as total from invoices where status = 0";
     $kq = $conn->prepare($countInvoiceQuery);
     $kq->execute();
     $invoices = $kq->fetch();
 
-    $countcmtProQuery = "select count(*) as total from product_comments";
+    $countcmtProQuery = "select count(*) as total from product_comments where status = 0";
     $kq = $conn->prepare($countcmtProQuery);
     $kq->execute();
     $countcmtPro = $kq->fetch();
 
-    $countcmtPQuery = "select count(*) as total from post_comments";
+    $countcmtPQuery = "select count(*) as total from post_comments where status = 0";
     $kq = $conn->prepare($countcmtPQuery);
     $kq->execute();
     $countcmtP = $kq->fetch();
 
-    $contactQuery = "select count(*) as total from contacts";
+    $contactQuery = "select count(*) as total from contacts where status = 0";
     $kq = $conn->prepare($contactQuery);
     $kq->execute();
     $contacts = $kq->fetch();
@@ -91,7 +91,7 @@
             <div class="inner">
               <h3><?= $invoices['total'] ?></h3>
 
-              <p>Hóa đơn</p>
+              <p>Đơn hàng mới</p>
             </div>
             <div class="icon">
               <i class="fa fa-shopping-cart"></i>
@@ -106,7 +106,7 @@
             <div class="inner">
               <h3><?= $countcmtPro['total']?></h3>
 
-              <p>Bình luận sản phẩm</p>
+              <p>Bình luận sản phẩm mới</p>
             </div>
             <div class="icon">
               <i class="fa fa-mail-forward"></i>
@@ -123,7 +123,7 @@
             <div class="inner">
               <h3><?= $countcmtP['total'] ?></h3>
 
-              <p>Bình luận bài viết</p>
+              <p>Bình luận bài viết mới</p>
             </div>
             <div class="icon">
               <i class="fa fa-mail-forward"></i>
@@ -138,7 +138,7 @@
             <div class="inner">
               <h3><?= $contacts['total'] ?></h3>
 
-              <p>Liên hệ</p>
+              <p>Liên hệ mới</p>
             </div>
             <div class="icon">
               <i class="fa fa-envelope"></i>
