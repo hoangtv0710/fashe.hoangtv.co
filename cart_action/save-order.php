@@ -1,8 +1,8 @@
 <?php 
 	session_start();
-	require_once './database/db_fashe.php';
+	require_once '../database/db_fashe.php';
 	if($_SERVER['REQUEST_METHOD'] != "POST"){
-		header('location: '.$siteurl . 'send_cart.php');
+		header('location: '. SITELINK . 'send_cart.php');
 		die;
 	}
 	$discount_code = $_POST['discount_code'];
@@ -76,7 +76,7 @@
 	$kq->execute();
 
 	unset($_SESSION['CART']);
-	header('location: send_cart.php?success=true');
+	header('location: ../send_cart.php?success=true');
 	die;
 
  ?>

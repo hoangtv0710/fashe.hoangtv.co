@@ -50,8 +50,7 @@
 <head>
 	<title><?= $product['product_name'] ?></title>
 	<meta charset="UTF-8">
-	<?php include 'share/linkAsset.php'; ?>
-	<link rel="stylesheet" href="<?= SITELINKADMIN ?>/adminlte/plugins/Toastr/toastr.min.css">
+	<?php include 'share/top_asset.php'; ?>
 </head>
 <body class="animsition">
 
@@ -139,7 +138,7 @@
 
 							<div class="btn-addcart-product-detail size9 trans-0-4 m-t-10 m-b-10">
 								<!-- Button -->
-								<a href="<?= "save-cart.php?id=".$product['id'] ?>" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 m-b-10">Thêm vào giỏ</a>
+								<a href="<?= "cart_action/save-cart.php?id=".$product['id'] ?>" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 m-b-10">Thêm vào giỏ</a>
 							</div>
 						</div>
 					</div>
@@ -249,7 +248,7 @@
 
 												<div class="block2-btn-addcart w-size1 trans-0-4">
 													<a href="<?= "product-detail.php?id=".$item['id']."&categories=".$item['cate_id'] ?>" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 m-b-10">Xem chi tiết</a>
-													<a href="<?= "save-cart.php?id=".$item['id'] ?>" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 m-b-10">Thêm vào giỏ</a>
+													<a href="<?= "cart_action/save-cart.php?id=".$item['id'] ?>" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 m-b-10">Thêm vào giỏ</a>
 												</div>
 											</div>
 										</div>
@@ -282,7 +281,7 @@
 
 												<div class="block2-btn-addcart w-size1 trans-0-4">
 													<a href="<?= "product-detail.php?id=".$item['id']."&categories=".$item['cate_id'] ?>" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 m-b-10">Xem chi tiết</a>
-													<a href="<?= "save-cart.php?id=".$item['id'] ?>" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 m-b-10">Thêm vào giỏ</a>
+													<a href="<?= "cart_action/save-cart.php?id=".$item['id'] ?>" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 m-b-10">Thêm vào giỏ</a>
 												</div>
 											</div>
 										</div>
@@ -330,7 +329,8 @@
 	<!-- Container Selection -->
 	<div id="dropDownSelect1"></div>
 	<div id="dropDownSelect2"></div>
-
+	
+	<?php include 'share/bottom_asset.php'; ?>
 
 	<script>
 		<?php if (!isset($_SESSION['login'])): ?>
@@ -353,26 +353,8 @@
 			}
 		<?php endif ?>
 	</script>
-<!--===============================================================================================-->
-	<script type="text/javascript" src="vendor/jquery/jquery-3.2.1.min.js"></script>
-	<script type="text/javascript" src="<?= $adminAssetUrl?>plugins/Toastr/toastr.min.js""></script>
-<!--===============================================================================================-->
-	<script type="text/javascript" src="vendor/animsition/js/animsition.min.js"></script>
-<!--===============================================================================================-->
-	<script type="text/javascript" src="vendor/bootstrap/js/popper.js"></script>
-	<script type="text/javascript" src="vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
-	<script type="text/javascript" src="vendor/select2/select2.min.js"></script>
-	<script type="text/javascript">
-		$(".selection-1").select2({
-			minimumResultsForSearch: 20,
-			dropdownParent: $('#dropDownSelect1')
-		});
 
-		$(".selection-2").select2({
-			minimumResultsForSearch: 20,
-			dropdownParent: $('#dropDownSelect2')
-		});
+	<script type="text/javascript">
 
 		<?php if (isset($_GET['success']) && $_GET['success'] == true) {
 	   		 ?>
@@ -397,36 +379,6 @@
 		    <?php
 		  } ?>
 	</script>
-<!--===============================================================================================-->
-	<script type="text/javascript" src="vendor/slick/slick.min.js"></script>
-	<script type="text/javascript" src="js/slick-custom.js"></script>
-<!--===============================================================================================-->
-	<script type="text/javascript" src="vendor/sweetalert/sweetalert.min.js"></script>
-	<script type="text/javascript">
-		$('.block2-btn-addcart').each(function(){
-			var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();
-			$(this).on('click', function(){
-				swal(nameProduct, "is added to cart !", "success");
-			});
-		});
-
-		$('.block2-btn-addwishlist').each(function(){
-			var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();
-			$(this).on('click', function(){
-				swal(nameProduct, "is added to wishlist !", "success");
-			});
-		});
-
-		$('.btn-addcart-product-detail').each(function(){
-			var nameProduct = $('.product-detail-name').html();
-			$(this).on('click', function(){
-				swal(nameProduct, "is added to wishlist !", "success");
-			});
-		});
-	</script>
-
-<!--===============================================================================================-->
-	<script src="js/main.js"></script>
 
 </body>
 </html>

@@ -2,10 +2,7 @@
 	$cart = isset($_SESSION['CART']) == true ? $_SESSION['CART'] : [];
 	$totalPrice = 0;
 	require_once 'database/db_fashe.php';
-	// if ($cart == null) {
-	// 	header('location: ' . $siteurl);
-	// 	die;
-	// }
+	
 	$bannerQuery = "select * from banners where page = 'cart'";
 	$stmt = $conn->prepare($bannerQuery);
 	$stmt->execute();
@@ -17,7 +14,7 @@
 <head>
 	<title>Giỏ hàng</title>
 	<meta charset="UTF-8">
-	<?php include 'share/linkAsset.php'; ?>
+	<?php include 'share/top_asset.php'; ?>
 </head>
 <body class="animsition">
 
@@ -36,7 +33,7 @@
 	<section class="cart bgwhite p-t-70 p-b-100">
 		<div class="container">
 			<!-- Cart item -->
-			<form action="update_cart.php" method="post">
+			<form action="cart_action/update_cart.php" method="post">
 				<div class="container-table-cart pos-relative">
 					<div class="wrap-table-shopping-cart bgwhite">
 						<table class="table-shopping-cart">
@@ -84,7 +81,7 @@
 												<?= number_format($item['price']*$item['quantity']) ?>
 											<?php endif ?>										
 										</td>
-										<td class="column-7"><a href="<?= "remove_cart.php?id=". $item['id'] ?>"><i class="fa fa-trash"></i></a></td>
+										<td class="column-7"><a href="cart_action/<?= "remove_cart.php?id=". $item['id'] ?>"><i class="fa fa-trash"></i></a></td>
 			
 									</tr>
 								<?php 
@@ -125,7 +122,7 @@
 											</div>
 										</td>
 										<td class="column-6"><?= number_format($item['sell_price']*$item['quantity']) ?></td>
-										<td class="column-7"><a href="<?= "remove_cart.php?id=". $item['id'] ?>"><i class="fa fa-trash"></i></a></td>
+										<td class="column-7"><a href="cart_action/<?= "remove_cart.php?id=". $item['id'] ?>"><i class="fa fa-trash"></i></a></td>
 									</tr>
 									<?php 
 										$totalPrice += $item['sell_price']*$item['quantity'];
@@ -141,7 +138,7 @@
 				<div class="flex-w flex-sb-m p-t-25 p-b-25 bo8 p-l-35 p-r-60 p-lr-15-sm">
 					<div>
 						<div class="size12 trans-0-4 m-t-10 m-b-10 m-r-10">
-							<a href="removeAllcart.php" class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4" >
+							<a href="cart_action/removeAllcart.php" class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4" >
 								Xóa tất cả
 							</a>
 							

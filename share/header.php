@@ -1,6 +1,5 @@
 <?php 
 	session_start();
-	require_once 'database/db_fashe.php';
 	$totalCart = 0;
 	if (isset($_SESSION['CART']) && count($_SESSION['CART']) > 0) {
 		$cart = $_SESSION['CART'];
@@ -196,8 +195,6 @@
 								<div class="header-cart-total">
 									Tổng: <?= number_format($total_price) ?>
 								</div>
-
-								
 
 								<div class="header-cart-buttons">
 									<div class="header-cart-wrapbtn">

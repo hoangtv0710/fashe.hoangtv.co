@@ -1,5 +1,5 @@
 <?php 
-	require_once './database/db_fashe.php';
+	require_once '../database/db_fashe.php';
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,7 +21,7 @@
 				<!-- Col -->
 				<div
 					class="w-full h-auto bg-gray-400 hidden lg:block lg:w-1/2 bg-cover rounded-l-lg"
-					style="background-image: url('images/icon-login-admin.jpg')"
+					style="background-image: url('../images/icon-login-admin.jpg')"
 				></div>
 				<!-- Col -->
 				<div class="w-full lg:w-1/2 bg-white p-5 rounded-lg lg:rounded-l-none">

@@ -23,8 +23,7 @@
 <head>
 	<title>Thanh toán</title>
 	<meta charset="UTF-8">
-	<?php include 'share/linkAsset.php'; ?>
-	<link rel="stylesheet" href="<?= SITELINKADMIN ?>/adminlte/plugins/Toastr/toastr.min.css">
+	<?php include 'share/top_asset.php'; ?>
 </head>
 <body class="animsition">
 
@@ -143,7 +142,7 @@
 						Mời nhập thông tin đề mua hàng
 						<hr>
 					</h4>
-		<form method="POST" action="save-order.php" class="leave-comment" name="form" onsubmit="return validate()">	
+		<form method="POST" action="cart_action/save-order.php" class="leave-comment" name="form" onsubmit="return validate()">	
 					<input type="hidden" name="discount_code" value="<?= $discount_code['code'] ?>">			
 					<input type="hidden" name="totalprice" value="<?= $total_ ?>">			
 					<!--  -->			
@@ -197,7 +196,8 @@
 	<!-- Container Selection -->
 	<div id="dropDownSelect1"></div>
 	<div id="dropDownSelect2"></div>
-
+	
+	<?php include 'share/bottom_asset.php'; ?>
 	
 	<script>
 		function checkCode () {
@@ -256,28 +256,8 @@
 
 		}
 	</script>
-<!--===============================================================================================-->
-	<script type="text/javascript" src="vendor/jquery/jquery-3.2.1.min.js"></script>
-	<script type="text/javascript" src="<?= SITELINKADMIN ?>/adminlte/plugins/Toastr/toastr.min.js"></script>
-<!--===============================================================================================-->
-	<script type="text/javascript" src="vendor/animsition/js/animsition.min.js"></script>
-<!--===============================================================================================-->
-	<script type="text/javascript" src="vendor/bootstrap/js/popper.js"></script>
-	<script type="text/javascript" src="vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
-	<script type="text/javascript" src="vendor/select2/select2.min.js"></script>
+
 	<script type="text/javascript">
-
-		$(".selection-1").select2({
-			minimumResultsForSearch: 20,
-			dropdownParent: $('#dropDownSelect1')
-		});
-
-		$(".selection-2").select2({
-			minimumResultsForSearch: 20,
-			dropdownParent: $('#dropDownSelect2')
-		});
-
 		<?php if (isset($_GET['success']) && $_GET['success'] == true) {
 	   		 ?>
 		    toastr.options = {
@@ -290,8 +270,8 @@
 		      "onclick": null,
 		      "showDuration": "300",
 		      "hideDuration": "1000",
-		      "timeOut": "6000",
-		      "extendedTimeOut": "1000",
+		      "timeOut": "7000",
+		      "extendedTimeOut": "7000",
 		      "showEasing": "swing",
 		      "hideEasing": "linear",
 		      "showMethod": "fadeIn",
@@ -301,11 +281,6 @@
 		    <?php
 		  } ?>
 	</script>
-<!--===============================================================================================-->
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKFWBqlKAGCeS1rMVoaNlwyayu0e0YRes"></script>
-	<script src="js/map-custom.js"></script>
-<!--===============================================================================================-->
-	<script src="js/main.js"></script>
 
 </body>
 </html>

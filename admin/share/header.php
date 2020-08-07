@@ -75,7 +75,6 @@
 
                   <?php endif ?>
                 <?php endforeach ?>
-              <span class="hidden-xs"><?= $_SESSION['login']['fullname'] ?></span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
@@ -92,35 +91,25 @@
 
                   <?php endif ?>
                 <?php endforeach ?>
-               
 
                 <p>
                   <?= $_SESSION['login']['fullname'] ?>
-                  <small><?= $_SESSION['login']['role'] ?></small>
+                  <small>
+                    <?php if ($_SESSION['login']['role'] == 3): ?>
+                        Admin
+                    <?php else: ?>
+                        Moderator
+                    <?php endif ?>
+                  </small>
                 </p>
-              </li>
-              <!-- Menu Body -->
-              <li class="user-body">
-                <div class="row">
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Followers</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Sales</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Friends</a>
-                  </div>
-                </div>
-                <!-- /.row -->
               </li>
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">Profile</a>
+                  <a href="<?= SITELINK ?>account.php" class="btn btn-default btn-flat" target=_blank>Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="<?= SITELINK ?>login.php" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="<?= SITELINKADMIN ?>/logout.php" class="btn btn-default btn-flat">Sign out</a>
                 </div>
               </li>
             </ul>

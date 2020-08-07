@@ -13,6 +13,7 @@
 		unset($_SESSION['CART'][$flag]);
 	}
 	
-	header('location: cart.php');
-	
 ?>
+<script>
+	history.back()
+</script>

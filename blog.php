@@ -51,7 +51,7 @@
 <head>
 	<title>Blog</title>
 	<meta charset="UTF-8">
-	<?php include 'share/linkAsset.php'; ?>
+	<?php include 'share/top_asset.php'; ?>
 </head>
 <body class="animsition">
 
@@ -252,29 +252,11 @@
 	<!-- Container Selection -->
 	<div id="dropDownSelect1"></div>
 	<div id="dropDownSelect2"></div>
+	
+	<?php include 'share/bottom_asset.php'; ?>
 
 
-
-<!--===============================================================================================-->
-	<script type="text/javascript" src="vendor/jquery/jquery-3.2.1.min.js"></script>
-<!--===============================================================================================-->
-	<script src="<?= SITELINKADMIN ?>/adminlte/plugins/twbs-pagination/jquery.twbsPagination.min.js"></script>
-	<script type="text/javascript" src="vendor/animsition/js/animsition.min.js"></script>
-<!--===============================================================================================-->
-	<script type="text/javascript" src="vendor/bootstrap/js/popper.js"></script>
-	<script type="text/javascript" src="vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
-	<script type="text/javascript" src="vendor/select2/select2.min.js"></script>
 	<script type="text/javascript">
-		$(".selection-1").select2({
-			minimumResultsForSearch: 20,
-			dropdownParent: $('#dropDownSelect1')
-		});
-
-		$(".selection-2").select2({
-			minimumResultsForSearch: 20,
-			dropdownParent: $('#dropDownSelect2')
-		});
 		//page
 			$('#pagination').twbsPagination({
 		      totalPages: <?= $totalPage?>,
@@ -288,8 +270,6 @@
 		      }
 		  });
 	</script>
-<!--===============================================================================================-->
-	<script src="js/main.js"></script>
 
 </body>
 </html>
