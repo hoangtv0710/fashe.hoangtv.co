@@ -1,10 +1,15 @@
 <?php 
-
+	session_start();
+	
 	require_once 'database/db_fashe.php';
-
 	$id = $_GET['id'];
 
-	$conn->query("update posts set views = views + 1 where id = '$id'");
+	$sessionKey = 'blog_' . $id;
+    $sessionView = $_SESSION[$sessionKey];
+    if (!$sessionView) { 
+        $_SESSION[$sessionKey] = 1; 
+        $conn->query("update posts set views = views + 1 where id = '$id'");
+	}
 
 	$sql = "select * from posts where id = '$id'";
 	$stmt = $conn->prepare($sql);
