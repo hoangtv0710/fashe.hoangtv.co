@@ -38,7 +38,7 @@
 	$stmt->execute();
 	$categories = $stmt->fetch();
 
-	$conmentSql = "select * from product_comments where product_id = $id order by id desc";
+	$conmentSql = "select * from product_comments where product_id = $id and status = 1 order by id desc";
 	$kq = $conn->prepare($conmentSql);
 	$kq->execute();
 	$comments = $kq->fetchall();
@@ -191,7 +191,7 @@
 						</button>
 					</div>
 					<div class="m-t-10"></div>
-					<a href="<?= SITELINK ?>authenticarot/login-client.php" id="err" class="text-danger s-text2"></a>
+					<a href="<?= SITELINK ?>authenticator/login-client.php" id="err" class="text-danger s-text2"></a>
 				</form>
 			</div>
 			<div class="col-md-6 m-t-30">

@@ -101,7 +101,7 @@
 					<?php if (isset($_SESSION['login'])): ?>
 						<div class="header-wrapicon2">
 
-								<img src="<?= $_SESSION['login']['avatar']  ?>" class="header-icon1 js-show-header-dropdown"> <?= $_SESSION['login']['fullname'] ?>
+								<img src="<?= $_SESSION['login']['avatar']  ?>" class="header-icon1 js-show-header-dropdown rounded-circle"> <?= $_SESSION['login']['fullname'] ?>
 
 							<!-- Header cart noti -->
 							<div class="header-cart header-dropdown">

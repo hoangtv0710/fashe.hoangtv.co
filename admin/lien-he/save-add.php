@@ -10,9 +10,10 @@
 	$email = $_POST['email'];
 	$phone_number = $_POST['phone_number'];
 	$message = $_POST['message'];
+	$status = 0;
 
 
-	$sql = "insert into contacts (name, email, phone_number, message ) values ('$name', '$email', '$phone_number', '$message')";
+	$sql = "insert into contacts (name, email, phone_number, message, status) values ('$name', '$email', '$phone_number', '$message', '$status')";
 	$stmt = $conn->prepare($sql);
 	$stmt->execute();
 

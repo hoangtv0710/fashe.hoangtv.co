@@ -42,7 +42,7 @@
 	$stmt->execute();
 	$cB = $stmt->fetchall();
 
-	$conmentSql = "select * from post_comments where post_id = $id order by id desc";
+	$conmentSql = "select * from post_comments where post_id = $id and status = 1 order by id desc";
 	$kq = $conn->prepare($conmentSql);
 	$kq->execute();
 	$comments = $kq->fetchall();
@@ -54,6 +54,11 @@
 	<title><?= $posts['title'] ?></title>
 	<meta charset="UTF-8">
 	<?php include 'share/top_asset.php'; ?>
+	<style>
+		.content_post p img {
+			width: 100%;
+		}
+	</style>
 </head>
 <body class="animsition">
 
@@ -100,22 +105,25 @@
 
 								<div class="s-text8 flex-w flex-m p-b-21">
 									<span>
-										By <?= $posts['author_name'] ?>
+										<i class="fa fa-user" aria-hidden="true"></i>
+										<?= $posts['author_name'] ?>
 										<span class="m-l-3 m-r-6">|</span>
 									</span>
 
 									<span>
+										<i class="fa fa-calendar" aria-hidden="true"></i>
 										<?= $posts['created_date'] ?>
 										<span class="m-l-3 m-r-6">|</span>
 									</span>
 
 									<span>
-										<?= $categories['name'] ?>
+										<i class="fa fa-eye" aria-hidden="true"></i>
+										<?= $posts['views'] ?>
 										<span class="m-l-3 m-r-6">|</span>
 									</span>
-
+									
 									<span>
-										8 Comments
+										<?= $categories['name'] ?>
 									</span>
 								</div>
 
@@ -124,7 +132,9 @@
 								</p>
 								
 								<p class="p-b-25">
-									<?= $posts['content'] ?>
+									<div class="content_post">
+										<?= $posts['content'] ?>
+									</div>
 								</p>
 
 							</div>

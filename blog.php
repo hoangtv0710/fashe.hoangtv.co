@@ -80,6 +80,7 @@
 										<img src="<?= $p['image'] ?>" alt="IMG-BLOG">
 
 										<span class="item-blog-date dis-block flex-c-m pos1 size17 bg4 s-text1">
+											<i class="fa fa-calendar mr-1" aria-hidden="true"></i> 
 											<?= $p['created_date'] ?>
 										</span>
 									</a>
@@ -93,13 +94,14 @@
 
 										<div class="s-text8 flex-w flex-m p-b-21">
 											<span>
-												By <?= $p['author_name'] ?>
+												<i class="fa fa-user" aria-hidden="true"></i>
+												<?= $p['author_name'] ?>
 												<span class="m-l-3 m-r-6">|</span>
 											</span>
 
 											<span>
-												<?= $p['cate_id'] ?>
-												
+												<i class="fa fa-eye" aria-hidden="true"></i>
+												<?= $p['views'] ?>
 											</span>
 
 											
@@ -125,6 +127,7 @@
 										<img src="<?= $p['image'] ?>" alt="IMG-BLOG">
 
 										<span class="item-blog-date dis-block flex-c-m pos1 size17 bg4 s-text1">
+											<i class="fa fa-calendar mr-1" aria-hidden="true"></i> 
 											<?= $p['created_date'] ?>
 										</span>
 									</a>
@@ -138,12 +141,14 @@
 
 										<div class="s-text8 flex-w flex-m p-b-21">
 											<span>
-												By <?= $p['author_name'] ?>
+												<i class="fa fa-user" aria-hidden="true"></i>
+												<?= $p['author_name'] ?>
 												<span class="m-l-3 m-r-6">|</span>
 											</span>
 
 											<span>
-												<?= $p['cate_id'] ?>										
+												<i class="fa fa-eye" aria-hidden="true"></i>
+												<?= $p['views'] ?>										
 											</span>
 
 											

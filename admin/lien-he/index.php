@@ -4,7 +4,7 @@
   $path = "../";
   require_once $path.'../database/db_fashe.php';
 
-  $contactsQuery = "select * from contacts";
+  $contactsQuery = "select * from contacts order by status asc";
   $stmt = $conn->prepare($contactsQuery);
   $stmt->execute();
   $contacts = $stmt->fetchAll();
@@ -55,6 +55,7 @@
                   <th>Email</th>
                   <th>SĐT</th>
                   <th>Ghi chú</th>
+                  <th width="150">Trạng thái</th>
                 </tr>
 
                 <?php foreach ($contacts as $item): ?>
@@ -69,6 +70,14 @@
                     <td><?= $item['phone_number']?></td>
 
                     <td><?= $item['message']?></td>
+
+                    <td>
+                      <?php if($item['status'] == 0) :?>
+                          <button type="button" class="btn btn-xs btn-secondary">Chưa trả lời</button>
+                      <?php else :?>
+                          <button type="button" class="btn btn-xs btn-success">Đã trả lời</button>
+                      <?php endif ?>
+                    </td>
 
                     <td>
                       <a href=send.php?id=<?= $item['id']?> class="btn btn-xs btn-primary"><i class="fa fa-pencil"></i>  Gủi phản hồi</a>
