@@ -1,6 +1,6 @@
 <?php 
 	session_start();
-	require_once 'database/db_fashe.php';
+	require_once '../database/db_fashe.php';
 	$id = $_GET['id'];
 	$sql = "select * from products";
 	$stmt = $conn->prepare($sql);

@@ -1,10 +1,10 @@
 <?php 
 	session_start();
-	require_once './database/db_fashe.php';
+	require_once '../database/db_fashe.php';
 
 	// kiem tra xem loai request co phai loai post hay khong
 	if($_SERVER['REQUEST_METHOD'] != "POST"){
-		header('location: '. SITELINK );
+		header('location: '. 'login.php' );
 		die;
 	}
 	$email = $_POST['email'];
