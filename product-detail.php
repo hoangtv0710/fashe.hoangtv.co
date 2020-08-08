@@ -95,7 +95,7 @@
 					<div class="slick3">
 						<div class="item-slick3" data-thumb="<?= $product['image'] ?>">
 							<div class="wrap-pic-w">
-								<img src="<?= $product['image'] ?>" alt="IMG-PRODUCT" height="600px">
+								<img src="<?= $product['image'] ?>" alt="IMG-PRODUCT">
 							</div>
 						</div>
 					<?php foreach ($pg as $p): ?>

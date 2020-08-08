@@ -43,23 +43,23 @@
 					<form action="<?= SITELINKADMIN . 'tai-khoan/quick-saveeditprofile.php' ?>" method="post" enctype="multipart/form-data" name="ff" onsubmit="return err()">
 						<div class="row">
 							<input type="hidden" name="id" value="<?= $account['id'] ?>">
-							<div class="col-md-5 p-l-50">
+							<div class="col-md-5" id="profile">
 								<p class="s-text3"><i class="fa fa-image"></i> Ảnh đại diện</p><img src="<?= $account['avatar'] ?>" width="40" height="40">
 								<input type="file" name="avatar" class="form-control m-t-5">
 
-								<p class="s-text3 p-t-25"><i class="fa fa-user"></i> Họ tên</p>
+								<p class="s-text3 p-t-25 data"><i class="fa fa-user"></i> Họ tên</p>
 								<input type="text" name="fullname" class="form-control" value="<?= $account['fullname'] ?>">
 								<span id="err" class="text-danger"></span>
 							</div>
 
-							<div class="col-md- p-l-50">
+							<div class="col-md-4" id="profile">
 								<p class="s-text3"><i class="fa fa-envelope"></i> Email</p><?= $account['email'] ?>
 
-								<p class="s-text3 p-t-40"><i class="fa fa-location-arrow"></i></i> Địa chỉ</p>
+								<p class="s-text3 p-t-40 data"><i class="fa fa-location-arrow"></i></i> Địa chỉ</p>
 								<input type="text" name="address" class="form-control" value="<?= $account['address'] ?>">
 							</div>
 
-							<div class="col-md-3 p-l-100">
+							<div class="col-md-3" id="profile">
 								<p class="s-text3"><i class="fa fa-transgender"></i></i> Giới tính</p>
 								<input type="radio" name="gender" <?php if ($account['gender'] == "Nam"): ?>
 				                  checked
@@ -67,7 +67,7 @@
 				                <input type="radio" name="gender" <?php if ($account['gender'] == "Nữ"): ?>
 				                  checked
 				                <?php endif ?> value="Nữ"> Nữ 
-								<p class="s-text3 p-t-40"><i class="fa fa-phone"></i> Só điện thoại</p>
+								<p class="s-text3 p-t-40 data"><i class="fa fa-phone"></i> Só điện thoại</p>
 								<input type="text" name="phone_number" class="form-control" value="<?= $account['phone_number'] ?>">
 							</div>
 						</div>
