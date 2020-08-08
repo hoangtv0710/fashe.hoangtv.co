@@ -5,7 +5,7 @@
   include_once $path.'share/check_login.php';
   
   $pageNumber = isset($_GET['page']) == true ? $_GET['page'] : 1;
-  $pageSize = 10;
+  $pageSize = 15;
 
   $offset = ($pageNumber-1)*$pageSize;
   $sql = "select p.*, c.name as catename from products p join product_categories c on p.cate_id = c.id order by id desc  limit $offset, $pageSize";
@@ -20,6 +20,7 @@
 
   $totalPage = ceil($totalProduct['total']/$pageSize);
 
+  $i = 1;
 ?>
 <!DOCTYPE html>
 <html>
@@ -80,12 +81,12 @@
                     </a>
                   </th>
                 </tr>
-
+                
                 <?php foreach ($products as $item): ?>
                   
                   <tr>
                     
-                    <td><?= $item['id']?>.</td>
+                    <td><?= $i++ ?>.</td>
 
                     <td><?= $item['product_name']?></td>
 
@@ -95,7 +96,7 @@
 
                     <td><?= $item['sell_price']?></td>
 
-                    <td><img src="<?= SITELINK . $item['image']?>" class="img-responsive"></td>
+                    <td><img src="<?= SITELINK . $item['image']?>" width="100%" height="120"></td>
 
                     <td><?= $item['status'] ?></td>
 

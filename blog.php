@@ -201,7 +201,7 @@
 								<p class="text-uppercase">Tất cả</p><hr>										
 							</a>
 						</li>
-						<ul class="p-b-54">
+						<ul class="p-b-54" id="blog_category">
 							<?php foreach ($cB as $c): ?>
 								<li class="p-t-4">
 									<a href="<?= "blog.php?id=".$c['id'] ?>" class="s-text13">
@@ -212,7 +212,7 @@
 						</ul>
 
 						<!-- Featured Products -->
-						<h4 class="m-text23 p-t-65 p-b-34">
+						<h4 class="m-text23 p-t-15 p-b-34">
 							Đọc nhiều nhất
 						</h4>
 

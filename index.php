@@ -11,17 +11,17 @@
 	$stmt->execute();
 	$banner = $stmt->fetchall();
 
-	$saleProductsQuery = "select * from products";
+	$saleProductsQuery = "select * from products where sell_price > 0 and status = 'Còn hàng'";
 	$stmt = $conn->prepare($saleProductsQuery);
 	$stmt->execute();
 	$saleProduct = $stmt->fetchall();
 
-	$newProductsQuery = "select * from products order by id desc limit 6";
+	$newProductsQuery = "select * from products where status = 'Còn hàng' order by id desc limit 6";
 	$stmt = $conn->prepare($newProductsQuery);
 	$stmt->execute();
 	$newProduct = $stmt->fetchall();
 
-	$mostProductsQuery = "select * from products order by views desc limit 6";
+	$mostProductsQuery = "select * from products where status = 'Còn hàng' order by views desc limit 6";
 	$stmt = $conn->prepare($mostProductsQuery);
 	$stmt->execute();
 	$mostProduct = $stmt->fetchall();
@@ -43,11 +43,13 @@
 	
 	<!-- header -->
 	<?php include 'share/header.php'; ?>
-	 <div class="flex-c-m size22 bg0 s-text21 pos-relative">
-		Đăng kí để nhận mã giảm giá 10% cho lần mua hàng đầu tiên tại shop
-		<a href="authenticator/registration.php" class="s-text22 hov6 p-l-5">
-			Đăng kí ngay
-		</a>
+	 <div class="flex-c-m size22 bg0 s-text21 pos-relative" id="discount_">
+		<span>
+			Đăng kí để nhận mã giảm giá 10% cho lần mua hàng đầu tiên tại shop
+			<a href="authenticator/registration.php" class="s-text22 hov6 p-l-5">
+				Đăng kí ngay
+			</a>
+		</span>
 
 		<button class="flex-c-m pos2 size23 colorwhite eff3 trans-0-4 btn-romove-top-noti">
 			<i class="fa fa-remove fs-13" aria-hidden="true"></i>
@@ -129,45 +131,41 @@
 					<div class="tab-pane fade show active" id="sale" role="tabpanel">
 						<div class="row">
 							<?php foreach ($saleProduct as $p): ?>
-								<?php if ($p['status'] == 'Còn hàng'): ?>
-									<?php if (!empty($p['sell_price'])): ?>
-										<div class="col-sm-6 col-md-4 col-lg-3 p-b-50">
-											<div class="block2">
-												<div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelsale">
-													<img src="<?= $p['image'] ?>" alt="IMG-PRODUCT" height="280">
+								<div class="col-sm-6 col-md-4 col-lg-3 p-b-50">
+									<div class="block2">
+										<div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelsale">
+											<img src="<?= $p['image'] ?>" alt="IMG-PRODUCT" height="300">
 
-													<div class="block2-overlay trans-0-4">
-														<a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
-															<i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
-															<i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
-														</a>
+											<div class="block2-overlay trans-0-4">
+												<a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
+													<i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
+													<i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
+												</a>
 
-														<div class="block2-btn-addcart w-size1 trans-0-4">
-															<!-- Button -->
-																<a href="<?= "product-detail.php?id=".$p['id']."&categories=".$p['cate_id'] ?>" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 m-b-10">Xem chi tiết</a>
+												<div class="block2-btn-addcart w-size1 trans-0-4">
+													<!-- Button -->
+														<a href="<?= "product-detail.php?id=".$p['id']."&categories=".$p['cate_id'] ?>" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 m-b-10">Xem chi tiết</a>
 
-															<a href="<?= "cart_action/save-cart.php?id=".$p['id'] ?>" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 m-b-10">Thêm vào giỏ</a>
-														</div>
-													</div>
-												</div>
-
-												<div class="block2-txt p-t-20 text-center text-uppercase">
-													<a href="<?= "product-detail.php?id=".$p['id']."&categories=".$p['cate_id'] ?>" class="block2-name dis-block s-text3 p-b-5">
-														<?= $p['product_name'] ?>
-													</a>
-
-													<span class="block2-oldprice m-text7 p-r-5">
-														<?= number_format($p['price']) ?>
-													</span>
-
-													<span class="block2-newprice m-text8 p-r-5">
-														<?= number_format($p['sell_price']) ?>
-													</span>
+													<a href="<?= "cart_action/save-cart.php?id=".$p['id'] ?>" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 m-b-10">Thêm vào giỏ</a>
 												</div>
 											</div>
 										</div>
-									<?php endif ?>
-								<?php endif ?>
+
+										<div class="block2-txt p-t-20 text-center text-uppercase">
+											<a href="<?= "product-detail.php?id=".$p['id']."&categories=".$p['cate_id'] ?>" class="block2-name dis-block s-text3 p-b-5">
+												<?= $p['product_name'] ?>
+											</a>
+
+											<span class="block2-oldprice m-text7 p-r-5">
+												<?= number_format($p['price']) ?>
+											</span>
+
+											<span class="block2-newprice m-text8 p-r-5">
+												<?= number_format($p['sell_price']) ?>
+											</span>
+										</div>
+									</div>
+								</div>
 							<?php endforeach ?>
 						</div>
 					</div>
@@ -180,44 +178,86 @@
 				<div class="row">
 					<?php foreach ($newProduct as $p): ?>
 						<?php if (empty($p['sell_price'])): ?>
-							<?php if ($p['status'] == 'Còn hàng'): ?>
-								<div class="col-sm-6 col-md-4 col-lg-3 p-b-50">
-									<div class="block2">
-										<div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelnew">
-											<img src="<?= $p['image'] ?>" alt="IMG-PRODUCT">
+							<div class="col-sm-6 col-md-4 col-lg-3 p-b-50">
+								<div class="block2">
+									<div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelnew">
+										<img src="<?= $p['image'] ?>" alt="IMG-PRODUCT" height="300">
 
-											<div class="block2-overlay trans-0-4">
-												<a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
-													<i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
-													<i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
-												</a>
-
-												<div class="block2-btn-addcart w-size1 trans-0-4">
-													<!-- Button -->
-													<a href="<?= "product-detail.php?id=".$p['id']."&categories=".$p['cate_id'] ?>" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 m-b-10">Xem chi tiết</a>
-													<a href="<?= "cart_action/save-cart.php?id=".$p['id'] ?>" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 m-b-10">Thêm vào giỏ</a>
-												</div>
-											</div>
-										</div>
-
-										<div class="block2-txt p-t-20 text-center text-uppercase">
-											<a href="<?= "product-detail.php?id=".$p['id']."&categories=".$p['cate_id'] ?>" class="block2-name dis-block s-text3 p-b-5">
-												<?= $p['product_name'] ?>
+										<div class="block2-overlay trans-0-4">
+											<a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
+												<i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
+												<i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
 											</a>
 
-											<span class="block2-price m-text6 p-r-5">
-												<?= number_format($p['price']) ?>
-											</span>
+											<div class="block2-btn-addcart w-size1 trans-0-4">
+												<!-- Button -->
+												<a href="<?= "product-detail.php?id=".$p['id']."&categories=".$p['cate_id'] ?>" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 m-b-10">Xem chi tiết</a>
+												<a href="<?= "cart_action/save-cart.php?id=".$p['id'] ?>" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 m-b-10">Thêm vào giỏ</a>
+											</div>
 										</div>
 									</div>
+
+									<div class="block2-txt p-t-20 text-center text-uppercase">
+										<a href="<?= "product-detail.php?id=".$p['id']."&categories=".$p['cate_id'] ?>" class="block2-name dis-block s-text3 p-b-5">
+											<?= $p['product_name'] ?>
+										</a>
+
+										<span class="block2-price m-text6 p-r-5">
+											<?= number_format($p['price']) ?>
+										</span>
+									</div>
 								</div>
-							<?php endif ?>
+							</div>
 						<?php else: ?>
-							<?php if ($p['status'] == 'Còn hàng'): ?>
+							<div class="col-sm-6 col-md-4 col-lg-3 p-b-50">
+								<div class="block2">
+									<div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelnew">
+										<img src="<?= $p['image'] ?>" alt="IMG-PRODUCT" height="300">
+
+										<div class="block2-overlay trans-0-4">
+											<a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
+												<i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
+												<i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
+											</a>
+
+											<div class="block2-btn-addcart w-size1 trans-0-4">
+												<!-- Button -->
+												<a href="<?= "product-detail.php?id=".$p['id']."&categories=".$p['cate_id'] ?>" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 m-b-10">Xem chi tiết</a>
+												<a href="<?= "cart_action/save-cart.php?id=".$p['id'] ?>" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 m-b-10">Thêm vào giỏ</a>
+											</div>
+										</div>
+									</div>
+
+									<div class="block2-txt p-t-20 text-center text-uppercase">
+										<a href="<?= "product-detail.php?id=".$p['id']."&categories=".$p['cate_id'] ?>" class="block2-name dis-block s-text3 p-b-5">
+											<?= $p['product_name'] ?>
+										</a>
+
+										<span class="block2-oldprice m-text7 p-r-5">
+											<?= number_format($p['price']) ?>
+										</span>
+
+										<span class="block2-newprice m-text8 p-r-5">
+											<?= number_format($p['sell_price']) ?>
+										</span>
+									</div>
+								</div>
+							</div>
+						<?php endif ?>							
+					<?php endforeach ?>
+				</div>
+			</div>
+
+					<!-- most -->
+			<div class="tab-pane fade" id="most" role="tabpanel">
+				<div class="row">
+					<?php foreach ($mostProduct as $p): ?>
+						<?php if(!empty($p['sell_price'])): ?>
 								<div class="col-sm-6 col-md-4 col-lg-3 p-b-50">
+									<!-- Block2 -->
 									<div class="block2">
-										<div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelnew">
-											<img src="<?= $p['image'] ?>" alt="IMG-PRODUCT" height="280">
+										<div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelsale">
+											<img src="<?= $p['image'] ?>" alt="IMG-PRODUCT" height="300">
 
 											<div class="block2-overlay trans-0-4">
 												<a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
@@ -248,61 +288,12 @@
 										</div>
 									</div>
 								</div>
-							<?php endif ?>
-						<?php endif ?>							
-					<?php endforeach ?>
-				</div>
-			</div>
-
-					<!-- most -->
-			<div class="tab-pane fade" id="most" role="tabpanel">
-				<div class="row">
-					<?php foreach ($mostProduct as $p): ?>
-						<?php if(!empty($p['sell_price'])): ?>
-							<?php if ($p['status'] == 'Còn hàng'): ?>
-									<div class="col-sm-6 col-md-4 col-lg-3 p-b-50">
-										<!-- Block2 -->
-										<div class="block2">
-											<div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelsale">
-												<img src="<?= $p['image'] ?>" alt="IMG-PRODUCT">
-
-												<div class="block2-overlay trans-0-4">
-													<a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
-														<i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
-														<i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
-													</a>
-
-													<div class="block2-btn-addcart w-size1 trans-0-4">
-														<!-- Button -->
-														<a href="<?= "product-detail.php?id=".$p['id']."&categories=".$p['cate_id'] ?>" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 m-b-10">Xem chi tiết</a>
-														<a href="<?= "cart_action/save-cart.php?id=".$p['id'] ?>" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 m-b-10">Thêm vào giỏ</a>
-													</div>
-												</div>
-											</div>
-
-											<div class="block2-txt p-t-20 text-center text-uppercase">
-												<a href="<?= "product-detail.php?id=".$p['id']."&categories=".$p['cate_id'] ?>" class="block2-name dis-block s-text3 p-b-5">
-													<?= $p['product_name'] ?>
-												</a>
-
-												<span class="block2-oldprice m-text7 p-r-5">
-													<?= number_format($p['price']) ?>
-												</span>
-
-												<span class="block2-newprice m-text8 p-r-5">
-													<?= number_format($p['sell_price']) ?>
-												</span>
-											</div>
-										</div>
-									</div>
-								<?php endif ?>
 							<?php else: ?>
-							<?php if ($p['status'] == 'Còn hàng'): ?>
 								<div class="col-sm-6 col-md-4 col-lg-3 p-b-50">
 									<!-- Block2 -->
 									<div class="block2">
 										<div class="block2-img wrap-pic-w of-hidden pos-relative">
-											<img src="<?= $p['image'] ?>" alt="IMG-PRODUCT">
+											<img src="<?= $p['image'] ?>" alt="IMG-PRODUCT" height="300">
 
 											<div class="block2-overlay trans-0-4">
 												<a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
@@ -329,8 +320,6 @@
 										</div>
 									</div>
 								</div>
-
-							<?php endif ?>								
 						<?php endif ?>
 					<?php endforeach ?>
 

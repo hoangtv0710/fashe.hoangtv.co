@@ -9,7 +9,12 @@
 	$product_name = trim($_POST['product_name']);
 	$cate_id = $_POST['cate_id'];
 	$price = $_POST['price'];
-	$sell_price = $_POST['sell_price'];
+	if ($_POST['sell_price'] == "") {
+		$sell_price = 0;
+	}
+	else {
+		$sell_price = $_POST['sell_price'];
+	}
 	$file = $_FILES['image'];
 	$status = $_POST['status'];
 	$detail = $_POST['detail'];
@@ -24,7 +29,7 @@
 		die;
 	}
 
-	if ($product_name == "" || $price == "" || $sell_price == "" || $status == "" || file_exists($file)) {
+	if ($product_name == "" || $price == "" || $status == "" || file_exists($file)) {
 		header('location:' . SITELINKADMIN . '/san-pham/add.php?err=Không để trống mục này!&product_name='.$product_name.'&price='.$price.'&sell_price='.$sell_price.'&detail='.$detail);
 		die;
 	}

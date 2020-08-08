@@ -84,9 +84,6 @@
               <input type="text" name="sell_price" class="form-control" <?php if (isset($_GET['sell_price'])): ?>
                 value="<?= $_GET['sell_price'] ?>"
               <?php endif ?>>
-              <?php if (isset($_GET['err'])): ?>
-                <span class="text-danger"><?= $_GET['err'] ?></span>
-              <?php endif ?>
               <?php if (isset($_GET['errNumber1'])): ?>
                 <span class="text-danger"><?= $_GET['errNumber1'] ?></span>
               <?php endif ?>

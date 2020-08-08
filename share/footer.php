@@ -19,12 +19,12 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-md-2">
-					<h4 class="s-text12 p-l-20 p-b-10 p-t-40">
+				<div class="col-md-2" id="menu_footer">
+					<h4 class="s-text12 p-b-10 p-t-40">
 						liên kết
 					</h4>
 
-					<ul class="p-l-20">
+					<ul>
 						<li class="p-b-9">
 							<a href="<?= SITELINK ?>" class="s-text7 text-uppercase">Trang chủ</a>
 						</li>
