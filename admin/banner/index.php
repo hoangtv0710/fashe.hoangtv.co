@@ -1,8 +1,9 @@
 <?php 
   
-  session_start();
   $path = "../";
   require_once $path.'../database/db_fashe.php';
+
+  include_once $path.'share/check_login.php';
 
   $bannerQuery = "select * from banners";
   $stmt = $conn->prepare($bannerQuery);

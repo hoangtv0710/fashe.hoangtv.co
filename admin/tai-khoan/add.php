@@ -1,5 +1,4 @@
 <?php 
-  session_start();
   $path = "../";
   require_once $path.'../database/db_fashe.php';
 

@@ -1,5 +1,4 @@
 <?php 
-	session_start();
 	$totalCart = 0;
 	if (isset($_SESSION['CART']) && count($_SESSION['CART']) > 0) {
 		$cart = $_SESSION['CART'];

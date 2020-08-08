@@ -1,7 +1,8 @@
 <?php 
-  session_start();
   $path = "../";
   require_once $path.'../database/db_fashe.php';
+
+  include_once $path.'share/check_login.php';
 
   $catesQuery = "select c.*, (select count(*) from posts where cate_id = c.id) as total_post from post_categories c";
   $stmt = $conn->prepare($catesQuery);

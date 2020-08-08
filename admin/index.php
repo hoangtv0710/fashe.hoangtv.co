@@ -1,15 +1,8 @@
 <?php 
     $path = "./";
     require_once  $path.'../database/db_fashe.php';
-    session_start();
-    if(isset($_SESSION['login']) == false || $_SESSION['login'] == null){
-      header("location: ./login.php");
-      die;
-    }
-     if($_SESSION['login']['role'] != 2 &&  $_SESSION['login']['role'] != 3){
-      header("location: ./login.php");
-      die;
-    }
+
+    include_once $path.'share/check_login.php';
     
     $countInvoiceQuery = "select count(*) as total from invoices where status = 0";
     $kq = $conn->prepare($countInvoiceQuery);

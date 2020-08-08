@@ -1,7 +1,8 @@
 <?php 
-  session_start();
   $path = "../";
   require_once $path.'../database/db_fashe.php';
+
+  include_once $path.'share/check_login.php';
 
   $sql = "select p.*, c.name as catename from posts p join post_categories c on p.cate_id = c.id order by id desc";
   $stmt = $conn->prepare($sql);

@@ -1,8 +1,10 @@
 <?php 
-  session_start();
 
   $path = "../";
   require_once $path.'../database/db_fashe.php';
+
+  include_once $path.'share/check_login.php';
+  
   $pageNumber = isset($_GET['page']) == true ? $_GET['page'] : 1;
   $pageSize = 8;
 
