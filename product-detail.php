@@ -1,9 +1,10 @@
 <?php 
-	session_start();
 	require_once 'database/db_fashe.php';
 
 	$id = $_GET['id'];
 
+	error_reporting(0);
+	
 	$sessionKey = 'product_' . $id;
     $sessionView = $_SESSION[$sessionKey];
     if (!$sessionView) { 

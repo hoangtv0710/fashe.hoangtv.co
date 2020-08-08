@@ -1,5 +1,4 @@
 <?php 
-	session_start();
 	require_once '../database/db_fashe.php';
 
 	// kiem tra xem loai request co phai loai post hay khong

@@ -1,8 +1,9 @@
 <?php 
-  session_start();
 
   $path = "../";
   require_once $path.'../database/db_fashe.php';
+
+  include_once $path.'share/check_login.php';
 
   $sql = "select c.*, p.product_name as productname, p.cate_id as cate from product_comments c join products p on c.product_id = p.id order by status asc";
   $stmt = $conn->prepare($sql);

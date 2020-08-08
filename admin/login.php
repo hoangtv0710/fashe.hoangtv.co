@@ -10,7 +10,7 @@
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://unpkg.com/tailwindcss@1.0.4/dist/tailwind.min.css" rel="stylesheet">
-  <link rel="icon" type="image/png" href="images/icons/favicon.png"/>
+  <link rel="icon" type="image/png" href="../images/icons/favicon.png"/>
 </head>
 
 <body class="font-mono h-screen overflow-hidden flex items-center justify-center" style="background: #edf2f7;">

@@ -1,8 +1,9 @@
 <?php 
   
-  session_start();
   $path = "../";
   require_once $path.'../database/db_fashe.php';
+
+  include_once $path.'share/check_login.php';
 
   $contactsQuery = "select * from contacts order by status asc";
   $stmt = $conn->prepare($contactsQuery);
