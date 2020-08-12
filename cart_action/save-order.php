@@ -1,5 +1,4 @@
 <?php 
-	session_start();
 	require_once '../database/db_fashe.php';
 	if($_SERVER['REQUEST_METHOD'] != "POST"){
 		header('location: '. SITELINK . 'send_cart.php');
