@@ -41,7 +41,7 @@
           <div class="col-md-6">
             <div class="form-group">
               <label>Tên danh mục</label>
-              <input type="text" name="name" placeholder="Mạo hiểm, Nhập vai,..." class="form-control" <?php if (isset($_GET['name'])): ?>
+              <input type="text" name="name" class="form-control" <?php if (isset($_GET['name'])): ?>
                 value="<?= $_GET['name'] ?>"
               <?php endif ?>>
               <?php if (isset($_GET['errName'])): ?>

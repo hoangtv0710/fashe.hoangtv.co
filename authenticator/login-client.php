@@ -4,12 +4,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>LOGIN - CLIENT</title>
+	<title>Đăng nhập</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="<?= SITELINKADMIN ?>/adminlte/plugins/Toastr/toastr.min.css">
 	<link rel="stylesheet" href="<?= SITELINK ?>/css/authenticator.css">
 	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 	<link rel="icon" type="image/png" href="../images/icons/favicon.png"/>
+	<style>
+		.error {
+			color: red;
+		}
+	</style>
 </head>
 <body>
 
@@ -21,7 +26,7 @@
 			</div>
 
 			<!-- Login Form -->
-			<form action="post-login-client.php" method="post">
+			<form action="post-login-client.php" method="post" id="login_client">
 				<?php if (isset($_GET['err'])): ?>
 					<h3 style="color: red; text-align: center; padding-bottom: 10px;"><?= $_GET['err'] ?></h3><br>
 				<?php endif ?>
@@ -53,8 +58,32 @@
 <script type="text/javascript" src="<?= SITELINK ?>vendor/jquery/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="<?= SITELINKADMIN ?>/adminlte/plugins/Toastr/toastr.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script type="text/javascript">
-		
+<script type="text/javascript" src="<?= SITELINK ?>js/jquery.validate.min.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("#login_client").validate({
+				rules: {
+					"email": {
+						required: true,
+						email: true
+					},
+					"password": {
+						required: true
+					},
+				},
+				messages: {
+					"email": {
+						required: "Email không được bỏ trống",
+						email: "Email không hợp lệ"
+					},
+					"password": {
+						required: "Mật khẩu không được bỏ trống"
+					},
+				}
+			});
+		});
+
 		<?php if (isset($_GET['sce']) && $_GET['sce'] == true) {
 	   		 ?>
 		    toastr.options = {

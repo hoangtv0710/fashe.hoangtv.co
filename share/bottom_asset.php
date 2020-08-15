@@ -50,3 +50,5 @@
 	<script src="<?= SITELINKADMIN ?>/adminlte/plugins/twbs-pagination/jquery.twbsPagination.min.js"></script>
 
 	<script type="text/javascript" src="<?= SITELINKADMIN ?>/adminlte/plugins/Toastr/toastr.min.js""></script>
+
+	<script src="<?= SITELINK ?>js/jquery.validate.min.js"></script>

@@ -4,12 +4,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>REGISTRATION</title>
+	<title>Đăng ký</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="<?= SITELINKADMIN ?>/adminlte/plugins/Toastr/toastr.min.css">
 	<link rel="stylesheet" href="<?= SITELINK ?>/css/authenticator.css">
 	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 	<link rel="icon" type="image/png" href="../images/icons/favicon.png"/>
+	<style>
+		.error {
+			color: red;
+		}
+	</style>
 </head>
 <body>
 	<div class="wrapper fadeInDown">
@@ -20,7 +25,7 @@
 			</div>
 
 			<!-- Login Form -->
-			<form action="<?= SITELINKADMIN ?>/tai-khoan/quick-saveadd.php" method="post">
+			<form action="<?= SITELINKADMIN ?>/tai-khoan/quick-saveadd.php" method="post" id="register">
 
 				<input type="text" name="fullname" placeholder="Họ tên" <?php if (isset($_GET['fullname'])): ?>
 					value="<?= $_GET['fullname'] ?>"
@@ -39,9 +44,7 @@
 					<span style="color: red"><?= $_GET['err'] ?></span>
 				<?php endif ?>	
 
-				<input type="password" name="password" placeholder="Mật khẩu " <?php if (isset($_GET['password'])): ?>
-					value="<?= $_GET['password'] ?>"
-				<?php endif ?>><br>
+				<input type="password" name="password" id="password" placeholder="Mật khẩu"><br>
 				<?php if (isset($_GET['err'])): ?>
 					<span style="color: red"><?= $_GET['err'] ?></span>
 				<?php endif ?>	
@@ -64,6 +67,46 @@
 
 <script type="text/javascript" src="<?= SITELINK ?>vendor/jquery/jquery-3.2.1.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="<?= SITELINK ?>js/jquery.validate.min.js"></script>
+
+<script>
+	$(document).ready(function() {
+		$("#register").validate({
+			rules: {
+				"fullname": {
+					required: true
+				},
+				"email": {
+					required: true,
+					email: true
+				},
+				"password": {
+					required: true
+				},
+				"cfpassword": {
+					required: true,
+					equalTo: "#password"
+				},
+			},
+			messages: {
+				"fullname": {
+					required: "Tên không được bỏ trống"
+				},
+				"email": {
+					required: "Email không được bỏ trống",
+					email: "Email không hợp lệ"
+				},
+				"password": {
+					required: "Mật khẩu không được bỏ trống"
+				},
+				"cfpassword": {
+					required: "Xác nhận mật khẩu không được bỏ trống",
+					equalTo: "Mật khẩu không trùng"
+				}
+			}
+		});
+	});
+</script>
 
 </body>
 </html>

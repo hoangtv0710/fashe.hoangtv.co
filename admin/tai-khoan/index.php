@@ -37,11 +37,8 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Tài khoản :
+        Tài khoản
       </h1>
-        1: Member,&ensp;
-        2: Moderator,&ensp;
-        3: Admin	
       <ol class="breadcrumb">
         <li><a href="<?= SITELINKADMIN ?>"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="active">Tài khoản</li>
@@ -87,7 +84,15 @@
 
                     <td><img src="<?= SITELINK . $item['avatar']?> " class="img-responsive"></td>
 
-                    <td><?= $item['role']?></td>
+                    <td>
+                      <?php if ($item['role'] == 3 ) :?>
+                        Admin
+                      <?php elseif ($item['role'] == 2 ) :?>
+                        Moderator
+                      <?php else :?>
+                        Member
+                      <?php endif ?>
+                    </td>
 
                     <td><?= $item['address']?></td>
 
