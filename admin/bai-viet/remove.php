@@ -21,6 +21,8 @@
 	$kq = $conn->prepare($sql);
 	$kq->execute();
 
+	unlink("../../".$post['image']);
+
 	header('location:' . SITELINKADMIN . '/bai-viet');
 	die;
 

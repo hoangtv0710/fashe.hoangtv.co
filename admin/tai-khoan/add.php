@@ -68,9 +68,7 @@
 
               <div class="form-group">
                 <label>Mật khẩu</label>
-                <input type="password" name="password" class="form-control" <?php if (isset($_GET['password'])): ?>
-                  value="<?= $_GET['password'] ?>"
-                <?php endif ?>>
+                <input type="password" name="password" class="form-control">
                  <?php if (isset($_GET['err'])): ?>
                   <span class="text-danger"><?= $_GET['err'] ?></span>
                 <?php endif ?>

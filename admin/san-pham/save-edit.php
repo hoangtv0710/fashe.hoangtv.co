@@ -1,7 +1,6 @@
 <?php 
 	require_once '../../database/db_fashe.php';
 
-	// kiem tra xem loai request co phai loai post hay khong
 	if($_SERVER['REQUEST_METHOD'] != "POST"){
 		header('location: '. SITELINKADMIN . '/san-pham');
 		die;
@@ -16,9 +15,14 @@
 	$detail= $_POST['detail'];
 	$file = $_FILES['image'];
 
+	$findProduct = "select * from products where id = '$id'";
+	$kq = $conn->prepare($findProduct);
+	$kq->execute();
+	$product = $kq->fetch();
+
 	if ($product_name == "") {
 		header('location: '. SITELINKADMIN . '/san-pham/edit.php?id='.$id.'&errName=Không để trống tên sản phẩm');
-	die;
+		die;
 	}
 	
 	$sql = "select * from products where product_name = '$product_name' and id <> $id";
@@ -38,6 +42,8 @@
 		$filename = 'images/products/'.uniqid() . '.' . $ext;
 		
 		move_uploaded_file($file['tmp_name'], "../../".$filename);
+
+		unlink("../../".$product['image']);
 	}
 
 	$sql = "update products set 
@@ -67,7 +73,6 @@
 
 	$stmt->bindParam(':id', $id);
 	$stmt->execute();
-
 
 	header('location: '. SITELINKADMIN . '/san-pham');
 	die;

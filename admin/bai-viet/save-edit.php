@@ -1,7 +1,6 @@
 <?php 
 	require_once '../../database/db_fashe.php';
 
-	// kiem tra xem loai request co phai loai post hay khong
 	if($_SERVER['REQUEST_METHOD'] != "POST"){
 		header('location: '. SITELINKADMIN . '/bai-viet');
 		die;
@@ -15,9 +14,14 @@
 	$author_name = $_POST['author_name'];
 	$content = $_POST['content'];
 
+	$findPost = "select * from posts where id = '$id'";
+  	$stmt = $conn->prepare($findPost);
+  	$stmt->execute();
+  	$post = $stmt->fetch();    
+
 	if ($title == "") {
 		header('location: '. SITELINKADMIN . '/san-pham/edit.php?id='.$id.'&errName=Không để trống tiêu đề bài viết');
-	die;
+		die;
 	}
 	
 	$sql = "select * from posts where title = '$title' and id <> $id";
@@ -37,6 +41,8 @@
 		$filename = 'images/posts/'.uniqid() . '.' . $ext;
 		
 		move_uploaded_file($file['tmp_name'], "../../".$filename);
+
+		unlink("../../".$post['image']);
 	}
 
 	$sql = "update posts set 

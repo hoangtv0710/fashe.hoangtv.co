@@ -17,6 +17,8 @@
 	$kq = $conn->prepare($sql);
 	$kq->execute();
 
+	unlink("../../".$user['avatar']);
+
 	header('location:' . SITELINKADMIN . '/tai-khoan');
 	die;
 
