@@ -53,7 +53,7 @@
           <div class="col-md-6">
             <div class="form-group">
               <label>Tên danh mục</label>
-              <input type="text" name="name" placeholder="vd: Socola, Bánh dẻo,..." class="form-control" value="<?= $cate['name']?>" >
+              <input type="text" name="name" class="form-control" value="<?= $cate['name']?>" >
               <?php if (isset($_GET['errName'])): ?>
                 <span class="text-danger"><?= $_GET['errName'] ?></span>
               <?php endif ?>

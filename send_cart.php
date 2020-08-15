@@ -24,6 +24,11 @@
 	<title>Thanh toán</title>
 	<meta charset="UTF-8">
 	<?php include 'share/top_asset.php'; ?>
+	<style>
+		.error {
+			color: red;
+		}
+	</style>
 </head>
 <body class="animsition">
 
@@ -142,28 +147,24 @@
 						Mời nhập thông tin đề mua hàng
 						<hr>
 					</h4>
-		<form method="POST" action="cart_action/save-order.php" class="leave-comment" name="form" onsubmit="return validate()">	
+		<form method="POST" action="cart_action/save-order.php" class="save_order" name="form">	
 					<input type="hidden" name="discount_code" value="<?= $discount_code['code'] ?>">			
 					<input type="hidden" name="totalprice" value="<?= $total_ ?>">			
 					<!--  -->			
 					<div class="bo4 size15 m-b-30">
 						<input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="name" placeholder="Họ tên">
-						<span class="text-danger" id="errname"></span>
 					</div>
 
 					<div class="bo4 size15 m-b-30">
 						<input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="phone_number" placeholder="Số điện thoại">
-						<span class="text-danger" id="errphone-number"></span>
 					</div>
 				
 					<div class="bo4 size15 m-b-30">
 						<input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="email" placeholder="Địa chỉ email">
-						<span class="text-danger" id="erremail"></span>
 					</div>
 
 					<div class="bo4 size15 m-b-30">
 						<input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="address" placeholder="Địa chỉ nhận hàng">
-						<span class="text-danger" id="erraddress"></span>
 					</div>
 					
 					<textarea class="dis-block s-text7 size20 bo4 p-l-22 p-r-22 p-t-13" name="message" placeholder="Ghi chú"></textarea>
@@ -212,49 +213,50 @@
 				c.coupon_code.focus();
 				return false;
 			}
-
-			 else {
+			else {
 				document.getElementById("errCode").style.display = 'none';
 			}
-
 		}
+
+		$(".save_order").validate({
+			rules: {
+				"name": {
+					required: true
+				},
+				"phone_number": {
+					required: true,
+					number: true,
+					minlength: 10,
+					maxlength: 10
+				},
+				"email": {
+					required: true,
+					email: true
+				},
+				"address": {
+					required: true
+				},
+			},
+			messages: {
+				"name": {
+					required: "Tên không được bỏ trống"
+				},
+				"phone_number": {
+					required: "Sô điện thoại không được bỏ trống",
+					number: "Sô điện thoại không hợp lệ",
+					minlength: "Số điện thoại phải gồm 10 chữ số",
+					maxlength: "Số điện thoại tối đa 10 chữ số",
+				},
+				"email": {
+					required: "Email không được bỏ trống",
+					email: "Email không hợp lệ"
+				},
+				"address": {
+					required: "Địa chỉ nhận hàng không được bỏ trống"
+				}
+			}
+		});
 		
-		function validate () {
-			var f = document.form;
-			var checkPhone_number = /^(0)[0-9]{9,10}$/;
-			var checkEmail = /^\w+@\w+\.\w+$/;
-			var checkEmail2 = /^\w+@\w+\.\w+\.\w+$/;
-			if (f.totalprice.value == 0) {
-				document.getElementById("errcode").innerHTML = "Bạn chưa có sản phẩm để thanh toán!";
-				return false;
-			}
-			if (f.name.value == "") {
-				document.getElementById("errname").innerHTML = "Mời nhập tên";
-				f.name.focus();
-				return false;
-			} else {
-				document.getElementById("errname").style.display = 'none';
-			}
-			if (f.phone_number.value == "") {
-				document.getElementById("errphone-number").innerHTML = "Mời nhập số điện thoại";
-				f.phone_number.focus();
-				return false;
-			} else if (!checkPhone_number.test(f.phone_number.value)) {
-				document.getElementById("errphone-number").innerHTML = 'Số điện thoại không hợp lệ!';
-				f.phone_number.focus();
-				return false; 
-			} else {
-				document.getElementById("errphone-number").style.display = 'none';
-			}
-			if (f.address.value == "") {
-				document.getElementById("erraddress").innerHTML = "Mời nhập địa chỉ nhận hàng";
-				f.address.focus();
-				return false;
-			} else {
-				document.getElementById("erraddress").style.display = 'none';
-			}
-
-		}
 	</script>
 
 	<script type="text/javascript">

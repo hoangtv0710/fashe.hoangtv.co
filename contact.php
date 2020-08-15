@@ -12,6 +12,11 @@
 	<title>Liên hệ</title>
 	<meta charset="UTF-8">
 	<?php include 'share/top_asset.php'; ?>	
+	<style>
+		.error {
+			color: red;
+		}
+	</style>
 </head>
 <body class="animsition">
 
@@ -42,28 +47,24 @@
 				</div>	
 
 				<div class="col-md-7 p-b-30">
-					<form class="leave-comment" method="POST" action="<?= SITELINKADMIN ?>/lien-he/save-add.php" name="form" onsubmit="return validate()">
+					<form class="form_contact" method="POST" action="<?= SITELINKADMIN ?>/lien-he/save-add.php" name="form">
 						<h4 class="m-text26 p-b-36 p-t-15">
 							Gửi cho chúng tôi ý kiến của bạn
 						</h4>
 
 						<div class="bo4 size15 m-b-30">
 							<input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="name" placeholder="Họ tên">
-							<span class="text-danger" id="errname"></span>
 						</div>
 
 						<div class="bo4 size15 m-b-30">
 							<input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="phone_number" placeholder="Số điện thoại">
-							<span class="text-danger" id="errphone-number"></span>
 						</div>
 					
 						<div class="bo4 size15 m-b-30">
 							<input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="email" placeholder="Địa chỉ email">
-							<span class="text-danger" id="erremail"></span>
 						</div>
 						
 						<textarea class="dis-block s-text7 size20 bo4 p-l-22 p-r-22 p-t-13" name="message" placeholder="Lời nhắn"></textarea>
-						<span class="text-danger" id="errmessage"></span>
 						<div class="w-size25">
 							<!-- Button -->
 							<button type="submit" class="flex-c-m size2 bg1 bo-rad-23 hov1 m-text3 trans-0-4 m-t-20">
@@ -96,51 +97,44 @@
 	<?php include 'share/bottom_asset.php'; ?>
 
 	<script>
-		function validate() {
-				var f = document.form;
-				var checkPhone_number = /^(0)[0-9]{9,10}$/;
-				var checkEmail = /^\w+@\w+\.\w+$/;
-				var checkEmail2 = /^\w+@\w+\.\w+\.\w+$/;
-				if (f.name.value == "") {
-					document.getElementById("errname").innerHTML = 'Vui lòng nhập tên!';
-					f.name.focus();
-					return false;
-				} else {
-					document.getElementById("errname").style.display = 'none';
+		$(".form_contact").validate({
+			rules: {
+				"name": {
+					required: true
+				},
+				"phone_number": {
+					required: true,
+					number: true,
+					minlength: 10,
+					maxlength: 10
+				},
+				"email": {
+					required: true,
+					email: true
+				},
+				"message": {
+					required: true
+				},
+			},
+			messages: {
+				"name": {
+					required: "Tên không được bỏ trống"
+				},
+				"phone_number": {
+					required: "Sô điện thoại không được bỏ trống",
+					number: "Sô điện thoại không hợp lệ",
+					minlength: "Số điện thoại phải gồm 10 chữ số",
+					maxlength: "Số điện thoại tối đa 10 chữ số",
+				},
+				"email": {
+					required: "Email không được bỏ trống",
+					email: "Email không hợp lệ"
+				},
+				"message": {
+					required: "Lời nhắn không được bỏ trống"
 				}
-				if (f.phone_number.value == "") {
-					document.getElementById("errphone-number").innerHTML = 'Vui lòng nhập số điện thoại!';
-					f.phone_number.focus();
-					return false;
-				} else if (!checkPhone_number.test(f.phone_number.value)) {
-					document.getElementById("errphone-number").innerHTML = 'Số điện thoại không hợp lệ!';
-					f.phone_number.focus();
-					return false;
-				} else {
-					document.getElementById("errphone-number").style.display = 'none';
-				}
-				if (f.email.value == "") {
-					document.getElementById("erremail").innerHTML = 'Vui lòng nhập email!';
-					f.email.focus();
-					return false;
-				} else if (!checkEmail.test(f.email.value) && !checkEmail2.test(f.email.value)) {
-					document.getElementById("erremail").innerHTML = 'Email không hợp lệ!';
-					f.email.focus();
-					return false;
-				} else {
-					document.getElementById("erremail").style.display = 'none';
-				}
-	
-				if (f.message.value == "") {
-					document.getElementById("errmessage").innerHTML = 'Vui lòng nhập nội dung!';
-					f.message.focus();
-					return false;
-				} else {
-					document.getElementById("errmessage").style.display = 'none';
-				}
-
-				return true;
 			}
+		});
 	</script>
 
 	<script type="text/javascript">

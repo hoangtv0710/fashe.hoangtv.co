@@ -40,17 +40,17 @@
 	$kq->execute();
 	$checkUserEmail = $kq->fetch();
 	if ($checkUserEmail != false) {
-		header('location:' . SITELINK . 'authenticator/registration.php?errEmail=Email đã tồn tại!&email='.$email.'&fullname='.$fullname.'&password='.$password);
+		header('location:' . SITELINK . 'authenticator/registration.php?errEmail=Email đã tồn tại!&email='.$email.'&fullname='.$fullname);
 		die;
 	}
 
 	if ($cfpassword != $password) {
-		header('location:' . SITELINK . 'authenticator/registration.php?errcfPassword=Mật khẩu không khớp!&email='.$email.'&fullname='.$fullname.'&password='.$password);
+		header('location:' . SITELINK . 'authenticator/registration.php?errcfPassword=Mật khẩu không khớp!&email='.$email.'&fullname='.$fullname);
 		die;
 	}
 
 	if ($email == "" || $password == "" || $cfpassword == "" || $fullname == "") {
-		header('location:' . SITELINK . 'authenticator/registration.php?err=Không để trống mục này!&email='.$email.'&fullname='.$fullname.'&password='.$password);
+		header('location:' . SITELINK . 'authenticator/registration.php?err=Không để trống mục này!&email='.$email.'&fullname='.$fullname);
 		die;
 	}
 
