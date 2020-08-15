@@ -13,6 +13,11 @@
 	<title>Sửa tài khoản</title>
 	<meta charset="UTF-8">
 	<?php include 'share/top_asset.php'; ?>
+	<style>
+		.error {
+			color: red;
+		}
+	</style>
 </head>
 <body class="animsition">
 
@@ -40,7 +45,7 @@
 
 				<div class="col-md-10 p-b-20 p-t-20" style="background: #0101">
 					<p class="s-text12">sửa THÔNG TIN CÁ NHÂN</p><hr>
-					<form action="<?= SITELINKADMIN . 'tai-khoan/quick-saveeditprofile.php' ?>" method="post" enctype="multipart/form-data" name="ff" onsubmit="return err()">
+					<form action="<?= SITELINKADMIN . '/tai-khoan/quick-saveeditprofile.php' ?>" method="post" enctype="multipart/form-data" name="ff" id="form_update_profile">
 						<div class="row">
 							<input type="hidden" name="id" value="<?= $account['id'] ?>">
 							<div class="col-md-5" id="profile">
@@ -49,7 +54,6 @@
 
 								<p class="s-text3 p-t-25 data"><i class="fa fa-user"></i> Họ tên</p>
 								<input type="text" name="fullname" class="form-control" value="<?= $account['fullname'] ?>">
-								<span id="err" class="text-danger"></span>
 							</div>
 
 							<div class="col-md-4" id="profile">
@@ -115,17 +119,37 @@
 	<?php include 'share/bottom_asset.php'; ?>
 
 	<script>
-		function err () {
-			var f = document.ff;
-			if (f.fullname.value == "") {
-				document.getElementById("err").innerHTML = "Không để trống tên";
-				return false;
-			} else {
-				document.getElementById("err").style.display = 'none';
+		$("#form_update_profile").validate({
+			rules: {
+				"fullname": {
+					required: true
+				},
+				"phone_number": {
+					required: true,
+					number: true,
+					minlength: 10,
+					maxlength: 10
+				},
+				"address": {
+					required: true
+				},
+			},
+			messages: {
+				"fullname": {
+					required: "Tên không được bỏ trống"
+				},
+				"phone_number": {
+					required: "Sô điện thoại không được bỏ trống",
+					number: "Sô điện thoại không hợp lệ",
+					minlength: "Số điện thoại phải gồm 10 chữ số",
+					maxlength: "Số điện thoại tối đa 10 chữ số",
+				},
+				"address": {
+					required: "Địa chỉ không được bỏ trống",
+				}
 			}
-		}
+		});
 	</script>
-
 
 </body>
 </html>

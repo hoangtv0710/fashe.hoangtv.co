@@ -40,7 +40,7 @@
 
 				<div class="col-md-10 p-b-20 p-t-20" style="background: #0101">
 					<p class="s-text12">sửa mật khẩu</p><hr>
-					<form action="<?= SITELINKADMIN . 'tai-khoan/edit-password.php' ?>" method="post" name="ff" onsubmit="return err()">
+					<form action="<?= SITELINKADMIN . '/tai-khoan/edit-password.php' ?>" method="post" name="ff" onsubmit="return err()">
 						<div class="row">
 
 							<div class="col-md-6">

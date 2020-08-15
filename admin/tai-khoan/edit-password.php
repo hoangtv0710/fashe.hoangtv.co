@@ -3,7 +3,7 @@
 	require_once '../../database/db_fashe.php';
 
 	if($_SERVER['REQUEST_METHOD'] != "POST"){
-		header('location: '. SITELINK . 'edit-profile.php');
+		header('location: '. SITELINK . 'edit-password.php');
 		die;
 	}
 
@@ -17,7 +17,7 @@
 	$user = $stmt->fetch();
 
 	if($user == false || password_verify($password, $user['password']) == false){
-		header('location: '.$siteurl. "edit-password.php?msg=Sai mật khẩu");
+		header('location: '. SITELINK . "edit-password.php?msg=Sai mật khẩu");
 		die;
 	}
 

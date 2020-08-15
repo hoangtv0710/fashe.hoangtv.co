@@ -34,7 +34,7 @@
     $kq->execute();
     $discount = $kq->fetch();
 
-    $countUsersQuery = "select count(*) as total from users";
+    $countUsersQuery = "select count(*) as total from users where role = 1";
     $kq = $conn->prepare($countUsersQuery);
     $kq->execute();
     $countUsers = $kq->fetch();
@@ -182,7 +182,7 @@
             <div class="inner">
               <h3><?= $countUsers['total'] ?></h3>
 
-              <p>Tài khoản</p>
+              <p>Thành viên</p>
             </div>
             <div class="icon">
               <i class="fa fa-users"></i>
