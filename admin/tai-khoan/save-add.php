@@ -21,17 +21,17 @@
 	$kq->execute();
 	$checkUserEmail = $kq->fetch();
 	if ($checkUserEmail != false) {
-		header('location:' . SITELINKADMIN . '/tai-khoan/add.php?errEmail=Email đã tồn tại!&email='.$email.'&fullname='.$fullname.'&password='.$password.'&address='.$address.'&phone_number='.$phone_number);
+		header('location:' . SITELINKADMIN . '/tai-khoan/add.php?errEmail=Email đã tồn tại!&email='.$email.'&fullname='.$fullname.'&address='.$address.'&phone_number='.$phone_number);
 		die;
 	}
 
 	if ($cfpassword != $password) {
-		header('location:' . SITELINKADMIN . '/tai-khoan/add.php?errcfPassword=Mật khẩu không khớp!&email='.$email.'&fullname='.$fullname.'&password='.$password.'&address='.$address.'&phone_number='.$phone_number);
+		header('location:' . SITELINKADMIN . '/tai-khoan/add.php?errcfPassword=Mật khẩu không khớp!&email='.$email.'&fullname='.$fullname.'&address='.$address.'&phone_number='.$phone_number);
 		die;
 	}
 
 	if ($email == "" || $password == "" || $cfpassword == "" || $fullname == "" || $gender == "") {
-		header('location:' . SITELINKADMIN . '/tai-khoan/add.php?err=Không để trống mục này!&email='.$email.'&fullname='.$fullname.'&password='.$password.'&address='.$address.'&phone_number='.$phone_number);
+		header('location:' . SITELINKADMIN . '/tai-khoan/add.php?err=Không để trống mục này!&email='.$email.'&fullname='.$fullname.'&address='.$address.'&phone_number='.$phone_number);
 		die;
 	}
 

@@ -14,15 +14,22 @@
 	$gender = $_POST['gender'];
 	$phone_number = $_POST['phone_number'];
 
+	$findUser = "select * from users where id = $id";
+  	$kq = $conn->prepare($findUser);
+  	$kq->execute();
+	$user = $kq->fetch();
+	 
+	$filename = false;
 
-$filename = false;
-if ($file['size'] > 0) {
-	$path = $file['name'];
-	$ext = pathinfo($path, PATHINFO_EXTENSION);
+	if ($file['size'] > 0) {
+		$path = $file['name'];
+		$ext = pathinfo($path, PATHINFO_EXTENSION);
 
-	$filename = 'images/users/'.uniqid() . '.' . $ext;
-	move_uploaded_file($file['tmp_name'], "../../".$filename);
-} 
+		$filename = 'images/users/'.uniqid() . '.' . $ext;
+		move_uploaded_file($file['tmp_name'], "../../".$filename);
+
+		unlink("../../".$user['avatar']);
+	} 
 
 
 	$sql = "update users set 

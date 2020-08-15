@@ -16,10 +16,12 @@
 	$sql = "delete from comments where product_id = '$productId'";
 	$kq = $conn->prepare($sql);
 	$kq->execute();
-
+	
 	$sql = "delete from products where id = '$productId'";
 	$kq = $conn->prepare($sql);
 	$kq->execute();
+	
+	unlink("../../".$product['image']);
 
 	header('location:' . SITELINKADMIN . '/san-pham');
 	die;
