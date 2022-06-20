@@ -77,7 +77,7 @@
 
                     <td>
                       <a 
-                        href="edit.php?id=<?= $item['id']?>" 
+                        href="<?= SITELINKADMIN ?>/banner/edit.php?id=<?= $item['id']?>" 
                         class="btn btn-xs btn-primary">
                         <i class="fa fa-pencil"></i>  Sửa
                       </a>

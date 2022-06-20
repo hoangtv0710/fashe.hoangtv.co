@@ -75,7 +75,7 @@
                     </td>
 
                     <td>
-                      <form action="update_status.php" method="post">
+                      <form action="<?= SITELINKADMIN ?>/phan-hoi-bv/update_status.php" method="post">
                         <input type="hidden" name="id" value="<?= $item['id'] ?>">
                         <select class="form-control" name="status" onchange="this.form.submit()">
                           <option value="0" <?php if($item['status'] == 0) :?> selected <?php endif ?> >Ẩn</option>
@@ -88,7 +88,7 @@
 
                       <a 
                         href="javascript:;" 
-                        linkurl="remove.php?id=<?= $item['id']?>" 
+                        linkurl="<?= SITELINKADMIN ?>/phan-hoi-bv/remove.php?id=<?= $item['id']?>" 
                         class="btn btn-xs btn-danger btn-remove">
                         <i class="fa fa-trash"></i>  Xoá
                       </a>

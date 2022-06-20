@@ -81,10 +81,10 @@
                     </td>
 
                     <td>
-                      <a href=send.php?id=<?= $item['id']?> class="btn btn-xs btn-primary"><i class="fa fa-pencil"></i>  Gủi phản hồi</a>
+                      <a href="<?= SITELINKADMIN ?>/lien-he/send.php?id=<?= $item['id']?>" class="btn btn-xs btn-primary"><i class="fa fa-pencil"></i>  Gủi phản hồi</a>
                       <a 
                         href="javascript:;" 
-                        linkurl="remove.php?id=<?= $item['id']?>" 
+                        linkurl="<?= SITELINKADMIN ?>/lien-he/remove.php?id=<?= $item['id']?>" 
                         class="btn btn-xs btn-danger btn-remove">
                         <i class="fa fa-trash"></i>  Xoá
                       </a>

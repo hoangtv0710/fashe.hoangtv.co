@@ -1,8 +1,8 @@
 <?php
 	session_start();
 	//url
-	define('SITELINK', 'http://localhost:8080/Fashe/');
-	define('SITELINKADMIN', 'http://localhost:8080/Fashe/admin');
+	define('SITELINK', 'http://localhost:6969/');
+	define('SITELINKADMIN', 'http://localhost:6969/admin');
 
 	//database
 	$host = "localhost";

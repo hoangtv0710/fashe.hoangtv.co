@@ -60,7 +60,7 @@
                   <th>Đường dẫn</th>
                   <th style="width: 120px">
                     <a 
-                      href="add.php" 
+                      href="<?= SITELINKADMIN ?>/slide-show/add.php" 
                       class="btn btn-xs btn-success">
                       <i class="fa fa-plus"></i>  Thêm
                     </a>
@@ -86,13 +86,13 @@
 
                     <td>
                        <a 
-                        href="edit.php?id=<?= $item['id']?>" 
+                        href="<?= SITELINKADMIN ?>/slide-show/edit.php?id=<?= $item['id']?>" 
                         class="btn btn-xs btn-primary">
                         <i class="fa fa-pencil"></i>  Sửa
                       </a>
                       <a 
                         href="javascript:;" 
-                        linkurl="remove.php?id=<?= $item['id']?>" 
+                        linkurl="<?= SITELINKADMIN ?>/slide-show/remove.php?id=<?= $item['id']?>" 
                         class="btn btn-xs btn-danger btn-remove">
                         <i class="fa fa-trash"></i>  Xoá
                       </a>

@@ -71,7 +71,7 @@
                   <th style="width: 150px;">Ảnh</th>
                   <th style="width: 120px;">
                     <a 
-                      href="add.php" 
+                      href="<?= SITELINKADMIN ?>/trung-bay-sp/add.php" 
                       class="btn btn-xs btn-success">
                       <i class="fa fa-plus"></i>  Thêm
                     </a>
@@ -94,14 +94,14 @@
 
                     <td>
                       <a 
-                        href="edit.php?id=<?= $item['id']?>" 
+                        href="<?= SITELINKADMIN ?>/trung-bay-sp/edit.php?id=<?= $item['id']?>" 
                         class="btn btn-xs btn-primary">
                         <i class="fa fa-pencil"></i>  Sửa
                       </a>
 
                       <a 
                         href="javascript:;" 
-                        linkurl="remove.php?id=<?= $item['id']?>" 
+                        linkurl="<?= SITELINKADMIN ?>/trung-bay-sp/remove.php?id=<?= $item['id']?>" 
                         class="btn btn-xs btn-danger btn-remove">
                         <i class="fa fa-trash"></i>  Xoá
                       </a>

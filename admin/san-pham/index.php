@@ -75,7 +75,7 @@
                   <th>Lượt xem</th>
                   <th style="width: 120px">
                     <a 
-                      href="add.php" 
+                      href="<?= SITELINKADMIN ?>/san-pham/add.php" 
                       class="btn btn-xs btn-success">
                       <i class="fa fa-plus"></i>  Thêm
                     </a>
@@ -104,13 +104,13 @@
 
                     <td>
                       <a 
-                        href="edit.php?id=<?= $item['id']?>" 
+                        href="<?= SITELINKADMIN ?>/san-pham/edit.php?id=<?= $item['id']?>" 
                         class="btn btn-xs btn-primary">
                         <i class="fa fa-pencil"></i>  Sửa
                       </a>
                       <a 
                         href="javascript:;" 
-                        linkurl="remove.php?id=<?= $item['id']?>" 
+                        linkurl="<?= SITELINKADMIN ?>/san-pham/remove.php?id=<?= $item['id']?>" 
                         class="btn btn-xs btn-danger btn-remove">
                         <i class="fa fa-trash"></i>  Xoá
                       </a>
