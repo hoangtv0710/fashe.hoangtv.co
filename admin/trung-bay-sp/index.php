@@ -135,10 +135,7 @@
 
 <script type="text/javascript" src="<?= SITELINKADMIN ?>/adminlte/plugins/Toastr/toastr.min.js"></script>
 <script type="text/javascript">
-  
-  <?php if (isset($_GET['success']) && $_GET['success'] == true) {
-    ?>
-    toastr.options = {
+  toastr.options = {
       "closeButton": false,
       "debug": false,
       "newestOnTop": false,
@@ -155,7 +152,15 @@
       "showMethod": "fadeIn",
       "hideMethod": "fadeOut"
     }
+  <?php if (isset($_GET['success']) && $_GET['success'] == true) {
+    ?>
     toastr.success('Thêm thành công!')
+    <?php
+  } ?>
+
+<?php if (isset($_GET['error'])) {
+    ?>
+    toastr.error('<?php echo $_GET['error'] ?>')
     <?php
   } ?>
 

@@ -33,6 +33,21 @@
 		die;
 	}
 
+	if(!checkXss($title)){
+		header('location: '. SITELINKADMIN . '/bai-viet/edit.php?id='.$id.'&errName=Tiêu đề không hợp lệ!');
+		die;
+	}
+
+	if(!checkXss($short_desc)){
+		header('location: '. SITELINKADMIN . '/bai-viet/edit.php?id='.$id.'&errDescription=Nội dung không hợp lệ!');
+		die;
+	}
+
+	if(!checkXss($content)){
+		header('location: '. SITELINKADMIN . '/bai-viet/edit.php?id='.$id.'&errContent=Nội dung không hợp lệ!');
+		die;
+	}
+
 	$filename = false;
 	if($file['size'] > 0){
 		$path = $file['name'];

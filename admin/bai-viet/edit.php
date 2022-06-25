@@ -85,6 +85,9 @@
               <input type="text" name="short_desc" 
                 value="<?= $product['short_desc'] ?>" 
                 class="form-control">
+                <?php if (isset($_GET['errDescription'])): ?>
+                <span class="text-danger"><?= $_GET['errDescription'] ?></span>
+              <?php endif ?>
             </div>
 
             <div class="form-group">
@@ -119,6 +122,9 @@
             <div class="form-group">
               <label>Nội dung bài viết</label>
               <textarea name="content" class="form-control" rows="10"><?= $product['content'] ?></textarea>
+              <?php if (isset($_GET['errContent'])): ?>
+                <span class="text-danger"><?= $_GET['errContent'] ?></span>
+              <?php endif ?>
             </div>
           </div>
           <div class="col-md-12 text-right">

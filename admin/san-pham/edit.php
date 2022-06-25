@@ -129,6 +129,9 @@
             <div class="form-group">
               <label>Chi tiết sản phẩm</label>
               <textarea name="detail" class="form-control" rows="10"><?= $product['detail'] ?></textarea>
+              <?php if (isset($_GET['errDetail'])): ?>
+                <span class="text-danger"><?= $_GET['errDetail'] ?></span>
+              <?php endif ?>
             </div>
           </div>
           <div class="col-md-12 text-right">

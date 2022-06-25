@@ -117,7 +117,7 @@
           <i class="fa fa-shopping-cart"></i> <span>Hóa đơn</span>
         </a>
       </li>
-
+      <?php if ($_SESSION['login']['role'] == 3): ?>
       <li class="treeview">
         <a href="#">
           <i class="fa fa-sliders"></i> <span>Slideshow</span>
@@ -134,6 +134,7 @@
           </li>
         </ul>
       </li>
+      <?php endif; ?>
 
       <li class="treeview">
         <a href="#">

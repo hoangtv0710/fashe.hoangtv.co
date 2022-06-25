@@ -121,6 +121,9 @@
               <textarea name="detail" class="form-control" rows="10" <?php if (isset($_GET['detail'])): ?>
                 value="<?= $_GET['detail'] ?>"
               <?php endif ?>></textarea>
+              <?php if (isset($_GET['errDetail'])): ?>
+                <span class="text-danger"><?= $_GET['errDetail'] ?></span>
+              <?php endif ?>
             </div>
           </div>
 

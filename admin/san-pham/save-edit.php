@@ -24,6 +24,16 @@
 		header('location: '. SITELINKADMIN . '/san-pham/edit.php?id='.$id.'&errName=Không để trống tên sản phẩm');
 		die;
 	}
+
+	if(!checkXss($product_name)){
+		header('location: '. SITELINKADMIN . '/san-pham/edit.php?id='.$id.'&errName=Tên sản phẩm không hợp lệ');
+		die;
+	}
+
+	if(!checkXss($detail)){
+		header('location: '. SITELINKADMIN . '/san-pham/edit.php?id='.$id.'&errDetail=Nội dung sản phẩm không hợp lệ!');
+		die;
+	}
 	
 	$sql = "select * from products where product_name = '$product_name' and id <> $id";
 	$stmt = $conn->prepare($sql);

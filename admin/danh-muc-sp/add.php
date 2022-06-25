@@ -54,6 +54,9 @@
               <textarea name="description" class="form-control" rows="5" <?php if (isset($_GET['description'])): ?>
                 value="<?= $_GET['description'] ?>"
               <?php endif ?>></textarea>
+              <?php if (isset($_GET['errDescription'])): ?>
+                <span class="text-danger"><?= $_GET['errDescription'] ?></span>
+              <?php endif ?>
             </div>
             
             <div class="text-right">

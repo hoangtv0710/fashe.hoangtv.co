@@ -1,6 +1,9 @@
 <?php 
 	require_once '../../database/db_fashe.php';
-	
+	if($_SESSION['login']['role'] == 2){
+		header('location: '. SITELINKADMIN . '/bai-viet?error=Chức năng không khả dụng cho tài khoản demo');
+		die;
+	}
 	$postId = $_GET['id'];
 
 	$sql = "select * from posts where id = '$postId'";

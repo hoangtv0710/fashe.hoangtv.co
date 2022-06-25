@@ -18,4 +18,9 @@
 		'Moderator' => 2,
 		'Admin' => 3	
 	];
+
+	function checkXss($string)
+	{
+		return preg_replace('#<script(.*?)>(.*?)</script>#is', '', $string);
+	}
  ?>

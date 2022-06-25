@@ -14,6 +14,16 @@
 		die;
 	}
 
+	if(!checkXss($name)){
+		header('location: '. SITELINKADMIN . '/danh-muc-bv/add.php?errName=Tên danh mục không hợp lệ!&name='.$name.'&description='.$description);
+		die;
+	}
+
+	if(!checkXss($description)){
+		header('location: '. SITELINKADMIN . '/danh-muc-bv/add.php?errDescription=Nội dung danh mục không hợp lệ!&name='.$name.'&description='.$description);
+		die;
+	}
+
 	$sql = "select * from post_categories where name = '$name'";
 	$stmt = $conn->prepare($sql);
 	$stmt->execute();

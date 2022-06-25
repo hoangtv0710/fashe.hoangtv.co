@@ -29,7 +29,7 @@
 		die;
 	}
 
-	if ($product_name == "" || $price == "" || $status == "" || file_exists($file)) {
+	if ($product_name == "" || $price == "" || $status == "") {
 		header('location:' . SITELINKADMIN . '/san-pham/add.php?err=Không để trống mục này!&product_name='.$product_name.'&price='.$price.'&sell_price='.$sell_price.'&detail='.$detail);
 		die;
 	}
@@ -44,6 +44,17 @@
 		die;
 	}
 
+	if(!checkXss($product_name)){
+		header('location: '. SITELINKADMIN . '/san-pham/add.php?errName=Tên sản phẩm không hợp lệ!&product_name='.$product_name.'&price='.$price.'&sell_price='.$sell_price.'&detail='.$detail);
+		die;
+	}
+	
+	if(!checkXss($detail)){
+		header('location: '. SITELINKADMIN . '/san-pham/add.php?errDetail=Nội dung sản phẩm không hợp lệ!&product_name='.$product_name.'&price='.$price.'&sell_price='.$sell_price.'&detail='.$detail);
+		die;
+	}
+
+
 if ($file['size'] > 0) {
 	$path = $file['name'];
 	$ext = pathinfo($path, PATHINFO_EXTENSION);
@@ -53,7 +64,6 @@ if ($file['size'] > 0) {
 } else {
 	$filename = 'images/default/default.jpg';
 }
-
 
 
 	$sql = "insert into products (product_name, cate_id, detail, price, sell_price, image, status, views) 

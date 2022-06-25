@@ -62,6 +62,9 @@
             <div class="form-group">
               <label>Mô tả</label>
               <textarea name="description" class="form-control" rows="5"><?= $cate['description']?></textarea>
+              <?php if (isset($_GET['errDescription'])): ?>
+                <span class="text-danger"><?= $_GET['errDescription'] ?></span>
+              <?php endif ?>
             </div>
 
             <div class="text-right">

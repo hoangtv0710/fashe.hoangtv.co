@@ -10,6 +10,10 @@
 	$email = $_POST['email'];
 	$phone_number = $_POST['phone_number'];
 	$message = $_POST['message'];
+	if (!checkXss($message)) {
+		header('location:' . SITELINK . 'contact.php?error=Có gì đó không ổn!');
+		die;
+	}
 	$status = 0;
 
 

@@ -1,6 +1,10 @@
 <?php 
 
 	require_once '../../database/db_fashe.php';
+	if($_SESSION['login']['role'] == 2){
+		header('location: '. SITELINKADMIN . '/danh-muc-sp?error=Chức năng không khả dụng cho tài khoản demo');
+		die;
+	}
 	$cateId = $_GET['id'];
 
 	// kiem tra xem id co ton tai trong csdl

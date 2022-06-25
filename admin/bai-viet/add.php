@@ -74,6 +74,9 @@
               <?php if (isset($_GET['err'])): ?>
                 <span class="text-danger"><?= $_GET['err'] ?></span>
               <?php endif ?>
+              <?php if (isset($_GET['errDescription'])): ?>
+                <span class="text-danger"><?= $_GET['errDescription'] ?></span>
+              <?php endif ?>
             </div>
 
 
@@ -98,9 +101,6 @@
             <div class="form-group">
               <label>Ảnh sản phẩm</label>
               <input type="file" name="image" class="form-control">
-              <?php if (isset($_GET['err'])): ?>
-                <span class="text-danger"><?= $_GET['err'] ?></span>
-              <?php endif ?>
             </div>
 
             
@@ -114,6 +114,9 @@
               <?php endif ?>></textarea>
               <?php if (isset($_GET['err'])): ?>
                 <span class="text-danger"><?= $_GET['err'] ?></span>
+              <?php endif ?>
+              <?php if (isset($_GET['errContent'])): ?>
+                <span class="text-danger"><?= $_GET['errContent'] ?></span>
               <?php endif ?>
             </div>
           </div>

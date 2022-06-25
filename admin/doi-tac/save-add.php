@@ -11,6 +11,16 @@
 	$name = $_POST['name'];
 	$url = $_POST['url'];
 
+	if ($name == '') {
+		header('location:' . SITELINKADMIN . '/doi-tac/add.php?errName=Vui lòng nhập tên đối tác!&name='.$name.'&url='.$url);
+		die;
+	}
+
+	if(!checkXss($name)){
+		header('location:' . SITELINKADMIN . '/doi-tac/add.php?errName=Tên đối tác không hợp lệ!&name='.$name.'&url='.$url);
+		die;
+	}
+
 	$sql = "select * from brands where name = '$name'";
 	$kq = $conn->prepare($sql);
 	$kq->execute();

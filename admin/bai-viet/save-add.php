@@ -26,8 +26,23 @@
 		die;
 	}
 
-	if ($title == "" || $short_desc == ""  || $content == "" || file_exists($file)) {
+	if ($title == "" || $short_desc == ""  || $content == "") {
 		header('location:' . SITELINKADMIN . '/bai-viet/add.php?err=Không để trống mục này!&title='.$title.'&short_desc='.$short_desc.'&created_date='.$created_date.'&content='.$content);
+		die;
+	}
+
+	if(!checkXss($title)){
+		header('location: '. SITELINKADMIN . '/bai-viet/add.php?errName=Tiêu đề không hợp lệ!&title='.$title.'&short_desc='.$short_desc.'&created_date='.$created_date.'&content='.$content);
+		die;
+	}
+
+	if(!checkXss($short_desc)){
+		header('location: '. SITELINKADMIN . '/bai-viet/add.php?errDescription=Nội dung không hợp lệ!&title='.$title.'&short_desc='.$short_desc.'&created_date='.$created_date.'&content='.$content);
+		die;
+	}
+
+	if(!checkXss($content)){
+		header('location: '. SITELINKADMIN . '/bai-viet/add.php?errContent=Nội dung không hợp lệ!&title='.$title.'&short_desc='.$short_desc.'&created_date='.$created_date.'&content='.$content);
 		die;
 	}
 

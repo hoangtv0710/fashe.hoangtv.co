@@ -105,9 +105,11 @@
               </li>
               <!-- Menu Footer-->
               <li class="user-footer">
+              <?php if ($_SESSION['login']['role'] == 3): ?>
                 <div class="pull-left">
                   <a href="<?= SITELINK ?>account.php" class="btn btn-default btn-flat" target=_blank>Profile</a>
                 </div>
+                <?php endif ?>
                 <div class="pull-right">
                   <a href="<?= SITELINKADMIN ?>/logout.php" class="btn btn-default btn-flat">Sign out</a>
                 </div>
